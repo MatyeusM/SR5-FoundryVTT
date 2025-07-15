@@ -7,7 +7,6 @@ import { SR5Actor } from '../../actor/SR5Actor';
 import { PartsList } from '../../parts/PartsList';
 import { Translation } from '../../utils/strings';
 import { DamageType } from 'src/module/types/item/Action';
-import { SkillFieldType } from 'src/module/types/template/Skills';
 import { ModifiableValueLinkedType } from 'src/module/types/template/Base';
 import { ActiveSkillsById } from 'src/module/config/ActiveSkills';
 
