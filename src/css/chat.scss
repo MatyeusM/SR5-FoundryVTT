@@ -23,7 +23,7 @@
         .card-header {
             padding: 0.25em 0;
             border-bottom: $groove;
-            
+
 
             img {
                 flex: 0 0;
@@ -82,7 +82,7 @@
             .card-description-content {
                 border-bottom: $groove;
             }
-        }        
+        }
 
         .damage-line {
             margin-top: 0.25em;
@@ -296,14 +296,14 @@
             flex-flow: row wrap;
             justify-content: center;
             .dice-roll {
-                background-image: url(/icons/svg/d6-grey.svg);
+                background-image: url('#{$systemPath}/icons/svg/d6-grey.svg');
                 background-size: 24px 24px;
                 font-size: 16px;
                 font-weight: bold;
                 text-align: center;
                 width: 24px;
                 line-height: 24px;
-                
+
                 // Consistent margin on top, if missing result boxes will clip.
                 margin-top: 5px;
 
