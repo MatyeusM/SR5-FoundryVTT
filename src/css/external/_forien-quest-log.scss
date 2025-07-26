@@ -258,7 +258,7 @@ body #forien-quest-log .quest-log .table ul .title p {
 .chat-message.emote {
     color: config.$white;
     background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.05)), config.asset("page.webp") repeat;
-    border: 1px solid config.$dark;
+    border: 1px solid config.$dark-0;
     .message-content.h2{
         color: config.$yellow;
     }

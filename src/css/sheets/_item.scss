@@ -51,7 +51,7 @@
             height: 2em;
 
             .source-button {
-                color: config.$light;
+                color: config.$light-0;
                 font-size: 16px;
                 height: 2em;
                 left: .5em;
@@ -171,7 +171,7 @@
                 flex: 1;
             }
             .label {
-                color: config.$light;
+                color: config.$light-0;
                 font-size: 1.15em;
                 @include config.systemFonts;
                 &.advanced{
@@ -207,16 +207,16 @@
                 color: config.$color;
                 background: rgba(config.$black, 0.05);
                 border-radius: 0.3em;
-                border-color: config.$dark;
+                border-color: config.$dark-0;
                 > option {
-                    background-color: config.$dark;
+                    background-color: config.$dark-0;
                 }
             }
             input {
                 color: config.$color;
                 background: rgba(config.$black, 0.05);
                 border-radius: 0.3em;
-                border-color: config.$dark;
+                border-color: config.$dark-0;
             }
             label {
                 color: config.$yellow;

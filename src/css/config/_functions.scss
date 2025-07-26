@@ -1,5 +1,11 @@
 @use 'variables';
+@use 'theme';
+@use 'sass:map';
 
 @function asset($path, $prefix: 'assets/') {
   @return url('#{variables.$systemPath}#{$prefix}#{$path}');
+}
+
+@function themed($key, $themeMap: theme.$dark) {
+    @return map.get($themeMap, $key);
 }

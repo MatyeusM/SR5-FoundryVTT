@@ -290,7 +290,7 @@ button.plus1_button {
     color: config.$black;
     line-height: 0;
     flex: 0;
-    background: rgba(config.$light, 0.1);
+    background: rgba(config.$light-0, 0.1);
     border-radius: 0.3em;
     text-align: center;
 
@@ -336,7 +336,7 @@ input[type='text'].disabled-for-display {
 
 input[type='text'].display {
     @include config.textOutline;
-    background: rgba(config.$light, 0.1);
+    background: rgba(config.$light-0, 0.1);
     color: config.$color;
     border-radius: 0.3em;
     border-color: config.$black;
@@ -352,7 +352,7 @@ input[type='text'].display {
     }
 
     &.text {
-        background: rgba(config.$dark, 0.1);
+        background: rgba(config.$dark-0, 0.1);
         border-radius: 0;
     }
 
@@ -403,10 +403,10 @@ input[type='text'].display {
         color: config.$color;
         background: rgba(config.$black, 0.05);
         border-radius: 0.3em;
-        border-color: config.$dark;
+        border-color: config.$dark-0;
 
         > option {
-            background-color: config.$dark;
+            background-color: config.$dark-0;
         }
     }
 
@@ -498,7 +498,7 @@ input[type='text'].display {
             color: config.$color;
             background: rgba(config.$black, 0.05);
             border-radius: 0.3em;
-            border-color: config.$dark;
+            border-color: config.$dark-0;
 
             // Icons like chevron and ticks.
             i,
@@ -508,7 +508,7 @@ input[type='text'].display {
 
             // ul will contain menus and sub-menus and can be nested.
             ul {
-                background-color: config.$dark;
+                background-color: config.$dark-0;
             }
 
             // li represents each menu entry in both menus and sub-menus
@@ -644,7 +644,7 @@ input[type='text'].display {
                 color: config.$color;
                 // border-color: config.$black;
                 // border-bottom: 0px;
-                background: rgba(config.$light, 0.1);
+                background: rgba(config.$light-0, 0.1);
             }
         }
 
@@ -851,7 +851,7 @@ input[type='text'].display {
                 }
 
                 &:hover {
-                    border-color: config.$light;
+                    border-color: config.$light-0;
                 }
             }
         }
@@ -999,7 +999,7 @@ input[type='text'].display {
                 flex: 1 0 auto;
                 text-align: center;
                 height: 100%;
-                border: config.$light;
+                border: config.$light-0;
                 padding-right: 10px;
 
                 &.faded {
@@ -1145,7 +1145,7 @@ input[type='text'].display {
     button.display {
         color: config.$color;
         border-color: config.$black;
-        background: rgba(config.$light, 0.1);
+        background: rgba(config.$light-0, 0.1);
         border-radius: 0.3em;
         text-align: center;
 
@@ -1160,7 +1160,7 @@ input[type='text'].display {
 
         &.light {
             color: config.$black;
-            background: config.$light;
+            background: config.$light-0;
         }
     }
 
@@ -1181,7 +1181,7 @@ input[type='text'].display {
 
         &.light {
             color: config.$black;
-            background: config.$light;
+            background: config.$light-0;
         }
     }
     button.display.show-hidden-skills {
@@ -1201,7 +1201,7 @@ input[type='text'].display {
 
         &.light {
             color: config.$black;
-            background: config.$light;
+            background: config.$light-0;
         }
     }
 
@@ -1222,7 +1222,7 @@ input[type='text'].display {
 
         &.light {
             color: config.$black;
-            background: config.$light;
+            background: config.$light-0;
         }
     }
 

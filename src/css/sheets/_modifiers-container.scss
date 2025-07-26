@@ -26,7 +26,7 @@
         display: grid;
         grid-template-columns: 200px 50px;
         background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), config.asset("page.webp") repeat;
-        border: 1px solid config.$dark;
+        border: 1px solid config.$dark-0;
         padding: 0.5em 0.5em 0.5em 0.5em;
         text-align: left;
         font-weight: normal;

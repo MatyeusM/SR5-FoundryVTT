@@ -11,10 +11,10 @@ $white: white;
 $darkblue: darkblue;
 $crimson: crimson;
 $darkred: #55101e;
-$light: darken($white, 10%);
-$light-1: darken($light, 10%);
+$light-0: darken($white, 10%);
+$light-1: darken($light-0, 10%);
 $light-2: darken($light-1, 10%);
-$dark: darken($grey, 20%);
+$dark-0: darken($grey, 20%);
 $dark2: #222;
 $dark-sunken: #41404073; //Removed as no longer needed in situational modifiers
 $matrix-green: rgb(7, 145, 35);
@@ -44,9 +44,9 @@ $inner-color: $white;
 $outline-color: $black;
 
 $groove-width: 1px;
-$groove-color: $dark;
+$groove-color: $dark-0;
 $groove: $groove-width solid $groove-color;
-$light-border: $dark;
+$light-border: $dark-0;
 
 $dark-sunken-box-shadow: inset 0 0 3px 0 $darkred, 0 -2px 2px -1px $darkred, -2px 0 2px -2px $fDarkRed, -2px 0 2px -2px $fDarkRed, 2px 0 2px -2px $darkred, 2px 0 2px -2px $darkred, 0 3px 3px -3px $fLightRed, 0 2px 2px -2px $fLightRed, 0 1px 1px -1px $fLightRed;
 

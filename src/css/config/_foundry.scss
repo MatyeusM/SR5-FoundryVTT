@@ -24,7 +24,7 @@ input[type='text'].display {
 }
 
 .display.text.left.document-name {
-    font-size: 25px;
+    @include config.font-size(24); // reduced it by 1px from 25px to have a foundry size
     border: 0;
 }
 
@@ -55,7 +55,7 @@ body:not(.theme-dark) {
     // This clashed with Weather Control module and others.
     h1 {
         color: config.$darkred;
-        font-size: 25px;
+        @include config.font-size(24); // reduced it by 1px from 25px to have a foundry size
     }
 
     h2 {
@@ -143,7 +143,7 @@ body:not(.theme-dark) {
 }
 
 .journal-sheet select {
-    color: config.$dark;
+    color: config.$dark-0;
 }
 
 .journal-sheet option {
@@ -158,7 +158,7 @@ body:not(.theme-dark) {
 .chat-message.emote {
     color: config.$white;
     background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.05)), config.asset('page.webp') repeat;
-    border: 1px solid config.$dark;
+    border: 1px solid config.$dark-0;
 }
 
 // Improve visibility non-default roll modes.
@@ -181,7 +181,7 @@ body:not(.theme-dark) {
 
 // Description for roll tables shown on chat messages for a rolled result drawn.
 .chat-message .table-draw .table-description {
-    color: config.$light;
+    color: config.$light-0;
 }
 /**
  * Settings Sidebar
@@ -193,7 +193,7 @@ body:not(.theme-dark) {
 
     > a[href] {
         flex: 0;
-        font-size: var(--font-size-12);
+        @include config.font-size(12);
         text-transform: uppercase;
 
         &:hover {
@@ -225,7 +225,7 @@ body:not(.theme-dark) {
 
 .list-header.item-section[data-item-id="weapon"][data-item-type=""] {
     color: config.$yellow;  /* set the color to yellow */
-    font-size: small;
+    @include config.font-size(13);
 }
 
 .common-test{

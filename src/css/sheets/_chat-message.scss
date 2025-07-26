@@ -49,7 +49,7 @@
         .button {
             color: config.$color;
             border-color: config.$black;
-            background: rgba(config.$light, 0.2);
+            background: rgba(config.$light-0, 0.2);
             border-radius: 0.3em;
             text-align: center;
             margin-top: 0.5em;

@@ -1,6 +1,7 @@
 @use 'variables';
 @use 'theme';
 @use 'functions';
+@use 'sass:math';
 
 @mixin basic-rollable {
     &:hover {
@@ -50,4 +51,13 @@
 @mixin linkHovered {
     text-shadow: 0 0 8px var(--color-shadow-primary);
     color: variables.$fLightRed;
+}
+
+/// Apply a FoundryVTT font size using a CSS variable fallback.
+/// Example: @include font-size(16);
+@mixin font-size($px, $lh: null) {
+  font-size: var(--font-size-#{$px}, #{math.div($px, 16)}rem);
+  @if $lh != null {
+      line-height: $lh;
+  }
 }
