@@ -1,4 +1,5 @@
-@import 'config';
+@use '../config';
+
 .sr5.item {
     min-height: 484px;
     min-width: 600px;
@@ -26,15 +27,15 @@
         display: flex;
         flex-flow: row nowrap;
         align-items: stretch;
-        // border: $groove;
+        // border: config.$groove;
         .item-name {
-            @include systemFonts;
+            @include config.systemFonts;
             border: 0px;
             flex: 1;
             height: 60px;
             font-size: var(--font-size-20);
             .display {
-                background: $nameplate-background;
+                background: config.$nameplate-background;
                 border: none;
                 height: 35px;
                 margin-top: 11px;
@@ -50,7 +51,7 @@
             height: 2em;
 
             .source-button {
-                color: $light;
+                color: config.$light;
                 font-size: 16px;
                 height: 2em;
                 left: .5em;
@@ -70,10 +71,10 @@
             }
         }
         .item-type {
-            @include systemFonts;
+            @include config.systemFonts;
             flex: 0;
             padding: 0 0.5em;
-            color: $color;
+            color: config.$color;
             display: flex;
             flex-flow: column;
             align-content: center;
@@ -81,7 +82,7 @@
         }
         .item-image {
             max-width: 100px;
-            border-right: $groove;
+            border-right: config.$groove;
             margin-bottom: 0;
             padding-bottom: 0;
             border: none;
@@ -89,17 +90,17 @@
         .item-info {
             flex: 1;
             > :not(:last-child) {
-                border-bottom: $groove;
+                border-bottom: config.$groove;
             }
 
             .toggle-fresh-import-off {
                 flex-grow: 0;
-                background-color: $bgrButton;
+                background-color: config.$bgrButton;
             }
         }
     }
     .technology {
-        @include systemFonts;
+        @include config.systemFonts;
         min-width: 12em;
         padding-top: 10px;
         padding-left: 10px;
@@ -111,7 +112,7 @@
         }
 
         label {
-          color: $yellow;
+          color: config.$yellow;
         }
 
         .tech-adjustable-label {
@@ -153,9 +154,9 @@
             max-width: 14em;
         }
         .header {
-            @include title;
+            @include config.title;
             font-size: 1.25em;
-            color: $yellow;
+            color: config.$yellow;
         }
         .form-line {
             display: flex;
@@ -164,17 +165,17 @@
             align-content: center;
             padding: 0.1em 0.25em;
             &.advanced{
-                color: $yellow;
+                color: config.$yellow;
             }
             > * {
                 flex: 1;
             }
             .label {
-                color: $light;
+                color: config.$light;
                 font-size: 1.15em;
-                @include systemFonts;
+                @include config.systemFonts;
                 &.advanced{
-                    color: $yellow;
+                    color: config.$yellow;
                 }
             }
             .inputs {
@@ -203,22 +204,22 @@
                 }
             }
             select {
-                color: $color;
-                background: rgba($black, 0.05);
+                color: config.$color;
+                background: rgba(config.$black, 0.05);
                 border-radius: 0.3em;
-                border-color: $dark;
+                border-color: config.$dark;
                 > option {
-                    background-color: $dark;
+                    background-color: config.$dark;
                 }
             }
             input {
-                color: $color;
-                background: rgba($black, 0.05);
+                color: config.$color;
+                background: rgba(config.$black, 0.05);
                 border-radius: 0.3em;
-                border-color: $dark;
+                border-color: config.$dark;
             }
             label {
-                color: $yellow;
+                color: config.$yellow;
             }
         }
     }
@@ -230,7 +231,7 @@
 
         & .window-header {
             border-bottom: none;
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("#{$systemPath}assets/page.webp") repeat;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("#{config.$systemPath}assets/page.webp") repeat;
             background-repeat: repeat;
             background-size: 100% 20px auto;
             flex: 0 0 20px;

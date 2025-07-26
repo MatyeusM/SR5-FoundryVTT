@@ -1,3 +1,4 @@
+@use '../config';
 /**
   * Is used on TokenHUDs to display a additional segment per situational modifer.
   */
@@ -33,7 +34,7 @@
         grid-template-columns: 36px auto;
         overflow: hidden;
 
-        // The numerical modifier total 
+        // The numerical modifier total
         .modifier-value {}
 
         // The corresponding modifier description per .modifier-value
@@ -46,7 +47,7 @@
             cursor: pointer;
 
             &:hover {
-                box-shadow: 0 0 0.25em 0.15em $white;
+                box-shadow: 0 0 0.25em 0.15em config.$white;
                 border-radius: 8px;
             }
         }
@@ -65,15 +66,15 @@
     }
 
     h1 {
-        border-bottom: 1px solid $yellow;
-        color: $yellow;
+        border-bottom: 1px solid config.$yellow;
+        color: config.$yellow;
         font-weight: bold;
     }
 
     // Add back in stylings as necessary
     h2,
     h3 {
-        color: $yellow;
+        color: config.$yellow;
         border-bottom: none;
         font-weight: normal;
     }

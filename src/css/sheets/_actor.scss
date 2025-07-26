@@ -1,4 +1,4 @@
-@import 'config';
+@use '../config';
 
 .sr5.actor {
     min-height: 690px;
@@ -15,8 +15,8 @@
         overflow: hidden;
     }
     .name {
-        @include systemFonts;
-        background: $nameplate-background;
+        @include config.systemFonts;
+        background: config.$nameplate-background;
         font-size: 200%;
         margin-bottom: 0;
         padding-left: 5px;
@@ -48,10 +48,10 @@
             flex-wrap: wrap;
         }
         .attribute {
-            @include title;
+            @include config.title;
 
             align-items: center;
-            color: $yellow;
+            color: config.$yellow;
             display: flex;
             flex-flow: column nowrap;
             flex: 1 0 auto;
@@ -109,7 +109,7 @@
                     font-size: 0.75em;
                 }
                 &.roll {
-                    @include rollable;
+                    @include config.rollable;
                 }
             }
 
@@ -134,12 +134,12 @@
 
             .toggle-fresh-import-all-off {
                 font-size: 0.75em;
-                background-color: $bgrButton;
+                background-color: config.$bgrButton;
             }
 
             .toggle-fresh-import-all-on {
                 font-size: 0.75em;
-                background-color: $bgrButton;
+                background-color: config.$bgrButton;
             }
 
             .track {
@@ -183,7 +183,7 @@
         }
     }
     .limit {
-        @include systemFonts;
+        @include config.systemFonts;
         padding: 0 0.1em;
         margin-top: -2px;
         text-align: center;
@@ -197,7 +197,7 @@
 
     // Interaction Element for Skill Lists
     .skill-header {
-        @include rollable;
+        @include config.rollable;
     }
 
     // Sprite sheet power tab list had broken flex/block relations, causing missing a scrollbar.
@@ -218,7 +218,7 @@
 
         & .window-header {
             border-bottom: none;
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("#{$systemPath}assets/page.webp") repeat;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("#{config.$systemPath}assets/page.webp") repeat;
             background-repeat: repeat;
             background-size: 100% 20px auto;
             flex: 0 0 20px;

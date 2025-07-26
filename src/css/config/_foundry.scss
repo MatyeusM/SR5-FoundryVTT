@@ -7,6 +7,8 @@
   * GENERAL ELEMENT STYLING
   */
 
+@use '../config';
+
 blockquote {
     padding-top: 5px;
     padding-bottom: 5px;
@@ -42,7 +44,7 @@ body:not(.theme-dark) {
     .sheet.journal-entry .journal-entry-content,
     // Journal Entry Page Editor
     .journal-sheet.journal-entry-page .window-content {
-        background: url('#{$systemPath}assets/light-page.webp') repeat;
+        background: url('#{config.$systemPath}assets/light-page.webp') repeat;
     }
 }
 
@@ -52,12 +54,12 @@ body:not(.theme-dark) {
     // As we only change headers in journal-entires, avoid cross styling outside of it.
     // This clashed with Weather Control module and others.
     h1 {
-        color: $darkred;
+        color: config.$darkred;
         font-size: 25px;
     }
 
     h2 {
-        color: $darkred;
+        color: config.$darkred;
     }
 
     table {
@@ -122,7 +124,7 @@ body:not(.theme-dark) {
 .journal-sheet .journal-header .title {
     background:
         $nameplate-background,
-        url("#{$systemPath}assets/page.webp") repeat;
+        url("#{config.$systemPath}assets/page.webp") repeat;
     background-repeat: no-repeat, repeat;
     background-size: 100% 41px, auto; // first layer = 60px tall
     background-position: center, top;
@@ -137,7 +139,7 @@ body:not(.theme-dark) {
 
 
 .journal-sheet h3 {
-    color: $darkred;
+    color: config.$darkred;
 }
 
 .journal-sheet select {
