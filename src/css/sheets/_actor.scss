@@ -4,9 +4,12 @@
   min-height: 690px;
   min-width: 870px;
   background:
-    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    linear-gradient(
+      config.themed('background-overlay'),
+      config.themed('background-overlay')
+    ),
     config.asset("page.webp") repeat;
-  box-shadow: 0 0 10px 0px rgba(235,181,49,0.3);
+  box-shadow: 0 0 0.625rem 0rem config.themed('window-glow');
   --headerHeight: 1.25rem; // set the foundry headerHeight
 
     // Hide Header Text, but show icons

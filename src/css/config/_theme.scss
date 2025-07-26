@@ -1,9 +1,15 @@
 $light: (
+  "background-overlay": hsla(0, 0%, 0%, 60%),
   "icons": hsl(0,0%,50%),
-  "icons-muted": hsl(0,0%,39%)
+  "icons-muted": hsl(0,0%,39%),
+  "text": hsl(43, 82%, 56%),
+  "window-glow": hsla(43, 82%, 56%, 0.3),
 );
 
 $dark: (
+  "background-overlay": hsla(0, 0%, 0%, 60%),
   "icons": hsl(0,0%,50%),
-  "icons-muted": hsl(0,0%,39%)
+  "icons-muted": hsl(0,0%,39%),
+  "text": hsl(43, 82%, 56%),
+  "window-glow": hsla(43, 82%, 56%, 0.3),
 );
