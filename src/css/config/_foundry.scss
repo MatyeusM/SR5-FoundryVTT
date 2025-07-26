@@ -44,7 +44,7 @@ body:not(.theme-dark) {
     .sheet.journal-entry .journal-entry-content,
     // Journal Entry Page Editor
     .journal-sheet.journal-entry-page .window-content {
-        background: url('#{config.$systemPath}assets/light-page.webp') repeat;
+        background: config.asset('light-page.webp') repeat;
     }
 }
 
@@ -68,7 +68,7 @@ body:not(.theme-dark) {
         caption{
             background: inherit;
             text-align: left;
-            color: $yellow;
+            color: config.$yellow;
             font-size: medium;
             padding: 9px;
         }
@@ -77,7 +77,7 @@ body:not(.theme-dark) {
     th {
         padding: 9px;
         background: black;
-        color: $yellow;
+        color: config.$yellow;
         text-align: left;
     }
     td{
@@ -94,15 +94,15 @@ body:not(.theme-dark) {
     }
 
     tr:first-child th {
-        border-top: 1px solid $yellow;
+        border-top: 1px solid config.$yellow;
     }
 
     tr:first-child th {
-        border-bottom: 1px solid $yellow;
+        border-bottom: 1px solid config.$yellow;
     }
 
     tr:last-child td {
-        border-bottom: 1px solid $yellow;
+        border-bottom: 1px solid config.$yellow;
     }
 
     table .content-link {
@@ -123,8 +123,8 @@ body:not(.theme-dark) {
 }
 .journal-sheet .journal-header .title {
     background:
-        $nameplate-background,
-        url("#{config.$systemPath}assets/page.webp") repeat;
+        config.$nameplate-background,
+        config.asset("page.webp") repeat;
     background-repeat: no-repeat, repeat;
     background-size: 100% 41px, auto; // first layer = 60px tall
     background-position: center, top;
@@ -143,11 +143,11 @@ body:not(.theme-dark) {
 }
 
 .journal-sheet select {
-    color: $dark;
+    color: config.$dark;
 }
 
 .journal-sheet option {
-    color: $white;
+    color: config.$white;
 }
 
 /**
@@ -156,32 +156,32 @@ body:not(.theme-dark) {
 // Public Roll
 .chat-message,
 .chat-message.emote {
-    color: $white;
-    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.05)), url('#{$systemPath}assets/page.webp') repeat;
-    border: 1px solid $dark;
+    color: config.$white;
+    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.05)), config.asset('page.webp') repeat;
+    border: 1px solid config.$dark;
 }
 
 // Improve visibility non-default roll modes.
 // Private Roll
 // Self Roll
 .chat-message.whisper {
-    background: linear-gradient(rgba(64, 64, 85, 0.5), rgba(0, 0, 0, 0.5)), url('#{$systemPath}assets/page.webp') repeat;
+    background: linear-gradient(rgba(64, 64, 85, 0.5), rgba(0, 0, 0, 0.5)), config.asset('page.webp') repeat;
 }
 
 // Blind Roll
 .chat-message.blind {
-    background: linear-gradient(rgba(87, 51, 87, 0.25), rgba(0, 0, 0, 0.5)), url('#{$systemPath}assets/page.webp') repeat;
+    background: linear-gradient(rgba(87, 51, 87, 0.25), rgba(0, 0, 0, 0.5)), config.asset('page.webp') repeat;
 }
 
 .chat-message .message-header,
 .chat-message.blind .message-header,
 .chat-message.whisper .message-header {
-    color: $light-2;
+    color: config.$light-2;
 }
 
 // Description for roll tables shown on chat messages for a rolled result drawn.
 .chat-message .table-draw .table-description {
-    color: $light;
+    color: config.$light;
 }
 /**
  * Settings Sidebar
@@ -216,7 +216,7 @@ body:not(.theme-dark) {
 
 .dialog-button.remove-token-modifiers-from-scene,
 .dialog-button.remove-modifiers-from-target{
-    background-color: $bgrButton;
+    background-color: config.$bgrButton;
 }
 .far-right {
     justify-content: center;
@@ -224,14 +224,14 @@ body:not(.theme-dark) {
 }
 
 .list-header.item-section[data-item-id="weapon"][data-item-type=""] {
-    color: $yellow;  /* set the color to yellow */
+    color: config.$yellow;  /* set the color to yellow */
     font-size: small;
 }
 
 .common-test{
     margin-bottom: 4px;
     margin-top: 4px;
-    color: $white;
+    color: config.$white;
     display: flex;
     .test-icon {
         width: 17px;
@@ -243,7 +243,7 @@ body:not(.theme-dark) {
 }
 .fas.fa-file-pdf //.fas.fa-suitcase.sr5, .fas.fa-book-open.sr5 For now these can´t get changed
 {
-    color: $pdfColor;
+    color: config.$pdfColor;
 }
 .window-resizable-handle {
     .fa-solid {

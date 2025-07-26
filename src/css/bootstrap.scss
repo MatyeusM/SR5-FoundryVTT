@@ -14,6 +14,8 @@
 // - To add new sheets/components/config files, forward them here.
 // -----------------------------------------------------------------------------
 
+@forward 'config/foundry';
+
 @forward 'sheets/active-effect';
 @forward 'sheets/actor';
 @forward 'sheets/chat-message';

@@ -1,0 +1,5 @@
+@use 'variables';
+
+@function asset($path, $prefix: 'assets/') {
+  @return url('#{variables.$systemPath}#{$prefix}#{$path}');
+}

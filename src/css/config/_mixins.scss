@@ -1,5 +1,6 @@
 @use 'variables';
 @use 'theme';
+@use 'functions';
 
 @mixin basic-rollable {
     &:hover {
@@ -42,7 +43,7 @@
 }
 
 @mixin sheet {
-    background: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)), url("#{variables.$systemPath}assets/page.webp") repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)), functions.asset("page.webp") repeat;
     color: variables.$color;
 }
 
