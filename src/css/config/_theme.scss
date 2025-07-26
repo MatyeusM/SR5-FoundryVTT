@@ -2,15 +2,19 @@
 @use 'sass:color';
 
 // switch to using oklch-colors
-$primary: functions.createColorMap(#ebb531);
+$primary: functions.createColorMap(#ebb531); // default: 800
+$secondary: functions.createColorMap(#55101e); // default: 300
 $neutral: functions.createColorMap(black); // same as picking white or black
-$dark: black;
-$light: white;
+$dark: black; // we really should not be using black
+$light: white; // we really should not be using white
 
 // light mode variables
 :where(.sr5) {
+    // new variables
     --application-background: #{functions.asset('light-page.webp')} repeat;
     --application-glow: #{color.adjust(functions.getColorFromMap($primary, 800), $alpha: -1)};
+    --header-title-background: linear-gradient(to right, #{functions.getColorFromMap($secondary, 300)} 30%, #{color.adjust(functions.getColorFromMap($secondary, 300), $alpha: -1)} 100%);
+    // overwriting foundry
     --color-text-primary: #{$dark};
     --control-icon-color: #{functions.getColorFromMap($neutral, 500)};
     --control-active-icon-color:  #{functions.getColorFromMap($neutral, 600)};
@@ -20,6 +24,7 @@ $light: white;
 // TODO: merge with prev tag as .theme-dark &, when v1 is dead
 .theme-dark :where(.sr5),
 .sr5.actor.sheet {
+    // new variables
     --application-background:
       linear-gradient(
         #{color.adjust($dark, $alpha: -0.4)},
@@ -27,6 +32,8 @@ $light: white;
       ),
       #{functions.asset("page.webp")} repeat;
     --application-glow: #{color.adjust(functions.getColorFromMap($primary, 800), $alpha: -0.7)};
+    --header-title-background: linear-gradient(to right, #{functions.getColorFromMap($secondary, 300)} 30%, #{color.adjust(functions.getColorFromMap($secondary, 300), $alpha: -1)} 100%);
+    // overwriting foundry
     --color-text-primary: #{$light};
     --control-icon-color: #{functions.getColorFromMap($neutral, 500)};
     --control-active-icon-color:  #{functions.getColorFromMap($neutral, 600)};

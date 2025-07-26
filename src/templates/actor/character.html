@@ -1,41 +1,41 @@
 <form class="{{cssClass}} wholesheet" autocomplete="off">
-    <header class="flexrow">
-        {{> 'systems/shadowrun5e/dist/templates/actor/parts/ProfileImage.html'
-            height='90px'
-            width='90px'
-        }}
-        <div class="flexcol flex-end">
-            <div class="block">
+    <header class="actor-header">
+        <section aria-label="Profile Image" class="actor-header__section">
+            {{> 'systems/shadowrun5e/dist/templates/actor/parts/ProfileImage.html'
+                height='90px'
+                width='90px'
+            }}
+        </section>
+        <section aria-label="Name and Damage Tracks" class="actor-header__section">
+            <div class="actor-header__name-container">
                 {{> 'systems/shadowrun5e/dist/templates/actor/parts/NameInput.html' }}
             </div>
-            <div class="attributes smooth" id="tracks">
-                <div class="block">
-                    {{#each system.track as |track id|}}
-                        {{> 'systems/shadowrun5e/dist/templates/common/HorizontalCellInput.html'
-                                name=(localize track.label)
-                                value=track.value
-                                max=track.max
-                                id=id
-                                tolerance=../woundTolerance
-                                toleranceBase=track.pain_tolerance
-                                disabled=track.disabled
-                        }}
-                        {{#if track.overflow}}
-                            {{#ife track.value track.max}}
-                                {{> 'systems/shadowrun5e/dist/templates/common/HorizontalCellInput.html'
-                                        name=(localize "SR5.Overflow")
-                                        value=track.overflow.value
-                                        max=track.overflow.max
-                                        id="overflow"
-                                }}
-                            {{/ife}}
-                        {{/if}}
-                    {{/each}}
-                </div>
+            <div class="actor-header__condition-monitor" id="tracks">
+                {{#each system.track as |track id|}}
+                    {{> 'systems/shadowrun5e/dist/templates/common/HorizontalCellInput.html'
+                            name=(localize track.label)
+                            value=track.value
+                            max=track.max
+                            id=id
+                            tolerance=../woundTolerance
+                            toleranceBase=track.pain_tolerance
+                            disabled=track.disabled
+                    }}
+                    {{#if track.overflow}}
+                        {{#ife track.value track.max}}
+                            {{> 'systems/shadowrun5e/dist/templates/common/HorizontalCellInput.html'
+                                    name=(localize "SR5.Overflow")
+                                    value=track.overflow.value
+                                    max=track.overflow.max
+                                    id="overflow"
+                            }}
+                        {{/ife}}
+                    {{/if}}
+                {{/each}}
             </div>
-        </div>
-        <div class="flexcol flex-end">
-            <div class="attributes center">                
+        </section>
+        <section aria-label="Movement and Initiative" class="actor-header__section">
+            <div class="attributes center">
                 {{> 'systems/shadowrun5e/dist/templates/actor/parts/Movement.html' }}
                 {{> 'systems/shadowrun5e/dist/templates/actor/parts/Initiative.html' }}
             </div>
@@ -49,7 +49,7 @@
                     }}
                 </div>
             </div>
-        </div>
+        </section>
     </header>
     <div class="attributes no-border">
         <div class="attribute row space-around">
