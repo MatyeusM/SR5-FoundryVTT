@@ -40,6 +40,7 @@
         &__name-container {
             background: var(--header-title-background);
             height: 2.125rem;
+            padding-left: 0.25rem;
             display: flex;
             align-items: center;
 
@@ -55,7 +56,8 @@
         }
 
         &__condition-monitor {
-            // we had so many unneeded styles here
+            // we had so many unneeded styles here we did not need
+            // we should add a max-width and an wrap ability for children
         }
     }
 }
@@ -71,16 +73,6 @@
         display: flex;
         flex-flow: column nowrap;
         overflow: hidden;
-    }
-    .name {
-        @include config.systemFonts;
-        @include config.font-size(28); // this just sets the line height
-        background: config.$nameplate-background;
-        margin-bottom: 0;
-        padding-left: 5px;
-        input[type=text].display {
-            background: none;
-        }
     }
     .sheetbody {
         overflow: hidden;
