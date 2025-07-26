@@ -1,15 +1,33 @@
-$light: (
-  "background-overlay": hsla(0, 0%, 0%, 60%),
-  "icons": hsl(0,0%,50%),
-  "icons-muted": hsl(0,0%,39%),
-  "text": hsl(43, 82%, 56%),
-  "window-glow": hsla(43, 82%, 56%, 0.3),
-);
+@use 'functions';
+@use 'sass:color';
 
-$dark: (
-  "background-overlay": hsla(0, 0%, 0%, 60%),
-  "icons": hsl(0,0%,50%),
-  "icons-muted": hsl(0,0%,39%),
-  "text": hsl(43, 82%, 56%),
-  "window-glow": hsla(43, 82%, 56%, 0.3),
-);
+// switch to using oklch-colors
+$primary: functions.createColorMap(#ebb531);
+$neutral: functions.createColorMap(black); // same as picking white or black
+$dark: black;
+$light: white;
+
+// light mode variables
+:where(.sr5) {
+    --application-background: #{functions.asset('light-page.webp')} repeat;
+    --application-glow: #{color.adjust(functions.getColorFromMap($primary, 800), $alpha: -1)};
+    --color-text-primary: #{$dark};
+    --control-icon-color: #{functions.getColorFromMap($neutral, 500)};
+    --control-active-icon-color:  #{functions.getColorFromMap($neutral, 600)};
+}
+
+// override with dark mode variables
+// TODO: merge with prev tag as .theme-dark &, when v1 is dead
+.theme-dark :where(.sr5),
+.sr5.actor.sheet {
+    --application-background:
+      linear-gradient(
+        #{color.adjust($dark, $alpha: -0.4)},
+        #{color.adjust($dark, $alpha: -0.4)}
+      ),
+      #{functions.asset("page.webp")} repeat;
+    --application-glow: #{color.adjust(functions.getColorFromMap($primary, 800), $alpha: -0.7)};
+    --color-text-primary: #{$light};
+    --control-icon-color: #{functions.getColorFromMap($neutral, 500)};
+    --control-active-icon-color:  #{functions.getColorFromMap($neutral, 600)};
+}
