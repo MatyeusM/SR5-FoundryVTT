@@ -283,7 +283,7 @@ label.checkbox {
 
     .checkmark {
         position: absolute;
-        @include config.font-size(20);
+        @include config.font-size(13); // original 20px, but it always rendered to 13
         top: -0.5em;
         left: 0.8em;
     }
@@ -640,7 +640,7 @@ input[type='text'].display {
             padding: 0.25em;
             margin-bottom: 0;
             position: relative;
-            @include config.font-size(18);
+            @include config.font-size(16);
             @include config.rollable;
 
             &.active {
