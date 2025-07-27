@@ -24,7 +24,7 @@ input[type='text'].display {
 }
 
 .display.text.left.document-name {
-    font-size: 25px;
+    @include config.font-size(24);
     border: 0;
 }
 
@@ -55,7 +55,7 @@ body:not(.theme-dark) {
     // This clashed with Weather Control module and others.
     h1 {
         color: config.$darkred;
-        font-size: 25px;
+        @include config.font-size(24);
     }
 
     h2 {
@@ -64,12 +64,12 @@ body:not(.theme-dark) {
 
     table {
         background: linear-gradient(to bottom, #3d3c3f, #000000);
-        font-size: 90%;
+        @include config.font-size(13);
         caption{
             background: inherit;
             text-align: left;
             color: config.$yellow;
-            font-size: medium;
+            @include config.font-size(16);
             padding: 9px;
         }
     }
@@ -193,7 +193,7 @@ body:not(.theme-dark) {
 
     > a[href] {
         flex: 0;
-        font-size: var(--font-size-12);
+        @include config.font-size(12);
         text-transform: uppercase;
 
         &:hover {
@@ -225,7 +225,7 @@ body:not(.theme-dark) {
 
 .list-header.item-section[data-item-id="weapon"][data-item-type=""] {
     color: config.$yellow;  /* set the color to yellow */
-    font-size: small;
+    @include config.font-size(13);
 }
 
 .common-test{

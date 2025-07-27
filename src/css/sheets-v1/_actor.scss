@@ -17,7 +17,7 @@
     .name {
         @include config.systemFonts;
         background: config.$nameplate-background;
-        font-size: 200%;
+        @include config.font-size(28); // bastardization, this sets the height of the container not the font size!
         margin-bottom: 0;
         padding-left: 5px;
         input[type=text].display {
@@ -29,7 +29,7 @@
         flex: 1;
     }
     .limit-title {
-        font-size: 115%;
+        @include config.font-size(16);
     }
     .attributes {
         // border-top: config.$;
@@ -55,7 +55,7 @@
             display: flex;
             flex-flow: column nowrap;
             flex: 1 0 auto;
-            font-size: 100%;
+            @include config.font-size(14);
             justify-content: space-evenly;
             min-width: 4em;
             padding-top: 4px;
@@ -94,19 +94,19 @@
             > .attribute-value {
                 > .attribute-value-total {
                     color: white;
-                    font-size: 125%;
+                    @include config.font-size(18);
                     width: 100%;
                     text-align: center;
                 }
             }
 
             > .attribute-name {
-                font-size: 115%;
+                @include config.font-size(16);
                 width: 100%;
                 text-align: center;
                 margin-bottom: 0;
                 &.icon {
-                    font-size: 0.75em;
+                    @include config.font-size(12);
                 }
                 &.roll {
                     @include config.rollable;
@@ -118,7 +118,7 @@
                 position: relative;
                 margin-bottom: 2px;
                 .mod {
-                    font-size: 0.75em;
+                    @include config.font-size(12);
                     margin-top: -2px;
                 }
                 &.row {
@@ -133,12 +133,12 @@
             }
 
             .toggle-fresh-import-all-off {
-                font-size: 0.75em;
+                @include config.font-size(12);
                 background-color: config.$bgrButton;
             }
 
             .toggle-fresh-import-all-on {
-                font-size: 0.75em;
+                @include config.font-size(12);
                 background-color: config.$bgrButton;
             }
 
@@ -187,7 +187,7 @@
         padding: 0 0.1em;
         margin-top: -2px;
         text-align: center;
-        font-size: 115%;
+        @include config.font-size(16);
         display: flex;
         flex-flow: column nowrap;
         justify-content: center;
@@ -229,12 +229,12 @@
             & a {
             display: inline-flex;
             padding: 6px 0 0 0;
-            font-size: 0px;
+            font-size: 0;
             color: rgb(100, 100, 100);
 
             & .fa-solid,
                 & .fas {
-                    font-size: 12px;
+                    @include config.font-size(12);
                 }
             }
 
@@ -246,7 +246,7 @@
 }
 
 .sr5 #filter-skills.display.text.left {
-    font-size: 15px;
+    @include config.font-size(15);
 }
 
 /**

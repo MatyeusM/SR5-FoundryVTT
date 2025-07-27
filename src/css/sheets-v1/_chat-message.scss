@@ -4,7 +4,7 @@
     &.chat-card {
         @include config.sheet;
         font-style: normal;
-        font-size: 1rem;
+        @include config.font-size(16);
 
         /**
          * Content with this class should be hidden from players eyes
@@ -39,7 +39,7 @@
                 align-self: center;
                 flex: 1;
                 margin: 0;
-                font-size: var(--font-size-12);
+                @include config.font-size(12);
             }
         }
         .card-header:first-of-type {
@@ -72,7 +72,7 @@
                 border-right: config.$groove;
                 padding: 0;
                 padding-right: 0.3em;
-                font-size: 0.75em;
+                @include config.font-size(12);
 
                 &:last-child {
                     border-right: none;
@@ -94,7 +94,7 @@
     }
     &.roll-card {
         margin: 0.15em;
-        font-size: 12px;
+        @include config.font-size(12);
 
         .card-title {
             display: flex;
@@ -162,7 +162,7 @@
                 padding: 2px 5px;
                 line-height: 1em;
                 color: config.$black;
-                font-size: 18px;
+                @include config.font-size(18);
                 margin-right: 1em;
                 flex: 0;
             }
@@ -242,10 +242,10 @@
                 }
             }
             p {
-                font-size: 0.8em;
+                @include config.font-size(13);
             }
             h3 {
-                font-size: 1em;
+                @include config.font-size(16);
                 margin: 0;
                 font-weight: bold;
             }
@@ -271,7 +271,7 @@
             }
             .test-code {
                 @include config.systemFonts;
-                font-size: var(--font-size-12);
+                @include config.font-size(12);
             }
             &.can-wrap {
                 flex-flow: row wrap;
@@ -298,7 +298,7 @@
             .dice-roll {
                 background-image: url(/icons/svg/d6-grey.svg);
                 background-size: 24px 24px;
-                font-size: 16px;
+                @include config.font-size(16);
                 font-weight: bold;
                 text-align: center;
                 width: 24px;
@@ -369,7 +369,7 @@
 
             @media only screen and (max-width: 400px) {
                 .glitch {
-                    font-size: 3em;
+                    @include config.font-size(48);
                 }
             }
 

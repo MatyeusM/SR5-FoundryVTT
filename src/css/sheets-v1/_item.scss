@@ -33,7 +33,7 @@
             border: 0px;
             flex: 1;
             height: 60px;
-            font-size: var(--font-size-20);
+            @include config.font-size(20);
             .display {
                 background: config.$nameplate-background;
                 border: none;
@@ -52,7 +52,7 @@
 
             .source-button {
                 color: config.$light;
-                font-size: 16px;
+                @include config.font-size(16);
                 height: 2em;
                 left: .5em;
                 padding: 2px;
@@ -135,7 +135,7 @@
             right: 0.5em;
             top: 50%;
             transform: translateY(-50%);
-            font-size: 0.8em;
+            @include config.font-size(13);
             pointer-events: none;
           }
         }
@@ -155,7 +155,7 @@
         }
         .header {
             @include config.title;
-            font-size: 1.25em;
+            @include config.font-size(20);
             color: config.$yellow;
         }
         .form-line {
@@ -172,7 +172,7 @@
             }
             .label {
                 color: config.$light;
-                font-size: 1.15em;
+                @include config.font-size(18);
                 @include config.systemFonts;
                 &.advanced{
                     color: config.$yellow;
@@ -183,7 +183,7 @@
                 flex-flow: row;
                 justify-content: flex-end;
                 align-items: center;
-                font-size: 0.75em;
+                @include config.font-size(12);
                 &.between {
                     justify-content: space-between;
                 }
@@ -242,12 +242,12 @@
             & a {
             display: inline-flex;
             padding: 6px 0 0 0;
-            font-size: 0px;
+            font-size: 0;
             color: rgb(100, 100, 100);
 
             & .fa-solid,
                 & .fas {
-                    font-size: 12px;
+                    @include config.font-size(12);
                 }
             }
 

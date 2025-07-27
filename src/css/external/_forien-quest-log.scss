@@ -32,7 +32,7 @@ body:not(.theme-dark) #forien-quest-log .window-content, .window-app.forien-ques
 }
 
 #forien-quest-log .actions i.fa-play, .window-app.forien-quest-preview .actions i.fa-play {
-    font-size: 14px;
+    @include config.font-size(14);
     padding-top: 2px;
     color: config.$yellow;
 }
@@ -78,7 +78,7 @@ body .window-app.forien-quest-preview .quest-body .details-header .quest-setup .
 body #forien-quest-log .quest-log .log-body header h1 {
     align-self: flex-end;
     border: none;
-    font-size: medium;
+    @include config.font-size(16);
     margin: 0;
     padding-bottom: 26px;
     background: rgba(255, 255, 255, 0);
@@ -96,14 +96,14 @@ body .window-app.forien-quest-preview .quest-body .details-header .quest-setup .
 
 body #forien-quest-log .actions-single i, .window-app.forien-quest-preview .actions-single i {
     cursor: pointer;
-    font-size: 18px;
+    @include config.font-size(18);
     transition: color .3s ease;
     color: config.$yellow;
 }
 //h1 quest Log
 body #forien-quest-log h1, .window-app.forien-quest-preview h1 {
     flex: 0 0 1px;
-    font-size: 22px;
+    @include config.font-size(22);
     font-weight: 700;
     line-height: 1;
     margin: 0 0 8px;
@@ -124,12 +124,12 @@ body #forien-quest-log h1, body .window-app.forien-quest-preview h1 {
 // h4 Quest Log
 body #quest-tracker .window-header h4 {
     color: config.$yellow;
-    font-size: large;
+    @include config.font-size(20);
 }
 //h2
 body #forien-quest-log .quest-log .table ul .title h2, body .window-app.forien-quest-preview h2 {
     border-width: 2px;
-    font-size: 20px;
+    @include config.font-size(20);
     font-weight: 700;
     margin: 4px;
     padding: 0px;
@@ -140,7 +140,7 @@ body #forien-quest-log .quest-log .table ul .title h2, body .window-app.forien-q
 
 body #quest-tracker .quest .title a, #quest-tracker .quest .title i {
     filter: drop-shadow(1px 1px 1px #000);
-    font-size: medium;
+    @include config.font-size(16);
     color: config.$yellow;
 }
 
@@ -203,7 +203,7 @@ body .open-quest.tasks {
 //Buttons
 body .window-app.forien-quest-preview .quest-body .quest-info .quest-col-right button {
     flex: 0 0 1px;
-    font-size: 15px;
+    @include config.font-size(15);
     height: 20px;
     line-height: 1;
     white-space: nowrap;
@@ -276,11 +276,11 @@ span.fa.fa-calendar{
 .message-content{
 h2{
     color: config.$yellow;
-    font-size: 1.5em;
+    @include config.font-size(24);
     border-bottom: 1px solid config.$edge;
 }}
 h4.message-sender{
-    font-size: small;
+    @include config.font-size(13);
     color: config.$white;
 }
 //End Simple Calendar
