@@ -264,6 +264,7 @@ body #forien-quest-log .quest-log .table ul .title p {
     }
     a.content-link{
         background: none;
+        color: config.$light;
     }
 }
 
@@ -276,7 +277,7 @@ span.fa.fa-calendar{
 .message-content{
 h2{
     color: config.$yellow;
-    @include config.font-size(24);
+    @include config.font-size(20); // i do not know what the parent was, it was parent +50%
     border-bottom: 1px solid config.$edge;
 }}
 h4.message-sender{

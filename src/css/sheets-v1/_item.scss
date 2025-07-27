@@ -135,7 +135,7 @@
             right: 0.5em;
             top: 50%;
             transform: translateY(-50%);
-            @include config.font-size(13);
+            @include config.font-size(11);
             pointer-events: none;
           }
         }
@@ -155,7 +155,7 @@
         }
         .header {
             @include config.title;
-            @include config.font-size(20);
+            @include config.font-size(18);
             color: config.$yellow;
         }
         .form-line {
@@ -172,7 +172,7 @@
             }
             .label {
                 color: config.$light;
-                @include config.font-size(18);
+                @include config.font-size(16);
                 @include config.systemFonts;
                 &.advanced{
                     color: config.$yellow;
@@ -183,7 +183,7 @@
                 flex-flow: row;
                 justify-content: flex-end;
                 align-items: center;
-                @include config.font-size(12);
+                @include config.font-size(11);
                 &.between {
                     justify-content: space-between;
                 }

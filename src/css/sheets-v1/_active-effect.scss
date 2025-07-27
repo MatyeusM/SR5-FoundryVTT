@@ -94,7 +94,7 @@
     .effect-control {
         color: #444;
         cursor: pointer;
-        @include config.font-size(18);
+        @include config.font-size(15);
         transition: color 0.2s ease;
     }
 
