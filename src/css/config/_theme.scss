@@ -52,3 +52,37 @@ $light-base: white; // we really should not be using white
     --control-icon-color: #{functions.getColorFromMap($neutral, 500)};
     --control-active-icon-color:  #{functions.getColorFromMap($neutral, 600)};
 }
+
+// legacy colors
+$black: $dark-base;
+$red: red;
+$grey: functions.getColorFromMap($neutral, 600);
+$white: $light-base;
+$darkred: functions.getColorFromMap($secondary, 300);
+$light: functions.getColorFromMap($neutral, 900);
+$light-2: functions.getColorFromMap($neutral, 700);
+$dark: functions.getColorFromMap($neutral, 300);
+$yellow: functions.getColorFromMap($primary, 800);
+$pdfColor: color.adjust(functions.getColorFromMap($primary, 800), $alpha: -0.35);//#e67260;
+$fadedBlack: color.adjust($dark-base, $alpha: -0.3);
+$fLightRed: #cc5e5e;
+$fDarkRed: #af0505;
+$bgrButton: rgba(70, 7, 7, 0.692);
+
+$physical: $red;
+
+$edge: #C7B002;
+
+$color: $light-base;
+$inner-color: $light-base;
+$outline-color: $dark-base;
+
+$groove-width: 1px;
+$groove-color: $dark-base;
+$groove: $groove-width solid $dark-base;
+$border-under: 1px groove $dark-base;
+
+$grid__cols: 12;
+$sheet-max-width: 690px;
+
+$nameplate-background: linear-gradient(to right, $darkred 30%, rgba(85, 16, 30, 0.0) 100%);

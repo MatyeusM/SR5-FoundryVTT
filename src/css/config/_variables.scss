@@ -18,37 +18,3 @@ $actor-sheet-min-width: 43.125rem;
 $actor-sheet-min-height: 43.125rem;
 
 $systemFonts: 'Signika', 'Palatino Linotype', sans-serif;
-
-$black: black;
-$red: red;
-$grey: grey;
-$white: white;
-$darkred: #55101e;
-$light: darken($white, 10%);
-$light-2: darken($white, 30%);
-$dark: darken($grey, 20%);
-$yellow: #ebb531;
-$pdfColor: #ebb531a6;//#e67260;
-$fadedBlack: #000000b8;
-$fLightRed: #cc5e5e;
-$fDarkRed: #af0505;
-$bgrButton: rgba(70, 7, 7, 0.692);
-
-$physical: $red;
-
-$edge: #C7B002;
-
-$color: $white;
-$inner-color: $white;
-$outline-color: $black;
-
-$groove-width: 1px;
-$groove-color: $dark;
-$groove: $groove-width solid $groove-color;
-
-$border-under: 1px groove $groove-color;
-
-$grid__cols: 12;
-$sheet-max-width: 690px;
-
-$nameplate-background: linear-gradient(to right, $darkred 30%, rgba(85, 16, 30, 0.0) 100%);

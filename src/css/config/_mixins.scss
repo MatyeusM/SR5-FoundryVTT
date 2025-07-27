@@ -21,14 +21,14 @@
 
 @mixin title {
     font-family: variables.$systemFonts;
-    color: variables.$color;
+    color: theme.$color;
     @include textOutline;
 }
 
 @mixin textOutline {
-    color: variables.$color;
-    text-shadow: -1px -1px 0 variables.$outline-color, 1px -1px 0 variables.$outline-color, -1px 1px 0 variables.$outline-color,
-        1px 1px 0 variables.$outline-color;
+    color: theme.$color;
+    text-shadow: -1px -1px 0 theme.$outline-color, 1px -1px 0 theme.$outline-color, -1px 1px 0 theme.$outline-color,
+        1px 1px 0 theme.$outline-color;
 }
 
 @mixin shortUnder {
@@ -39,18 +39,18 @@
         position: absolute;
         width: 50%;
         transform: translateX(50%);
-        border-bottom: variables.$border-under;
+        border-bottom: theme.$border-under;
     }
 }
 
 @mixin sheet {
     background: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)), url("assets/page.webp") repeat;
-    color: variables.$color;
+    color: theme.$color;
 }
 
 @mixin linkHovered {
     text-shadow: 0 0 8px var(--color-shadow-primary);
-    color: variables.$fLightRed;
+    color: theme.$fLightRed;
 }
 
 /// Apply a FoundryVTT font size using a CSS variable fallback.

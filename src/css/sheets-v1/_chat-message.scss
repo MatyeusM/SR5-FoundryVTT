@@ -1,5 +1,8 @@
 @use '../config';
 
+// we should not be using it here, but got to fix switching to oklch
+@use 'sass:color';
+
 .sr5 {
     &.chat-card {
         @include config.sheet;
@@ -49,7 +52,7 @@
         .button {
             color: config.$color;
             border-color: config.$black;
-            background: rgba(config.$light, 0.2);
+            background: color.adjust(config.$light, $alpha: -0.8);
             border-radius: 0.3em;
             text-align: center;
             margin-top: 0.5em;

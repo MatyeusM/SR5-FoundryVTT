@@ -1,6 +1,9 @@
 @use 'config';
 @use 'bootstrap';
 
+// got to remove this, when theming is done fully via variables
+@use 'sass:color';
+
 
 // .Roll class is used for labels that will look for data-roll-id on itself or a parent RollId
 .Roll {
@@ -291,7 +294,7 @@ button.plus1_button {
     color: config.$black;
     line-height: 0;
     flex: 0;
-    background: rgba(config.$light, 0.1);
+    background: color.adjust(config.$light, $alpha: -0.9);
     border-radius: 0.3em;
     text-align: center;
 
@@ -337,7 +340,7 @@ input[type='text'].disabled-for-display {
 
 input[type='text'].display {
     @include config.textOutline;
-    background: rgba(config.$light, 0.1);
+    background: color.adjust(config.$light, $alpha: -0.9);
     color: config.$color;
     border-radius: 0.3em;
     border-color: config.$black;
@@ -353,7 +356,7 @@ input[type='text'].display {
     }
 
     &.text {
-        background: rgba(config.$dark, 0.1);
+        background: color.adjust(config.$dark, $alpha: -0.9);
         border-radius: 0;
     }
 
@@ -402,7 +405,7 @@ input[type='text'].display {
     select.display,
     select {
         color: config.$color;
-        background: rgba(config.$black, 0.05);
+        background: color.adjust(config.$black, $alpha: -0.95);
         border-radius: 0.3em;
         border-color: config.$dark;
 
@@ -497,7 +500,7 @@ input[type='text'].display {
         // handles dropdown menus, not select based.
         .pm-dropdown {
             color: config.$color;
-            background: rgba(config.$black, 0.05);
+            background: color.adjust(config.$black, $alpha: -0.95);
             border-radius: 0.3em;
             border-color: config.$dark;
 
@@ -516,7 +519,7 @@ input[type='text'].display {
             ul > li:hover {
                 color: config.$color;
                 border-color: rgba(config.$white, 0.1);
-                background: rgba(config.$black, 0.05);
+                background: color.adjust(config.$black, $alpha: -0.95);
             }
         }
 
@@ -645,7 +648,7 @@ input[type='text'].display {
                 color: config.$color;
                 // border-color: config.$black;
                 // border-bottom: 0px;
-                background: rgba(config.$light, 0.1);
+                background: color.adjust(config.$light, $alpha: -0.9);
             }
         }
 
@@ -898,9 +901,6 @@ input[type='text'].display {
             color: config.$yellow;
             margin-right: 0;
             margin-left: 0;
-            // background: rgba(config.$grey, 0.2);
-            // padding: 0.25em;
-            // border-radius: 0.2em;
             border-bottom: 1px solid config.$yellow;
             border-radius: 0.2em;
             padding-top: 5px;
@@ -1080,7 +1080,7 @@ input[type='text'].display {
     }
 
     .list-item:nth-of-type(even) {
-        background: rgba(config.$white, 0.03);
+        background: color.adjust(config.$white, $alpha: -0.97);
     }
 
     .list-item-description {
@@ -1146,7 +1146,7 @@ input[type='text'].display {
     button.display {
         color: config.$color;
         border-color: config.$black;
-        background: rgba(config.$light, 0.1);
+        background: color.adjust(config.$light, $alpha: -0.9);
         border-radius: 0.3em;
         text-align: center;
 
