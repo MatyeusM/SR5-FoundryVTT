@@ -24,7 +24,7 @@
         $new-lightness: math.clamp(0%, $lightness-base + $offset, 100%);
 
         $variant: color.adjust($oklch-base, $lightness: $new-lightness - $lightness-base);
-        $correctedVariant: color.to-gamut($variant, oklch, $method: local-minde);
+        $correctedVariant: color.to-gamut($variant, rgb, $method: local-minde);
 
         $rounded-lightness: round-decimals(color.channel($correctedVariant, 'lightness', $space: oklch));
         $rounded-chroma: round-decimals(color.channel($correctedVariant, 'chroma', $space: oklch));
