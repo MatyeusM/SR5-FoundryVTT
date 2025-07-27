@@ -16,7 +16,7 @@ body:not(.theme-dark) #forien-quest-log .window-content, .window-app.forien-ques
     border-radius: 0 0 5px 5px;
     margin: 0;
     padding: 0;
-    background: url("assets/light-page.webp") repeat;
+    background: config.asset('light-page.webp') repeat;
 }
 
 .window-app .window-content {
@@ -39,7 +39,7 @@ body:not(.theme-dark) #forien-quest-log .window-content, .window-app.forien-ques
 body #forien-quest-log .quest-log .log-body header {
     background:
         config.$nameplate-background,
-        url("assets/page.webp") repeat;
+        config.asset('page.svg') repeat;
     background-repeat: no-repeat, repeat;
     background-size: 100% 41px, auto; // first layer = 60px tall
     background-position: center, top;
@@ -150,7 +150,7 @@ body .window-app.forien-quest-preview .quest-body .details-header .quest-setup .
     justify-content: space-between;
     background:
         config.$nameplate-background,
-        url("assets/page.webp") repeat;
+        config.asset('page.webp') repeat;
     background-repeat: no-repeat, repeat;
     background-size: 100% 41px, auto; // first layer = 60px tall
     background-position: center, top;
@@ -257,7 +257,7 @@ body #forien-quest-log .quest-log .table ul .title p {
 .chat-message,
 .chat-message.emote {
     color: config.$white;
-    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.05)), url("assets/page.webp") repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.05)), config.asset('page.webp') repeat;
     border: 1px solid config.$dark;
     .message-content.h2{
         color: config.$yellow;

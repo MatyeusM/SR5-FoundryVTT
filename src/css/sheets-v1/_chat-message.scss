@@ -299,7 +299,7 @@
             flex-flow: row wrap;
             justify-content: center;
             .dice-roll {
-                background-image: url(/icons/svg/d6-grey.svg);
+                background-image: config.asset('d6-grey.svg', 'icons/svg/');
                 background-size: 24px 24px;
                 @include config.font-size(16);
                 font-weight: bold;

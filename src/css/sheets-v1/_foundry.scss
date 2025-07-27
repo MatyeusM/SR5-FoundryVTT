@@ -44,7 +44,7 @@ body:not(.theme-dark) {
     .sheet.journal-entry .journal-entry-content,
     // Journal Entry Page Editor
     .journal-sheet.journal-entry-page .window-content {
-        background: url('assets/light-page.webp') repeat;
+        background: config.asset('light-page.webp') repeat;
     }
 }
 
@@ -124,7 +124,7 @@ body:not(.theme-dark) {
 .journal-sheet .journal-header .title {
     background:
         config.$nameplate-background,
-        url("assets/page.webp") repeat;
+        config.asset('page.webp') repeat;
     background-repeat: no-repeat, repeat;
     background-size: 100% 41px, auto; // first layer = 60px tall
     background-position: center, top;
@@ -157,7 +157,7 @@ body:not(.theme-dark) {
 .chat-message,
 .chat-message.emote {
     color: config.$white;
-    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.05)), url('assets/page.webp') repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.05)), config.asset('page.webp') repeat;
     border: 1px solid config.$dark;
 }
 
@@ -165,12 +165,12 @@ body:not(.theme-dark) {
 // Private Roll
 // Self Roll
 .chat-message.whisper {
-    background: linear-gradient(rgba(64, 64, 85, 0.5), rgba(0, 0, 0, 0.5)), url('assets/page.webp') repeat;
+    background: linear-gradient(rgba(64, 64, 85, 0.5), rgba(0, 0, 0, 0.5)), config.asset('page.webp') repeat;
 }
 
 // Blind Roll
 .chat-message.blind {
-    background: linear-gradient(rgba(87, 51, 87, 0.25), rgba(0, 0, 0, 0.5)), url('assets/page.webp') repeat;
+    background: linear-gradient(rgba(87, 51, 87, 0.25), rgba(0, 0, 0, 0.5)), config.asset('page.webp') repeat;
 }
 
 .chat-message .message-header,

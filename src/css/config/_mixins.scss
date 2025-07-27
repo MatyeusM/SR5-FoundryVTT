@@ -3,6 +3,10 @@
 @use 'theme';
 @use 'functions';
 
+// sadly we got to use it here too, gotta remove
+// it asap
+@use 'sass:color';
+
 @mixin basic-rollable {
     &:hover {
         @include linkHovered;
@@ -16,11 +20,11 @@
 }
 
 @mixin systemFonts {
-    font-family: variables.$systemFonts;
+    font-family: variables.$sans-font-stack;
 }
 
 @mixin title {
-    font-family: variables.$systemFonts;
+    font-family: variables.$sans-font-stack;
     color: theme.$color;
     @include textOutline;
 }
@@ -44,7 +48,11 @@
 }
 
 @mixin sheet {
-    background: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)), url("assets/page.webp") repeat;
+    background: linear-gradient(
+            #{color.adjust(theme.$dark-base, $alpha: -0.4)},
+            #{color.adjust(theme.$dark-base, $alpha: -0.4)}
+        ),
+        #{functions.asset("page.webp")} repeat;
     color: theme.$color;
 }
 

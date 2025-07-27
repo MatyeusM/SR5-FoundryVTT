@@ -4,7 +4,7 @@
 /// Should NOT set any CSS custom properties. Purely for internal SCSS usage.
 ///
 /// Examples:
-/// - $actor-sheet-min-width: 43.125rem
+/// - $actor-sheet-min-height: 43.125rem
 /// - $window-header-height: 1.25rem
 /// - $sans-font-stack: 'Signika', sans-serif;
 
@@ -14,7 +14,6 @@ $sans-font-stack: 'Signika', sans-serif;
 $serif-font-stack:  'Palatino Linotype', serif;
 $mono-font-stack: monospace;
 
-$actor-sheet-min-width: 43.125rem;
-$actor-sheet-min-height: 43.125rem;
 
-$systemFonts: 'Signika', 'Palatino Linotype', sans-serif;
+$actor-sheet-min-width: 54.375rem;
+$actor-sheet-min-height: 43.125rem;

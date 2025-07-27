@@ -964,7 +964,7 @@ input[type='text'].display {
 
                     &:hover {
                         > img {
-                            content: url('assets/dice-solid.svg');
+                            content: config.asset('dice-solid.svg');
                             filter: invert(1);
                         }
                     }
