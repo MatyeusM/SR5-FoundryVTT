@@ -1,20 +1,10 @@
-@import 'node_modules/@yaireo/tagify/dist/tagify';
+@use 'config';
+@use 'bootstrap';
 
-@import 'config';
-@import 'item';
-@import 'actor';
-@import 'chat';
-@import 'test';
-@import 'tagify';
-@import 'modifiers';
-@import 'modifiers-container';
-@import 'foundry';
-@import 'module';
-@import 'effect';
 
 // .Roll class is used for labels that will look for data-roll-id on itself or a parent RollId
 .Roll {
-    @include rollable;
+    @include config.rollable;
 }
 
 /**
@@ -93,7 +83,7 @@
     }
 
     .show-situation-modifiers-application {
-        @include rollable;
+        @include config.rollable;
     }
     .grid-2-col {
         display: grid;
@@ -246,7 +236,7 @@
     position: relative;
 
     .unit {
-        @include textOutline;
+        @include config.textOutline;
         position: absolute;
         display: block;
         left: 5px;
@@ -267,7 +257,7 @@ label.checkbox {
     -ms-user-select: none;
 
     &:hover input ~ .checkmark {
-        text-shadow: 0 0 0.2em $rollcolor;
+        text-shadow: 0 0 0.2em darkblue;
     }
 
     &.init-edge-label {
@@ -298,10 +288,10 @@ label.checkbox {
 
 button.plus1_button {
     padding: 2px;
-    color: $black;
+    color: config.$black;
     line-height: 0;
     flex: 0;
-    background: rgba($light, 0.1);
+    background: rgba(config.$light, 0.1);
     border-radius: 0.3em;
     text-align: center;
 
@@ -320,7 +310,7 @@ input[type='checkbox'].toggle {
     max-height: 0;
     overflow-y: auto;
     transition: max-height 0.25s ease-in-out;
-    color: $white;
+    color: config.$white;
 }
 
 .toggle:checked + .list-item-content + .collapsible-content {
@@ -329,33 +319,33 @@ input[type='checkbox'].toggle {
 //Collapsible End
 input[type='checkbox'].display {
     background: transparent;
-    color: $color;
+    color: config.$color;
     border: none;
     text-align: center;
     font-size: 1em;
 
     &:hover {
         background: transparent;
-        border: $groove;
+        border: config.$groove;
     }
 }
 
 input[type='text'].disabled-for-display {
-    color: $black;
+    color: config.$black;
     background-color: rgba(0, 0, 0, 0);
 }
 
 input[type='text'].display {
-    @include textOutline;
-    background: rgba($light, 0.1);
-    color: $color;
+    @include config.textOutline;
+    background: rgba(config.$light, 0.1);
+    color: config.$color;
     border-radius: 0.3em;
-    border-color: $black;
+    border-color: config.$black;
     text-align: center;
     min-height: 1em;
 
     &::placeholder {
-        color: $light-2;
+        color: config.$light-2;
     }
 
     &.short {
@@ -363,7 +353,7 @@ input[type='text'].display {
     }
 
     &.text {
-        background: rgba($dark, 0.1);
+        background: rgba(config.$dark, 0.1);
         border-radius: 0;
     }
 
@@ -376,7 +366,7 @@ input[type='text'].display {
     }
 
     &:disabled {
-        color: $color;
+        color: config.$color;
         background: transparent;
         border-color: transparent;
         padding-left: 0;
@@ -406,18 +396,18 @@ input[type='text'].display {
      */
 .sr5 {
     hr {
-        border-color: $yellow;
+        border-color: config.$yellow;
     }
 
     select.display,
     select {
-        color: $color;
-        background: rgba($black, 0.05);
+        color: config.$color;
+        background: rgba(config.$black, 0.05);
         border-radius: 0.3em;
-        border-color: $dark;
+        border-color: config.$dark;
 
         > option {
-            background-color: $dark;
+            background-color: config.$dark;
         }
     }
 
@@ -426,12 +416,12 @@ input[type='text'].display {
      */
     .form-group {
         label {
-            color: $white;
+            color: config.$white;
             font-weight: bold;
         }
 
         input {
-            color: $white;
+            color: config.$white;
         }
 
         .form-group-element-numerical {
@@ -439,7 +429,7 @@ input[type='text'].display {
             flex-direction: row;
 
             button {
-                border-color: $grey;
+                border-color: config.$grey;
             }
 
             button,
@@ -471,11 +461,11 @@ input[type='text'].display {
     .inline-roll {
         border: 0;
         background: none;
-        color: $white !important;
+        color: config.$white !important;
     }
 
     .entity-link.content-link {
-        color: $white !important;
+        color: config.$white !important;
     }
 
     // An origin link is a uuid based entity link, without drag support.
@@ -486,11 +476,11 @@ input[type='text'].display {
         border-radius: 2px;
         white-space: nowrap;
         word-break: break-all;
-        color: $black;
+        color: config.$black;
     }
 
     .roll {
-        @include rollable;
+        @include config.rollable;
     }
 
     .editor {
@@ -499,40 +489,40 @@ input[type='text'].display {
     }
 
     .editor .tox-edit-area {
-        background: $mce-background;
+        background: #939393;
     }
 
     // Styling for any prosemirror editors within shadowrun applications.
     .editor.prosemirror {
         // handles dropdown menus, not select based.
         .pm-dropdown {
-            color: $color;
-            background: rgba($black, 0.05);
+            color: config.$color;
+            background: rgba(config.$black, 0.05);
             border-radius: 0.3em;
-            border-color: $dark;
+            border-color: config.$dark;
 
             // Icons like chevron and ticks.
             i,
             i:hover {
-                color: $color;
+                color: config.$color;
             }
 
             // ul will contain menus and sub-menus and can be nested.
             ul {
-                background-color: $dark;
+                background-color: config.$dark;
             }
 
             // li represents each menu entry in both menus and sub-menus
             ul > li:hover {
-                color: $color;
-                border-color: rgba($white, 0.1);
-                background: rgba($black, 0.05);
+                color: config.$color;
+                border-color: rgba(config.$white, 0.1);
+                background: rgba(config.$black, 0.05);
             }
         }
 
         // HTML editing uses a class-less textarea
         textarea {
-            color: $color;
+            color: config.$color;
         }
     }
 
@@ -575,9 +565,9 @@ input[type='text'].display {
     }
 
     .window-content {
-        @include sheet;
+        @include config.sheet;
         overflow: hidden;
-        border: 1px solid $dark2;
+        border: 1px solid #222;
         border-top: 0px;
     }
 
@@ -585,7 +575,7 @@ input[type='text'].display {
         height: 95%;
         min-height: 15em;
         width: 100%;
-        color: $color;
+        color: config.$color;
     }
 
     .mods-scroll,
@@ -593,7 +583,7 @@ input[type='text'].display {
         margin-bottom: 0.5em;
         flex: 1;
         overflow-y: auto;
-        color: $white;
+        color: config.$white;
     }
     .flexcontainer-skills {
         display: flex;
@@ -633,14 +623,14 @@ input[type='text'].display {
         padding: 0.25em;
         min-width: 80px; // should also have a min width
         max-width: 100px;
-        //border-right: $groove;
-        //border-bottom: $groove;
+        //border-right: config.$groove;
+        //border-bottom: config.$groove;
     }
 
     .tabs {
         flex: 0;
         align-items: stretch; // Make tabs stretch instead of space horizontally.
-        border-bottom: 1px solid $yellow;
+        border-bottom: 1px solid config.$yellow;
 
         > a {
             margin: 0.25em;
@@ -648,26 +638,26 @@ input[type='text'].display {
             margin-bottom: 0;
             position: relative;
             font-size: 1.15em;
-            @include rollable;
+            @include config.rollable;
 
             &.active {
-                @include linkHovered;
-                color: $color;
-                // border-color: $black;
+                @include config.linkHovered;
+                color: config.$color;
+                // border-color: config.$black;
                 // border-bottom: 0px;
-                background: rgba($light, 0.1);
+                background: rgba(config.$light, 0.1);
             }
         }
 
         > .item {
             // Make tabs stretch across horizontally.
-            color: $white;
+            color: config.$white;
             flex: 1;
             text-align: center;
         }
     }
     .sheet .editor-content {
-        color: $white;
+        color: config.$white;
         height: 100%;
         overflow-y: auto;
         word-break: break-word;
@@ -677,11 +667,11 @@ input[type='text'].display {
     }
 
     label.item-text.item-name[for='select-inventory'] {
-        color: $yellow;
+        color: config.$yellow;
     }
 
     label.item-text.item-name {
-        color: $white;
+        color: config.$white;
     }
 
     .tab {
@@ -720,13 +710,13 @@ input[type='text'].display {
         }
 
         > *:not(:last-child) {
-            border-right: $groove;
+            border-right: config.$groove;
             padding-right: 0.25em;
         }
     }
 
     .container {
-        max-width: $sheet-max-width;
+        max-width: config.$sheet-max-width;
         margin: 0 auto;
 
         &--fluid {
@@ -741,9 +731,9 @@ input[type='text'].display {
         }
 
         // Auto create grid style classes for a fixed max column grid
-        @for $i from 1 through $grid__cols {
+        @for $i from 1 through config.$grid__cols {
             &__col-#{$i} {
-                flex-basis: calc(100 / ($grid__cols / $i)) * 1%;
+                flex-basis: calc(100 / (config.$grid__cols / $i)) * 1%;
                 overflow: hidden;
             }
         }
@@ -789,7 +779,7 @@ input[type='text'].display {
             }
 
             &.border-bottom {
-                border-bottom: $groove;
+                border-bottom: config.$groove;
             }
 
             &.gap-4 {
@@ -811,19 +801,19 @@ input[type='text'].display {
         padding: 4px;
 
         &.stun .cell {
-            box-shadow: 0 0 5px 1px rgba($stun, 0.5);
+            box-shadow: 0 0 5px 1px rgba(blue, 0.5);
         }
 
         &.physical .cell {
-            box-shadow: 0 0 5px 1px rgba($physical, 0.5);
+            box-shadow: 0 0 5px 1px rgba(config.$physical, 0.5);
         }
 
         &.edge .cell {
-            box-shadow: 0 0 5px 1px rgba($edge, 0.5);
+            box-shadow: 0 0 5px 1px rgba(config.$edge, 0.5);
         }
 
         &.matrix .cell {
-            box-shadow: 0 0 5px 1px rgba($matrix, 0.5);
+            box-shadow: 0 0 5px 1px rgba(rgb(7, 145, 35), 0.5);
         }
 
         .roll {
@@ -840,10 +830,10 @@ input[type='text'].display {
                 cursor: pointer;
                 text-align: center;
                 font-size: 80%;
-                border: $groove;
-                color: $light-2;
+                border: config.$groove;
+                color: config.$light-2;
                 border-radius: 4px;
-                background: $black;
+                background: config.$black;
                 min-width: 26px;
                 height: 18px;
 
@@ -856,13 +846,13 @@ input[type='text'].display {
                 }
 
                 &.filled {
-                    background: $light-2;
-                    border-color: $black;
-                    color: $black;
+                    background: config.$light-2;
+                    border-color: config.$black;
+                    color: config.$black;
                 }
 
                 &:hover {
-                    border-color: $light;
+                    border-color: config.$light;
                 }
             }
         }
@@ -882,13 +872,13 @@ input[type='text'].display {
         padding: 0.1em 0.25em;
         min-height: 26px;
         margin: 0.1em;
-        margin-right: $groove-width;
-        margin-left: $groove-width;
+        margin-right: config.$groove-width;
+        margin-left: config.$groove-width;
         &.matrix {
-            color: $white;
+            color: config.$white;
         }
         .has-desc {
-            @include rollable;
+            @include config.rollable;
         }
 
         &.no-border {
@@ -905,23 +895,23 @@ input[type='text'].display {
 
         &.item-section {
             background: black;
-            color: $yellow;
+            color: config.$yellow;
             margin-right: 0;
             margin-left: 0;
-            // background: rgba($grey, 0.2);
+            // background: rgba(config.$grey, 0.2);
             // padding: 0.25em;
             // border-radius: 0.2em;
-            border-bottom: 1px solid $yellow;
+            border-bottom: 1px solid config.$yellow;
             border-radius: 0.2em;
             padding-top: 5px;
             &.sprite {
                 background: none;
             }
             &.faded {
-                color: $grey;
+                color: config.$grey;
             }
             // &:first-child {
-            //     border-top: 1px solid $yellow;
+            //     border-top: 1px solid config.$yellow;
             // }
 
             &.subcategory-header {
@@ -970,7 +960,7 @@ input[type='text'].display {
                 max-width: 50px;
 
                 &.item-roll {
-                    @include rollable;
+                    @include config.rollable;
 
                     &:hover {
                         > img {
@@ -999,7 +989,7 @@ input[type='text'].display {
                 flex-flow: row nowrap;
                 justify-content: space-evenly;
                 align-items: center;
-                color: $grey;
+                color: config.$grey;
                 font-size: 12px;
                 height: 100%;
             }
@@ -1010,11 +1000,11 @@ input[type='text'].display {
                 flex: 1 0 auto;
                 text-align: center;
                 height: 100%;
-                border: $light;
+                border: config.$light;
                 padding-right: 10px;
 
                 &.faded {
-                    color: $grey;
+                    color: config.$grey;
                 }
 
                 &.center {
@@ -1031,10 +1021,10 @@ input[type='text'].display {
                     width: auto;
 
                     &.fresh-import {
-                        color: $freshImportColor;
+                        color: #ffdc80;
                     }
                     &.mods-label {
-                        color: $white;
+                        color: config.$white;
                     }
                 }
 
@@ -1071,7 +1061,7 @@ input[type='text'].display {
                     width: 16em;
                 }
                 .content-inner {
-                    color: $white;
+                    color: config.$white;
                 }
             }
 
@@ -1084,13 +1074,13 @@ input[type='text'].display {
             }
 
             &.skill-header {
-                @include rollable;
+                @include config.rollable;
             }
         }
     }
 
     .list-item:nth-of-type(even) {
-        background: rgba($white, 0.03);
+        background: rgba(config.$white, 0.03);
     }
 
     .list-item-description {
@@ -1106,17 +1096,17 @@ input[type='text'].display {
 
                 > * {
                     flex-shrink: 0;
-                    border-right: $groove;
-                    border-bottom: $groove;
+                    border-right: config.$groove;
+                    border-bottom: config.$groove;
                     padding: 0.25em 0.5em;
                     margin: 0.1em 0.25em;
-                    box-shadow: 0.2em 0.2em 0.3em $black;
+                    box-shadow: 0.2em 0.2em 0.3em config.$black;
                 }
             }
 
             .description {
-                //border-right: $light 2px solid;
-                // border-top: $light 2px solid;
+                //border-right: config.$light 2px solid;
+                // border-top: config.$light 2px solid;
                 margin: 0.5em 0.25em;
                 padding: 0.5em;
                 // margin-right: 0.5em;
@@ -1136,15 +1126,15 @@ input[type='text'].display {
         display: contents;
     }
     .modified-target-damage {
-        margin-top: $large-distance;
-        margin-bottom: $large-distance;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
         display: grid;
         grid-template-columns: 40px auto auto;
 
         .modified-target-damage-cell {
             display: flex;
             align-items: center;
-            margin-bottom: $small-distance;
+            margin-bottom: 0.15em;
         }
     }
 
@@ -1154,15 +1144,15 @@ input[type='text'].display {
 
     button,
     button.display {
-        color: $color;
-        border-color: $black;
-        background: rgba($light, 0.1);
+        color: config.$color;
+        border-color: config.$black;
+        background: rgba(config.$light, 0.1);
         border-radius: 0.3em;
         text-align: center;
 
         &:hover {
             cursor: pointer;
-            background: $bgrButton;
+            background: config.$bgrButton;
         }
 
         &.short {
@@ -1170,15 +1160,15 @@ input[type='text'].display {
         }
 
         &.light {
-            color: $black;
-            background: $light;
+            color: config.$black;
+            background: config.$light;
         }
     }
 
     button.display.import-character {
-        color: $color;
-        border-color: $black;
-        background: $dark-sunken;
+        color: config.$color;
+        border-color: config.$black;
+        background: #41404073;
         border-radius: 0.3em;
         text-align: center;
 
@@ -1191,13 +1181,13 @@ input[type='text'].display {
         }
 
         &.light {
-            color: $black;
-            background: $light;
+            color: config.$black;
+            background: config.$light;
         }
     }
     button.display.show-hidden-skills {
-        color: $color;
-        border-color: $black;
+        color: config.$color;
+        border-color: config.$black;
         background: rgb(70, 7, 7);
         border-radius: 0.3em;
         text-align: center;
@@ -1211,14 +1201,14 @@ input[type='text'].display {
         }
 
         &.light {
-            color: $black;
-            background: $light;
+            color: config.$black;
+            background: config.$light;
         }
     }
 
     button.display.reset-actor-run-data {
-        color: $color;
-        border-color: $black;
+        color: config.$color;
+        border-color: config.$black;
         background: rgb(70, 7, 7);
         border-radius: 0.3em;
         text-align: center;
@@ -1232,8 +1222,8 @@ input[type='text'].display {
         }
 
         &.light {
-            color: $black;
-            background: $light;
+            color: config.$black;
+            background: config.$light;
         }
     }
 
@@ -1250,9 +1240,8 @@ input[type='text'].display {
 
     .env-modifier-active {
         border-radius: 8px;
-        //box-shadow: $dark-sunken-box-shadow;
-        background-color: $darkred; //$dark-sunken;
-        color: $yellow;
+        background-color: config.$darkred;
+        color: config.$yellow;
     }
 
     .env-modifier-total {
@@ -1274,61 +1263,61 @@ input[type='text'].display {
     }
 
     .document-name {
-        @include systemFonts;
+        @include config.systemFonts;
         font-size: var(--font-size-18);
         font-weight: bold;
     }
 
     .cell-input-roll {
-        color: $yellow;
+        color: config.$yellow;
     }
 
     // Intended to affect icons only within the url/pdf source controls.
     .source-button i.fas {
-        color: $pdfColor;
+        color: config.$pdfColor;
     }
 }
 //END SR5 Style
 
 .custom-item-element {
-    color: $white; /* Text color */
+    color: config.$white; /* Text color */
 }
 //lable back to white color
 .matrix-label {
-    color: $white;
+    color: config.$white;
 }
 
 .scroll-area-matrix {
     overflow-y: auto;
-    color: $white;
+    color: config.$white;
 }
 
 //table in any Item
 .SR5 th {
-    color: $yellow;
+    color: config.$yellow;
     padding: 10px; /* Padding */
     text-align: left; /* Left text */
-    border-bottom: 2px solid $edge; /* Add a border at the bottom */
+    border-bottom: 2px solid config.$edge; /* Add a border at the bottom */
     font-size: medium;
 }
 .SR5 th:hover {
-    color: $pdfColor;
+    color: config.$pdfColor;
 }
 .SR5 caption {
     background: none;
-    color: $yellow;
+    color: config.$yellow;
     padding: 6px;
     text-align: left;
     font-size: medium;
 }
 .SR5 caption:hover {
-    color: $fDarkRed;
+    color: config.$fDarkRed;
 }
 .SR5 tr {
-    color: $white;
+    color: config.$white;
 }
 .SR5 tr:hover {
-    color: $pdfColor;
+    color: config.$pdfColor;
 }
 .SR5 tr p:not(th p) {
     padding-left: 10px; /* Padding on the left */

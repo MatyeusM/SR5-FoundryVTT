@@ -1,8 +1,8 @@
-@import 'config';
+@use '../config';
 
 .sr5 {
     &.chat-card {
-        @include sheet;
+        @include config.sheet;
         font-style: normal;
         font-size: 1rem;
 
@@ -17,13 +17,13 @@
         .clickable:hover {
             cursor: pointer;
             background: #4b4a44;
-            color: $white;
+            color: config.$white;
         }
 
         .card-header {
             padding: 0.25em 0;
-            border-bottom: $groove;
-            
+            border-bottom: config.$groove;
+
 
             img {
                 flex: 0 0;
@@ -43,13 +43,13 @@
             }
         }
         .card-header:first-of-type {
-            color: $yellow;
-            border-color: $yellow;
+            color: config.$yellow;
+            border-color: config.$yellow;
         }
         .button {
-            color: $color;
-            border-color: $black;
-            background: rgba($light, 0.2);
+            color: config.$color;
+            border-color: config.$black;
+            background: rgba(config.$light, 0.2);
             border-radius: 0.3em;
             text-align: center;
             margin-top: 0.5em;
@@ -62,14 +62,14 @@
 
             &:hover {
                 cursor: pointer;
-                // box-shadow: 0 0 0.25em 0.15em $black;
+                // box-shadow: 0 0 0.25em 0.15em config.$black;
                 outline: none;
                 box-shadow: 0 0 5px var(--color-shadow-primary);
             }
         }
         .card-description {
             span {
-                border-right: $groove;
+                border-right: config.$groove;
                 padding: 0;
                 padding-right: 0.3em;
                 font-size: 0.75em;
@@ -80,9 +80,9 @@
                 }
             }
             .card-description-content {
-                border-bottom: $groove;
+                border-bottom: config.$groove;
             }
-        }        
+        }
 
         .damage-line {
             margin-top: 0.25em;
@@ -98,7 +98,7 @@
 
         .card-title {
             display: flex;
-            border-bottom: $groove;
+            border-bottom: config.$groove;
             justify-content: flex-start;
             align-content: center;
             align-items: flex-end;
@@ -126,10 +126,10 @@
                 white-space: nowrap;
                 // Override Foundry default header styling.
                 border-bottom: none;
-                color: $white;
+                color: config.$white;
 
                 &:hover {
-                    text-shadow: -1px -1px 0 $cornflower, 1px -1px 0 $cornflower, -1px 1px 0 $cornflower, 1px 1px 0 $cornflower;
+                    text-shadow: -1px -1px 0 #6495ed, 1px -1px 0 #6495ed, -1px 1px 0 #6495ed, 1px 1px 0 #6495ed;
                 }
             }
 
@@ -161,7 +161,7 @@
             .place-template {
                 padding: 2px 5px;
                 line-height: 1em;
-                color: $black;
+                color: config.$black;
                 font-size: 18px;
                 margin-right: 1em;
                 flex: 0;
@@ -176,11 +176,11 @@
         }
         .card-description {
             padding: 0.25em;
-            border-bottom: $groove;
+            border-bottom: config.$groove;
             display: none;
         }
         .card-content {
-            border-bottom: $groove;
+            border-bottom: config.$groove;
 
             padding: 0.25em 0.25em 0.25em;
             display: flex;
@@ -270,7 +270,7 @@
                 }
             }
             .test-code {
-                @include systemFonts;
+                @include config.systemFonts;
                 font-size: var(--font-size-12);
             }
             &.can-wrap {
@@ -288,7 +288,7 @@
         }
         .dice-rolls {
             display: none;
-            border-bottom: $groove;
+            border-bottom: config.$groove;
         }
         .dice-roll-content {
             padding: 0.5em 0.5em;
@@ -303,7 +303,7 @@
                 text-align: center;
                 width: 24px;
                 line-height: 24px;
-                
+
                 // Consistent margin on top, if missing result boxes will clip.
                 margin-top: 5px;
 
@@ -320,7 +320,7 @@
         .glitch-content {
             display: flex;
             flex-flow: column;
-            border-bottom: $groove;
+            border-bottom: config.$groove;
 
             .glitch {
                 position: relative;
@@ -410,6 +410,6 @@
     }
     .chat-select-link img:hover {
         padding: 0;
-        border: $groove;
+        border: config.$groove;
     }
 }
