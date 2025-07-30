@@ -12,3 +12,8 @@ dist
 # NOTE: v11 packs must be ignored until system goes v11 only and drops v10 support. Until then use v11 migration path for v11 support.
 packs/*
 !packs/_source/
+
+# Ignore the fake files to allow vite do its magic
+bundle.css
+bundle.js
+public/templates

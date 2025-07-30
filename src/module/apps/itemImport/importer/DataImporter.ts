@@ -5,7 +5,7 @@ import { ImportHelper as IH } from '../helper/ImportHelper';
 import ShadowrunItemData = Shadowrun.ShadowrunItemData;
 import ShadowrunActorData = Shadowrun.ShadowrunActorData;
 
-const xml2js = require('xml2js');
+import { Parser } from 'xml2js';
 
 /**
  * The most basic chummer item data importer, meant to handle one or more Chummer5a data <type>.xml file.
@@ -45,7 +45,7 @@ export abstract class DataImporter {
      * @returns A json object converted from the string.
      */
     public static async xml2json(xmlString: string): Promise<object> {
-        const parser = xml2js.Parser({
+        const parser = new Parser({
             explicitArray: false,
             explicitCharkey: true,
             charkey: IH.CHAR_KEY,
@@ -56,7 +56,7 @@ export abstract class DataImporter {
 
     /**
      * Checks if the provided JSON object originates from a supported book source.
-     * 
+     *
      * @param jsonObject - The JSON object containing source information.
      * @returns `true` if the source is supported or undefined; otherwise, `false`.
      */
@@ -67,10 +67,10 @@ export abstract class DataImporter {
 
     /**
      * Parses an array of input data into an array of output items using a specified parser.
-     * 
+     *
      * @template TInput - The type of the input data to be parsed.
      * @template TOutput - The type of the parsed output items.
-     * 
+     *
      * @param inputs - An array of input data to be parsed.
      * @param options - Configuration options for parsing:
      *   - `compendiumKey`: The key to identify the compendium to be used.
@@ -78,9 +78,9 @@ export abstract class DataImporter {
      *   - `filter`: (Optional) A function to filter input data before parsing.
      *   - `injectActionTests`: (Optional) A function to modify or enhance parsed items.
      *   - `errorPrefix`: (Optional) A prefix for error messages when parsing fails.
-     * 
+     *
      * @returns A promise that resolves to an array of parsed output items.
-     * 
+     *
      * @remarks
      * - The function first ensures the specified compendium is loaded.
      * - Each input is filtered (if a filter is provided) and parsed using the provided parser.
@@ -103,7 +103,7 @@ export abstract class DataImporter {
         for (const data of inputs) {
             try {
                 if (!this.supportedBookSource(data) || !filter(data)) continue;
-                
+
                 const key = compendiumKey(data);
                 const item = await parser.Parse(data, key);
                 injectActionTests?.(item);
