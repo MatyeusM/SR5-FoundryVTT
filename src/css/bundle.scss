@@ -336,12 +336,12 @@ input[type='checkbox'].display {
 
     &:hover {
         background: transparent;
-        border: config.$groove;
+        border:  1px solid var(--sr5-control-border);
     }
 }
 
 input[type='text'].disabled-for-display {
-    color: config.$black;
+    color: var(--sr5-text-primary-muted);
     background-color: transparent;
 }
 
@@ -414,10 +414,10 @@ input[type='text'].display {
         color: var(--sr5-text-primary);
         background: var(--sr5-control-background-inverse);
         border-radius: 0.3em;
-        border-color: config.$dark;
+        border-color: var(--sr5-control-border);
 
         > option {
-            background-color: config.$dark;
+            background-color: var(--sr5-surface);
         }
     }
 
@@ -439,7 +439,7 @@ input[type='text'].display {
             flex-direction: row;
 
             button {
-                border-color: config.$grey;
+                border-color: var(--sr5-control-icon);
             }
 
             button,
@@ -480,13 +480,13 @@ input[type='text'].display {
 
     // An origin link is a uuid based entity link, without drag support.
     .origin-link {
-        background: #ddd;
+        background: var(--sr5-text-primary);
         padding: 1px 4px;
-        border: 1px solid #4b4a44;
+        border: 1px solid var(--sr5-control-border);
         border-radius: 2px;
         white-space: nowrap;
         word-break: break-all;
-        color: config.$black;
+        color: var(--sr5-text-primary-inverse);
     }
 
     .roll {
@@ -499,7 +499,7 @@ input[type='text'].display {
     }
 
     .editor .tox-edit-area {
-        background: #939393;
+        background: var(--sr5-control-icon);
     }
 
     // Styling for any prosemirror editors within shadowrun applications.
@@ -509,7 +509,7 @@ input[type='text'].display {
             color: var(--sr5-text-primary);
             background: var(--sr5-control-background-inverse);
             border-radius: 0.3em;
-            border-color: config.$dark;
+            border-color: var(--sr5-control-background-inverse);
 
             // Icons like chevron and ticks.
             i,
@@ -519,13 +519,13 @@ input[type='text'].display {
 
             // ul will contain menus and sub-menus and can be nested.
             ul {
-                background-color: config.$dark;
+                background-color: var(--sr5-surface);
             }
 
             // li represents each menu entry in both menus and sub-menus
             ul > li:hover {
                 color: var(--sr5-text-primary);
-                border-color: rgba(config.$white, 0.1);
+                border-color: var(--sr5-control-background);
                 background: var(--sr5-control-background-inverse);
             }
         }
@@ -577,7 +577,7 @@ input[type='text'].display {
     .window-content {
         @include config.sheet;
         overflow: hidden;
-        border: 1px solid #222;
+        border: 1px solid var(--sr5-control-border);
         border-top: 0px;
     }
 
@@ -623,7 +623,7 @@ input[type='text'].display {
 
     img {
         box-sizing: border-box;
-        border: 1px solid var(--color-border-dark);
+        border: 1px solid var(--sr5-text-primary-inverse);
         border-radius: 2px;
         max-width: 100%;
         object-fit: contain;
@@ -638,7 +638,7 @@ input[type='text'].display {
     .tabs {
         flex: 0;
         align-items: stretch; // Make tabs stretch instead of space horizontally.
-        border-bottom: 1px solid config.$yellow;
+        border-bottom: 1px solid var(--sr5-text-highlight);
 
         > a {
             margin: 0.25em;
@@ -651,9 +651,7 @@ input[type='text'].display {
             &.active {
                 @include config.linkHovered;
                 color: var(--sr5-text-primary);
-                // border-color: config.$black;
-                // border-bottom: 0px;
-                background: color.adjust(config.$light, $alpha: -0.9);
+                background: var(--sr5-control-background);
             }
         }
 
@@ -718,7 +716,7 @@ input[type='text'].display {
         }
 
         > *:not(:last-child) {
-            border-right: config.$groove;
+            border-right:  1px solid var(--sr5-control-border);
             padding-right: 0.25em;
         }
     }
@@ -787,7 +785,7 @@ input[type='text'].display {
             }
 
             &.border-bottom {
-                border-bottom: config.$groove;
+                border-bottom:  1px solid var(--sr5-control-border);
             }
 
             &.gap-4 {
@@ -809,19 +807,23 @@ input[type='text'].display {
         padding: 4px;
 
         &.stun .cell {
-            box-shadow: 0 0 5px 1px rgba(blue, 0.5);
+            box-shadow: 0 0 5px 1px var(--sr5-color-stun);
         }
 
         &.physical .cell {
-            box-shadow: 0 0 5px 1px rgba(config.$physical, 0.5);
+            box-shadow: 0 0 5px 1px var(--sr5-color-physical);
         }
 
         &.edge .cell {
-            box-shadow: 0 0 5px 1px rgba(config.$edge, 0.5);
+            box-shadow: 0 0 5px 1px var(--sr5-color-edge);
         }
 
         &.matrix .cell {
-            box-shadow: 0 0 5px 1px rgba(rgb(7, 145, 35), 0.5);
+            box-shadow: 0 0 5px 1px var(--sr5-color-matrix);
+        }
+
+        &.overflow .cell {
+            box-shadow: 0 0 5px 1px var(--sr5-color-overflow);
         }
 
         .roll {
@@ -838,10 +840,10 @@ input[type='text'].display {
                 cursor: pointer;
                 text-align: center;
                 @include config.font-size(11);
-                border: config.$groove;
-                color: config.$light-2;
+                border:  1px solid var(--sr5-control-border);
+                color: var(--sr5-control-icon);
                 border-radius: 4px;
-                background: config.$black;
+                background: var(--sr5-surface);
                 min-width: 26px;
                 height: 18px;
 
@@ -854,13 +856,13 @@ input[type='text'].display {
                 }
 
                 &.filled {
-                    background: config.$light-2;
-                    border-color: config.$black;
-                    color: config.$black;
+                    background: var(--sr5-control-icon);
+                    border-color: var(--sr5-text-primary-inverse);
+                    color: var(--sr5-text-primary-inverse);
                 }
 
                 &:hover {
-                    border-color: config.$light;
+                    border-color: var(--sr5-text-primary);
                 }
             }
         }
@@ -880,8 +882,8 @@ input[type='text'].display {
         padding: 0.1em 0.25em;
         min-height: 26px;
         margin: 0.1em;
-        margin-right: config.$groove-width;
-        margin-left: config.$groove-width;
+        margin-inline: 1px;
+
         &.matrix {
             color: var(--sr5-text-primary);
         }
@@ -902,22 +904,19 @@ input[type='text'].display {
         }
 
         &.item-section {
-            background: black;
+            background: var(--sr5-surface);
             color: var(--sr5-text-highlight);
             margin-right: 0;
             margin-left: 0;
-            border-bottom: 1px solid config.$yellow;
+            border-bottom: 1px solid var(--sr5-text-highlight);
             border-radius: 0.2em;
             padding-top: 5px;
             &.sprite {
                 background: none;
             }
             &.faded {
-                color: config.$grey;
+                color: var(--sr5-text-primary-muted);
             }
-            // &:first-child {
-            //     border-top: 1px solid config.$yellow;
-            // }
 
             &.subcategory-header {
                 margin-left: 0.5em;
@@ -935,6 +934,12 @@ input[type='text'].display {
             justify-content: space-between;
             align-items: center;
             align-content: center;
+
+            // vertically center the rows, using a table would have
+            // been better, but i pray for V2 or during the rework.
+            &:not(.list-header > .list-item-content) {
+              margin-top: 0.3125rem;
+            }
 
             .item-center {
                 display: flex;
@@ -993,7 +998,7 @@ input[type='text'].display {
                 flex-flow: row nowrap;
                 justify-content: space-evenly;
                 align-items: center;
-                color: config.$grey;
+                color: var(--sr5-control-icon);
                 @include config.font-size(12);
                 height: 100%;
             }
@@ -1004,11 +1009,11 @@ input[type='text'].display {
                 flex: 1 0 auto;
                 text-align: center;
                 height: 100%;
-                border: config.$light;
+                border: var(--sr5-text-primary);
                 padding-right: 10px;
 
                 &.faded {
-                    color: config.$grey;
+                    color: var(--sr5-text-primary-muted);
                 }
 
                 &.center {
@@ -1025,7 +1030,7 @@ input[type='text'].display {
                     width: auto;
 
                     &.fresh-import {
-                        color: #ffdc80;
+                        color: var(--sr5-text-highlight);
                     }
                     &.mods-label {
                         color: var(--sr5-text-primary);
@@ -1084,7 +1089,7 @@ input[type='text'].display {
     }
 
     .list-item:nth-of-type(even) {
-        background: color.adjust(config.$white, $alpha: -0.97);
+        background: var(--sr5-control-background);
     }
 
     .list-item-description {
@@ -1100,21 +1105,17 @@ input[type='text'].display {
 
                 > * {
                     flex-shrink: 0;
-                    border-right: config.$groove;
-                    border-bottom: config.$groove;
+                    border-right: 1px solid var(--sr5-control-border);
+                    border-bottom: 1px solid var(--sr5-control-border);
                     padding: 0.25em 0.5em;
                     margin: 0.1em 0.25em;
-                    box-shadow: 0.2em 0.2em 0.3em config.$black;
+                    box-shadow: 0.2em 0.2em 0.3em config.$shadow;
                 }
             }
 
             .description {
-                //border-right: config.$light 2px solid;
-                // border-top: config.$light 2px solid;
                 margin: 0.5em 0.25em;
                 padding: 0.5em;
-                // margin-right: 0.5em;
-                //padding-right: 0.5em;
             }
         }
         .item-desc:after {
@@ -1149,14 +1150,14 @@ input[type='text'].display {
     button,
     button.display {
         color: var(--sr5-text-primary);
-        border-color: config.$black;
-        background: color.adjust(config.$light, $alpha: -0.9);
+        border-color: var(--sr5-text-primary-inverse);
+        background: var(--sr5-control-background);
         border-radius: 0.3em;
         text-align: center;
 
         &:hover {
             cursor: pointer;
-            background: config.$bgrButton;
+            background: var(--sr5-surface-secondary);
         }
 
         &.short {
@@ -1164,15 +1165,15 @@ input[type='text'].display {
         }
 
         &.light {
-            color: config.$black;
-            background: config.$light;
+            color: var(--sr5-text-primary-inverse);
+            background: var(--sr5-text-primary);
         }
     }
 
     button.display.import-character {
         color: var(--sr5-text-primary);
-        border-color: config.$black;
-        background: #41404073;
+        border-color: var(--sr5-text-primary-inverse);
+        background: var(--sr5-text-primary-inverse-muted);
         border-radius: 0.3em;
         text-align: center;
 
@@ -1185,14 +1186,14 @@ input[type='text'].display {
         }
 
         &.light {
-            color: config.$black;
-            background: config.$light;
+            color: var(--sr5-text-primary-inverse);
+            background: var(--sr5-text-primary);
         }
     }
     button.display.show-hidden-skills {
         color: var(--sr5-text-primary);
-        border-color: config.$black;
-        background: rgb(70, 7, 7);
+        border-color: var(--sr5-text-primary-inverse);
+        background: var(--sr5-surface-secondary);
         border-radius: 0.3em;
         text-align: center;
 
@@ -1205,15 +1206,15 @@ input[type='text'].display {
         }
 
         &.light {
-            color: config.$black;
-            background: config.$light;
+            color: var(--sr5-text-primary-inverse);
+            background: var(--sr5-text-primary);
         }
     }
 
     button.display.reset-actor-run-data {
         color: var(--sr5-text-primary);
-        border-color: config.$black;
-        background: rgb(70, 7, 7);
+        border-color: var(--sr5-text-primary-inverse);
+        background: var(--sr5-surface-secondary);
         border-radius: 0.3em;
         text-align: center;
 
@@ -1226,8 +1227,8 @@ input[type='text'].display {
         }
 
         &.light {
-            color: config.$black;
-            background: config.$light;
+            color: var(--sr5-text-primary-inverse);
+            background: var(--sr5-text-primary);
         }
     }
 
@@ -1244,7 +1245,7 @@ input[type='text'].display {
 
     .env-modifier-active {
         border-radius: 8px;
-        background-color: config.$darkred;
+        background-color: var(--sr5-surface-secondary-elevated);
         color: var(--sr5-text-highlight);
     }
 
@@ -1278,7 +1279,7 @@ input[type='text'].display {
 
     // Intended to affect icons only within the url/pdf source controls.
     .source-button i.fas {
-        color: config.$pdfColor;
+        color:  var(--sr5-text-highlight-muted);
     }
 }
 //END SR5 Style
@@ -1301,11 +1302,11 @@ input[type='text'].display {
     color: var(--sr5-text-highlight);
     padding: 10px; /* Padding */
     text-align: left; /* Left text */
-    border-bottom: 2px solid config.$edge; /* Add a border at the bottom */
+    border-bottom: 2px solid var(--sr5-color-edge); /* Add a border at the bottom */
     @include config.font-size(14);
 }
 .SR5 th:hover {
-    color: config.$pdfColor;
+    color: var(--sr5-text-highlight-muted);
 }
 .SR5 caption {
     background: none;
@@ -1315,13 +1316,13 @@ input[type='text'].display {
     @include config.font-size(14);
 }
 .SR5 caption:hover {
-    color: config.$fDarkRed;
+    color: var(--sr5-text-secondary);
 }
 .SR5 tr {
     color: var(--sr5-text-primary);
 }
 .SR5 tr:hover {
-    color: config.$pdfColor;
+    color: var(--sr5-text-highlight-muted);
 }
 .SR5 tr p:not(th p) {
     padding-left: 10px; /* Padding on the left */

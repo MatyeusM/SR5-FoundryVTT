@@ -22,14 +22,18 @@ $neutral: functions.createColorMap(black); // same as picking white or black
 $dark-base: black; // we really should not be using black
 $light-base: white; // we really should not be using white
 
+// shadow is always black
+$shadow: black;
+
 $color-scheme: (
     // primary highlight color in dark mode
     'primary': functions.createColorMap(oklch(80% 0.15 85)),
     // secondary accent color in dark mode
     'secondary': functions.createColorMap(oklch(30% 0.15 25)),
-    // neutral color palette, slight chroma, to give
-    // it a warm feeling
-    'neutral': functions.createColorMap(oklch(10% 0.015 55)),
+    // neutral color palette, slight chroma, to give it life
+    // started with a warm orange, but that did not work,
+    // changed to be complementary of hue 55
+    'neutral': functions.createColorMap(oklch(10% 0.015 235)),
     // use it for magic related things
     'magic': functions.createColorMap(oklch(50% 0.15 325)),
     // matrix green, use it for matrix colors but also
@@ -41,8 +45,8 @@ $color-scheme: (
     'mental': functions.createColorMap(oklch(50% 0.15 210)),
     // use for error or meatspace related things
     'physical': functions.createColorMap(oklch(50% 0.15 10)),
-    // neutral but with chroma / more color, use for
-    // overflow damage or warnings
+    // complement of neutral but with chroma / more color,
+    // use for overflow damage or warnings
     'overflow': functions.createColorMap(oklch(50% 0.15 55))
 );
 
@@ -50,18 +54,32 @@ $color-scheme: (
 // universally apply .sr5 to all properties that should be styled, we instead
 // use :root --sr5-varname properties until we can do so.
 body {
+    // shadowrun-related colors
+    --sr5-color-stun: #{functions.getColor($color-scheme, 'mental', 600)};
+    --sr5-color-physical: #{functions.getColor($color-scheme, 'physical', 600)};
+    --sr5-color-overflow: #{functions.getColor($color-scheme, 'overflow', 600)};
+    --sr5-color-matrix: #{functions.getColor($color-scheme, 'matrix', 600)};
+    --sr5-color-edge: #{functions.getColor($color-scheme, 'primary', 600)};
     // text-colors
     --sr5-text-primary: #{functions.getColor($color-scheme, 'neutral', 300)};
     --sr5-text-primary-muted: #{functions.getColor($color-scheme, 'neutral', 500)};
+    --sr5-text-primary-inverse: #{functions.getColor($color-scheme, 'neutral', 700)};
+    --sr5-text-primary-inverse-muted: #{functions.getColor($color-scheme, 'neutral', 500)};
     --sr5-text-highlight: #{functions.getColor($color-scheme, 'secondary', 200)};
     --sr5-text-highlight-muted: #{functions.getColor($color-scheme, 'secondary', 400)};
+    --sr5-text-secondary: #{functions.getColor($color-scheme, 'primary', 600)};
+    --sr5-text-secondary-muted: #{functions.getColor($color-scheme, 'primary', 500)};
     // controls [form elements, buttons]
     --sr5-control-background: #{color.adjust(functions.getColor($color-scheme, 'neutral', 100), $alpha: -0.9)};
     --sr5-control-background-inverse: #{color.adjust(functions.getColor($color-scheme, 'neutral', 700), $alpha: -0.9)};
     --sr5-control-border: #{functions.getColor($color-scheme, 'neutral', 700)};
+    --sr5-control-icon: #{functions.getColor($color-scheme, 'neutral', 400)};
+    --sr5-control-icon-muted: #{functions.getColor($color-scheme, 'neutral', 500)};
     // background elements
     --sr5-surface: #{functions.getColor($color-scheme, 'neutral', 900)};
     --sr5-surface-elevated: #{functions.getColor($color-scheme, 'neutral', 800)};
+    --sr5-surface-secondary: #{functions.getColor($color-scheme, 'primary', 400)};
+    --sr5-surface-secondary-elevated: #{functions.getColor($color-scheme, 'primary', 200)};
     --sr5-application-background: #{functions.asset('light-page.webp')};
     --sr5-application-title-background: linear-gradient(
         to right,
@@ -71,23 +89,31 @@ body {
 
     &.theme-dark {
         // shadowrun-related colors
-        --sr5-color-stun: #{functions.getColor($color-scheme, 'mental', 300)};
-        --sr5-color-physical: #{functions.getColor($color-scheme, 'physical', 300)};
-        --sr5-color-overflow: #{functions.getColor($color-scheme, 'overflow', 300)};
-        --sr5-color-matrix: #{functions.getColor($color-scheme, 'matrix', 300)};
-        --sr5-color-edge: #{functions.getColor($color-scheme, 'primary', 300)};
+        --sr5-color-stun: #{functions.getColor($color-scheme, 'mental', 400)};
+        --sr5-color-physical: #{functions.getColor($color-scheme, 'physical', 400)};
+        --sr5-color-overflow: #{functions.getColor($color-scheme, 'overflow', 400)};
+        --sr5-color-matrix: #{functions.getColor($color-scheme, 'matrix', 400)};
+        --sr5-color-edge: #{functions.getColor($color-scheme, 'primary', 400)};
         // text-colors
         --sr5-text-primary: #{functions.getColor($color-scheme, 'neutral', 900)};
         --sr5-text-primary-muted: #{functions.getColor($color-scheme, 'neutral', 700)};
+        --sr5-text-primary-inverse: #{functions.getColor($color-scheme, 'neutral', 100)};
+        --sr5-text-primary-inverse-muted: #{functions.getColor($color-scheme, 'neutral', 300)};
         --sr5-text-highlight: #{functions.getColor($color-scheme, 'primary', 800)};
         --sr5-text-highlight-muted: #{functions.getColor($color-scheme, 'primary', 600)};
+        --sr5-text-secondary: #{functions.getColor($color-scheme, 'secondary', 400)};
+        --sr5-text-secondary-muted: #{functions.getColor($color-scheme, 'secondary', 500)};
         // controls [form elements, buttons]
         --sr5-control-background: #{color.adjust(functions.getColor($color-scheme, 'neutral', 900), $alpha: -0.9)};
         --sr5-control-background-inverse: #{color.adjust(functions.getColor($color-scheme, 'neutral', 300), $alpha: -0.9)};
         --sr5-control-border: #{functions.getColor($color-scheme, 'neutral', 100)};
+        --sr5-control-icon: #{functions.getColor($color-scheme, 'neutral', 600)};
+        --sr5-control-icon-muted: #{functions.getColor($color-scheme, 'neutral', 500)};
         // background elements
         --sr5-surface: #{functions.getColor($color-scheme, 'neutral', 100)};
         --sr5-surface-elevated: #{functions.getColor($color-scheme, 'neutral', 200)};
+        --sr5-surface-secondary: #{functions.getColor($color-scheme, 'secondary', 200)};
+        --sr5-surface-secondary-elevated: #{functions.getColor($color-scheme, 'secondary', 400)};
         --sr5-application-background: linear-gradient(rgb(0 0 0 / 0.6), rgb(0 0 0 / 0.6)),
             #{functions.asset('page.webp')} repeat;
         --sr5-application-title-background: linear-gradient(
