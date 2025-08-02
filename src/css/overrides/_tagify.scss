@@ -6,6 +6,6 @@
      * Rules applied to elements of the tagify input components
      */
     .tagify-selection {
-        border-color: config.$dark;
+        border-color: var(--sr5-control-border);
     }
 }

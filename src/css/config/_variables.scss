@@ -11,9 +11,12 @@
 $base-url: '/systems/shadowrun5e/dist/';
 
 $sans-font-stack: 'Signika', sans-serif;
-$serif-font-stack:  'Palatino Linotype', serif;
+$serif-font-stack: 'Palatino Linotype', serif;
 $mono-font-stack: monospace;
 
 
 $actor-sheet-min-width: 54.375rem;
 $actor-sheet-min-height: 43.125rem;
+
+$grid__cols: 12;
+$sheet-max-width: 690px;

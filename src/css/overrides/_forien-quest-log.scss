@@ -12,11 +12,11 @@
     justify-content: flex-start;
 }
 //window background
-body:not(.theme-dark) #forien-quest-log .window-content, .window-app.forien-quest-preview .window-content {
+#forien-quest-log .window-content, .window-app.forien-quest-preview .window-content {
     border-radius: 0 0 5px 5px;
     margin: 0;
     padding: 0;
-    background: config.asset('light-page.webp') repeat;
+    background: var(--sr5-application-title-background);
 }
 
 .window-app .window-content {
@@ -26,7 +26,6 @@ body:not(.theme-dark) #forien-quest-log .window-content, .window-app.forien-ques
     justify-content: flex-start;
 
     padding: 8px;
-    //color: var(--color-text-dark-primary);
     overflow-y: auto;
     overflow-x: hidden;
 }
@@ -47,8 +46,8 @@ body #forien-quest-log .quest-log .log-body header {
     color: config.$white;
     border-width: 0;
     height: 80px;
-    border-block-end: 2px solid var(--palette-primary,var(--default-primary-accent,#782e22));
-    border-bottom: 2px solid var(--palette-primary,var(--default-primary-accent,#782e22));
+    border-block-end: 2px solid var(--sr5-text-secondary);
+    border-bottom: 2px solid var(--sr5-text-secondary);
     display: flex;
     justify-content: space-between;
     margin-bottom: 4px;
@@ -58,12 +57,12 @@ body #forien-quest-log .quest-log .log-body header {
 
 //table list hover
 body #forien-quest-log .quest-log .table ul li.drag-quest:hover {
-    border-color: var(--palette-primary,var(--default-primary-accent,config.$red));
-    box-shadow: 0 0 2px var(--palette-primary,var(--default-primary-accent,config.$red)) inset; //config.$red is the var for Red
+    border-color: var(--sr5-text-secondary);
+    box-shadow: 0 0 2px var(--sr5-text-secondary) inset; //config.$red is the var for Red
 }
 
 body .window-app.forien-quest-preview .quest-body .details-header .quest-setup .quest-giver-name h2:hover {
-    color: var(--palette-primary,var(--default-primary-accent,config.$darkred));
+    color: var(--sr5-text-secondary);
     text-shadow: 0 0 5px #fff, 0 0 3px #fff, 0 0 4px config.$darkred, 0 0 5px config.$darkred, 0 0 5px config.$darkred, 0 0 4px config.$darkred, 0 0 4px config.$white; /* Add this line for glow */
 }
 
@@ -166,8 +165,8 @@ body .quest-tasks ul {
 }
 
 body .window-app.forien-quest-preview .quest-body .quest-info .quest-col-right header {
-    border-block-end: 2px solid var(--palette-primary,var(--default-primary-accent,#782e22));
-    border-bottom: 2px solid var(--palette-primary,var(--default-primary-accent,#782e22));
+    border-block-end: 2px solid var(--sr5-text-secondary);
+    border-bottom: 2px solid var(--sr5-text-secondary);
     color: config.$edge;
     display: flex;
     flex: 0 0 1px;
@@ -189,7 +188,7 @@ body #forien-quest-log .quest-log .table ul li.drag-quest {
 //title h2
 body #forien-quest-log .quest-log .table ul .title h2 {
     color: config.$edge;
-    background: #00000000;
+    background: transparent;
 }
 
 body .open-quest.tasks {
@@ -253,8 +252,8 @@ body #forien-quest-log .quest-log .table ul .title p {
 .chat-message,
 .chat-message.emote {
     color: config.$white;
-    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.05)), config.asset('page.webp') repeat;
-    border: 1px solid config.$dark;
+    background: var(--sr5-application-background);
+    border: 1px solid var(--sr5-control-border);
     .message-content.h2{
         color: config.$yellow;
     }
