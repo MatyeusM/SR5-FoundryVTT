@@ -16,7 +16,7 @@
     }
     .name {
         @include config.systemFonts;
-        background: config.$nameplate-background;
+        background: var(--sr5-application-title-background);
         @include config.font-size(28); // bastardization, this sets the height of the container not the font size!
         margin-bottom: 0;
         padding-left: 5px;

@@ -49,3 +49,7 @@
 @function getColorFromMap($inputColor, $target) {
     @return map.get($inputColor, $target);
 }
+
+@function getColor($color-scheme, $color, $shade) {
+    @return map.get(map.get($color-scheme, $color), $shade);
+}

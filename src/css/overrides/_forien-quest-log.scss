@@ -37,11 +37,9 @@ body:not(.theme-dark) #forien-quest-log .window-content, .window-app.forien-ques
     color: config.$yellow;
 }
 body #forien-quest-log .quest-log .log-body header {
-    background:
-        config.$nameplate-background,
-        config.asset('page.svg') repeat;
-    background-repeat: no-repeat, repeat;
-    background-size: 100% 41px, auto; // first layer = 60px tall
+    // removed the background asset, to better support light mode
+    background: var(--sr5-application-title-background) no-repeat;
+    background-size: 100% var(--font-size-40, 2.5rem), auto; // first layer = 60px tall
     background-position: center, top;
     border-radius: 0;
     text-align: left !important;
@@ -108,7 +106,7 @@ body #forien-quest-log h1, .window-app.forien-quest-preview h1 {
     line-height: 1;
     margin: 0 0 8px;
     padding: 0 0 30px;
-    color: #ffffff;
+    color: var(--sr5-text-primary);
 }
 // h1 quest log header
 body #forien-quest-log h1, .window-app.forien-quest-preview h1 {
@@ -148,11 +146,9 @@ body .window-app.forien-quest-preview .quest-body .details-header .quest-setup .
     align-items: center;
     display: flex;
     justify-content: space-between;
-    background:
-        config.$nameplate-background,
-        config.asset('page.webp') repeat;
-    background-repeat: no-repeat, repeat;
-    background-size: 100% 41px, auto; // first layer = 60px tall
+    // removed background asset to better support light mode
+    background: var(--sr5-application-title-background) no repeat;
+    background-size: 100%  var(--font-size-40, 2.5rem), auto;
     background-position: center, top;
     border-radius: 0;
 }

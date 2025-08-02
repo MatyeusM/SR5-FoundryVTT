@@ -35,7 +35,7 @@
             height: 60px;
             @include config.font-size(20);
             .display {
-                background: config.$nameplate-background;
+                background: var(--sr5-application-title-background);
                 border: none;
                 height: 35px;
                 margin-top: 11px;

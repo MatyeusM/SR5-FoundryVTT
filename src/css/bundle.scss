@@ -259,8 +259,12 @@ label.checkbox {
     -moz-user-select: none;
     -ms-user-select: none;
 
+    // why are we coloring the checkbox for just screenreaders?
+    // the input is set to display: none;
+    // set to a normal text-color hover effect
+    // TODO: Remove?
     &:hover input ~ .checkmark {
-        text-shadow: 0 0 0.2em darkblue;
+        color: var(--sr5-text-highlight-muted);
     }
 
     &.init-edge-label {
@@ -289,12 +293,15 @@ label.checkbox {
     }
 }
 
+// TODO: removal of the class
+// a quick search reveals neither foundry nor we are using it
+// so assigning normal colors to it
 button.plus1_button {
     padding: 2px;
-    color: config.$black;
+    color: var(--sr5-text-primary);
     line-height: 0;
     flex: 0;
-    background: color.adjust(config.$light, $alpha: -0.9);
+    background: var(--sr5-surface-elevated);
     border-radius: 0.3em;
     text-align: center;
 
@@ -313,7 +320,7 @@ input[type='checkbox'].toggle {
     max-height: 0;
     overflow-y: auto;
     transition: max-height 0.25s ease-in-out;
-    color: config.$white;
+    color: var(--sr5-text-primary);
 }
 
 .toggle:checked + .list-item-content + .collapsible-content {
@@ -322,7 +329,7 @@ input[type='checkbox'].toggle {
 //Collapsible End
 input[type='checkbox'].display {
     background: transparent;
-    color: config.$color;
+    color: var(--sr5-text-primary);
     border: none;
     text-align: center;
     @include config.font-size(16);
@@ -335,20 +342,20 @@ input[type='checkbox'].display {
 
 input[type='text'].disabled-for-display {
     color: config.$black;
-    background-color: rgba(0, 0, 0, 0);
+    background-color: transparent;
 }
 
 input[type='text'].display {
     @include config.textOutline;
-    background: color.adjust(config.$light, $alpha: -0.9);
-    color: config.$color;
+    background: var(--sr5-control-background);
+    color: var(--sr5-text-primary);
     border-radius: 0.3em;
-    border-color: config.$black;
+    border-color: var(--sr5-control-border);
     text-align: center;
     min-height: 1em;
 
     &::placeholder {
-        color: config.$light-2;
+        color: var(--sr5-text-primary-muted);
     }
 
     &.short {
@@ -356,7 +363,7 @@ input[type='text'].display {
     }
 
     &.text {
-        background: color.adjust(config.$dark, $alpha: -0.9);
+        background: var(--sr5-control-background-inverse);
         border-radius: 0;
     }
 
@@ -369,7 +376,7 @@ input[type='text'].display {
     }
 
     &:disabled {
-        color: config.$color;
+        color: var(--sr5-text-primary);
         background: transparent;
         border-color: transparent;
         padding-left: 0;
@@ -399,13 +406,13 @@ input[type='text'].display {
      */
 .sr5 {
     hr {
-        border-color: config.$yellow;
+        border-color: var(--sr5-text-highlight);
     }
 
     select.display,
     select {
-        color: config.$color;
-        background: color.adjust(config.$black, $alpha: -0.95);
+        color: var(--sr5-text-primary);
+        background: var(--sr5-control-background-inverse);
         border-radius: 0.3em;
         border-color: config.$dark;
 
@@ -419,12 +426,12 @@ input[type='text'].display {
      */
     .form-group {
         label {
-            color: config.$white;
+            color: var(--sr5-text-primary);
             font-weight: bold;
         }
 
         input {
-            color: config.$white;
+            color: var(--sr5-text-primary);
         }
 
         .form-group-element-numerical {
@@ -464,11 +471,11 @@ input[type='text'].display {
     .inline-roll {
         border: 0;
         background: none;
-        color: config.$white !important;
+        color: var(--sr5-text-primary) !important;
     }
 
     .entity-link.content-link {
-        color: config.$white !important;
+        color: var(--sr5-text-primary) !important;
     }
 
     // An origin link is a uuid based entity link, without drag support.
@@ -499,15 +506,15 @@ input[type='text'].display {
     .editor.prosemirror {
         // handles dropdown menus, not select based.
         .pm-dropdown {
-            color: config.$color;
-            background: color.adjust(config.$black, $alpha: -0.95);
+            color: var(--sr5-text-primary);
+            background: var(--sr5-control-background-inverse);
             border-radius: 0.3em;
             border-color: config.$dark;
 
             // Icons like chevron and ticks.
             i,
             i:hover {
-                color: config.$color;
+                color: var(--sr5-text-primary);
             }
 
             // ul will contain menus and sub-menus and can be nested.
@@ -517,15 +524,15 @@ input[type='text'].display {
 
             // li represents each menu entry in both menus and sub-menus
             ul > li:hover {
-                color: config.$color;
+                color: var(--sr5-text-primary);
                 border-color: rgba(config.$white, 0.1);
-                background: color.adjust(config.$black, $alpha: -0.95);
+                background: var(--sr5-control-background-inverse);
             }
         }
 
         // HTML editing uses a class-less textarea
         textarea {
-            color: config.$color;
+            color: var(--sr5-text-primary);
         }
     }
 
@@ -578,7 +585,7 @@ input[type='text'].display {
         height: 95%;
         min-height: 15em;
         width: 100%;
-        color: config.$color;
+        color: var(--sr5-text-primary);
     }
 
     .mods-scroll,
@@ -586,7 +593,7 @@ input[type='text'].display {
         margin-bottom: 0.5em;
         flex: 1;
         overflow-y: auto;
-        color: config.$white;
+        color: var(--sr5-text-primary);
     }
     .flexcontainer-skills {
         display: flex;
@@ -626,8 +633,6 @@ input[type='text'].display {
         padding: 0.25em;
         min-width: 80px; // should also have a min width
         max-width: 100px;
-        //border-right: config.$groove;
-        //border-bottom: config.$groove;
     }
 
     .tabs {
@@ -645,7 +650,7 @@ input[type='text'].display {
 
             &.active {
                 @include config.linkHovered;
-                color: config.$color;
+                color: var(--sr5-text-primary);
                 // border-color: config.$black;
                 // border-bottom: 0px;
                 background: color.adjust(config.$light, $alpha: -0.9);
@@ -654,13 +659,13 @@ input[type='text'].display {
 
         > .item {
             // Make tabs stretch across horizontally.
-            color: config.$white;
+            color: var(--sr5-text-primary);
             flex: 1;
             text-align: center;
         }
     }
     .sheet .editor-content {
-        color: config.$white;
+        color: var(--sr5-text-primary);
         height: 100%;
         overflow-y: auto;
         word-break: break-word;
@@ -670,11 +675,11 @@ input[type='text'].display {
     }
 
     label.item-text.item-name[for='select-inventory'] {
-        color: config.$yellow;
+        color: var(--sr5-text-highlight);
     }
 
     label.item-text.item-name {
-        color: config.$white;
+        color: var(--sr5-text-primary);
     }
 
     .tab {
@@ -878,7 +883,7 @@ input[type='text'].display {
         margin-right: config.$groove-width;
         margin-left: config.$groove-width;
         &.matrix {
-            color: config.$white;
+            color: var(--sr5-text-primary);
         }
         .has-desc {
             @include config.rollable;
@@ -898,7 +903,7 @@ input[type='text'].display {
 
         &.item-section {
             background: black;
-            color: config.$yellow;
+            color: var(--sr5-text-highlight);
             margin-right: 0;
             margin-left: 0;
             border-bottom: 1px solid config.$yellow;
@@ -925,7 +930,6 @@ input[type='text'].display {
         }
 
         .list-item-content {
-            //color: white;
             display: flex;
             flex-flow: row nowrap;
             justify-content: space-between;
@@ -1024,7 +1028,7 @@ input[type='text'].display {
                         color: #ffdc80;
                     }
                     &.mods-label {
-                        color: config.$white;
+                        color: var(--sr5-text-primary);
                     }
                 }
 
@@ -1061,7 +1065,7 @@ input[type='text'].display {
                     width: 16em;
                 }
                 .content-inner {
-                    color: config.$white;
+                    color: var(--sr5-text-primary);
                 }
             }
 
@@ -1144,7 +1148,7 @@ input[type='text'].display {
 
     button,
     button.display {
-        color: config.$color;
+        color: var(--sr5-text-primary);
         border-color: config.$black;
         background: color.adjust(config.$light, $alpha: -0.9);
         border-radius: 0.3em;
@@ -1166,7 +1170,7 @@ input[type='text'].display {
     }
 
     button.display.import-character {
-        color: config.$color;
+        color: var(--sr5-text-primary);
         border-color: config.$black;
         background: #41404073;
         border-radius: 0.3em;
@@ -1186,7 +1190,7 @@ input[type='text'].display {
         }
     }
     button.display.show-hidden-skills {
-        color: config.$color;
+        color: var(--sr5-text-primary);
         border-color: config.$black;
         background: rgb(70, 7, 7);
         border-radius: 0.3em;
@@ -1207,7 +1211,7 @@ input[type='text'].display {
     }
 
     button.display.reset-actor-run-data {
-        color: config.$color;
+        color: var(--sr5-text-primary);
         border-color: config.$black;
         background: rgb(70, 7, 7);
         border-radius: 0.3em;
@@ -1241,7 +1245,7 @@ input[type='text'].display {
     .env-modifier-active {
         border-radius: 8px;
         background-color: config.$darkred;
-        color: config.$yellow;
+        color: var(--sr5-text-highlight);
     }
 
     .env-modifier-total {
@@ -1269,7 +1273,7 @@ input[type='text'].display {
     }
 
     .cell-input-roll {
-        color: config.$yellow;
+        color: var(--sr5-text-highlight);
     }
 
     // Intended to affect icons only within the url/pdf source controls.
@@ -1280,21 +1284,21 @@ input[type='text'].display {
 //END SR5 Style
 
 .custom-item-element {
-    color: config.$white; /* Text color */
+    color: var(--sr5-text-primary); /* Text color */
 }
 //lable back to white color
 .matrix-label {
-    color: config.$white;
+    color: var(--sr5-text-primary);
 }
 
 .scroll-area-matrix {
     overflow-y: auto;
-    color: config.$white;
+    color: var(--sr5-text-primary);
 }
 
 //table in any Item
 .SR5 th {
-    color: config.$yellow;
+    color: var(--sr5-text-highlight);
     padding: 10px; /* Padding */
     text-align: left; /* Left text */
     border-bottom: 2px solid config.$edge; /* Add a border at the bottom */
@@ -1305,7 +1309,7 @@ input[type='text'].display {
 }
 .SR5 caption {
     background: none;
-    color: config.$yellow;
+    color: var(--sr5-text-highlight);
     padding: 6px;
     text-align: left;
     @include config.font-size(14);
@@ -1314,7 +1318,7 @@ input[type='text'].display {
     color: config.$fDarkRed;
 }
 .SR5 tr {
-    color: config.$white;
+    color: var(--sr5-text-primary);
 }
 .SR5 tr:hover {
     color: config.$pdfColor;

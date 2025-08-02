@@ -122,16 +122,14 @@ body:not(.theme-dark) {
     z-index: 2;
 }
 .journal-sheet .journal-header .title {
-    background:
-        config.$nameplate-background,
-        config.asset('page.webp') repeat;
-    background-repeat: no-repeat, repeat;
-    background-size: 100% 41px, auto; // first layer = 60px tall
+    // removed the background asset, to better support light mode
+    background: var(--sr5-application-title-background) no-repeat;
+    background-size: 100% var(--font-size-40, 2.5rem), auto;
     background-position: center, top;
     border-radius: 0;
     text-align: left !important;
     text-indent: 5px;
-    color: white;
+    color: var(--sr5-text-primary);
     border-width: 0;
     height: 80px;
 }
