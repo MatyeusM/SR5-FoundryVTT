@@ -1,13 +1,27 @@
+// -----------------------------------------------------------------------------
+// SCSS Mixins File
+//
+// Purpose:
+// - Contains reusable SCSS mixins for styling patterns, UI behaviors, and layout.
+// - Encapsulates common style logic to promote consistency and reduce duplication.
+//
+// Scope:
+// - Mixins cover typography, shadows, interaction states, sizing, and theming helpers.
+// - Designed to be imported and used throughout the SR5 system stylesheets.
+// - Does NOT contain direct style rules—only reusable blocks for inclusion.
+//
+// Examples:
+// - Typography helpers: `font-size`
+// - Visual effects: `shadow-elevation`
+// -----------------------------------------------------------------------------
+
+
 @use 'sass:math';
 @use 'variables';
 @use 'theme';
 @use 'functions';
 
-// sadly we got to use it here too, gotta remove
-// it asap
-@use 'sass:color';
-
-
+// Legacy Section
 @mixin rollable {
     &:hover {
         @include linkHovered;

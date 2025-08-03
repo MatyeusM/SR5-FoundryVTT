@@ -2,25 +2,27 @@
 // SCSS Theme File
 //
 // Purpose:
-// - Handles theming variables.
-// - Define visual tokens like colors, shadows, gradients, etc.
-// - This file **writes to** CSS custom properties when applicable.
+// - Centralizes theme-related variables and visual tokens.
+// - Defines the color palettes, shadows, gradients, and other design foundations.
+// - Generates CSS custom properties for use throughout the system.
 //
-// Examples:
-// - Color palette mapping
-// - Light/dark mode conditions
-// - CSS variable definitions for themes
+// Scope:
+// - Provides a flexible, extensible system for managing light/dark modes and theme variants.
+// - Supplies consistent visual language through reusable tokens and color maps.
+// - Does not contain layout or component-specific styles; those belong elsewhere.
+//
+// Usage:
+// - Maps abstract color concepts to usable CSS custom properties.
+// - Supports dynamic adjustments and mode switching through conditional variables.
+// - Integrates asset references used in backgrounds or visual effects.
+//
+// Notes:
+// - CSS custom properties defined here should be scoped globally or within high-level selectors.
+// - This file focuses on visual design data, not structural or behavioral CSS rules.
 // -----------------------------------------------------------------------------
 
 @use 'functions';
 @use 'sass:color';
-
-// switch to using oklch-colors
-$primary: functions.createColorMap(#ebb531); // default: 800
-$secondary: functions.createColorMap(#55101e); // default: 300
-$neutral: functions.createColorMap(black); // same as picking white or black
-$dark-base: black; // we really should not be using black
-$light-base: white; // we really should not be using white
 
 // shadow is always black
 $shadow: black;
@@ -50,11 +52,9 @@ $color-scheme: (
     'overflow': functions.createColorMap(oklch(50% 0.15 55))
 );
 
-// new properties should be scoped to .sr5 classes, however since we do not
-// universally apply .sr5 to all properties that should be styled, we instead
-// use :root --sr5-varname properties until we can do so.
-
-//
+// new properties could be scoped to .sr5 classes, however since we do not
+// universally apply .sr5 to all content that should be styled, we instead
+// use :root --sr5-varname properties.
 body {
     // shadowrun-related colors
     --sr5-color-stun: #{functions.getColor($color-scheme, 'mental', 600)};

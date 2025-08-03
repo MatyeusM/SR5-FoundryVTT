@@ -1,12 +1,21 @@
-/// Global system variables unrelated to theming.
-/// Layout dimensions, assets paths, etc.
-///
-/// Should NOT set any CSS custom properties. Purely for internal SCSS usage.
-///
-/// Examples:
-/// - $actor-sheet-min-height: 43.125rem
-/// - $window-header-height: 1.25rem
-/// - $sans-font-stack: 'Signika', sans-serif;
+// -----------------------------------------------------------------------------
+// SCSS Variables File
+//
+// Purpose:
+// - Defines core global variables for internal SCSS usage only.
+// - Contains system constants such as layout dimensions, font stacks, asset paths, etc.
+// - Does NOT generate or assign CSS custom properties (those belong in theme files).
+//
+// Scope:
+// - Purely for SCSS preprocessing and calculations.
+// - Used throughout the system to maintain consistency in sizing, spacing, fonts, etc.
+//
+// Examples:
+// - $actor-sheet-min-height: 43.125rem
+// - $window-header-height: 1.25rem
+// - $sans-font-stack: 'Signika', sans-serif
+//
+// -----------------------------------------------------------------------------
 
 $base-url: '/systems/shadowrun5e/dist/';
 

@@ -1,3 +1,24 @@
+// -----------------------------------------------------------------------------
+// SCSS Functions File
+//
+// Purpose:
+// - Contains reusable SCSS functions
+// - Provides utility functions for mathematical operations, color processing,
+//   and data retrieval from maps and color schemes.
+//
+// Scope:
+// - Functions are pure and side-effect free, designed to be imported and used
+//   across all parts of the codebase.
+// - Does NOT include any styling rules or mixins; strictly functions.
+//
+// Examples:
+// - Generating asset URLs based on configurable base paths.
+// - Rounding decimal numbers to a specified precision.
+// - Creating dynamic color maps with lightness variants using OKLCH color space.
+// - Retrieving colors from nested maps for consistent theming.
+// -----------------------------------------------------------------------------
+
+
 @use 'variables';
 @use 'sass:map';
 @use 'sass:math';
