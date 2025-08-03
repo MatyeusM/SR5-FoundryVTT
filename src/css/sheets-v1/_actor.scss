@@ -92,7 +92,7 @@
             }
             > .attribute-value {
                 > .attribute-value-total {
-                    color: white;
+                    color: var(--sr5-text-primary);
                     @include config.font-size(18);
                     width: 100%;
                     text-align: center;

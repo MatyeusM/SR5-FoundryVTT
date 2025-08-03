@@ -6,11 +6,13 @@
 */
 @use '../config';
 
+// TODO: this is always in light-mode,
+// thus we cannot use vars for colors yet
 .active-effect-sheet {
 
     // Match tagify input selection to Foundry's default input selection
     .tagify-selection {
-        border: 1px solid var(--color-border-light-tertiary);
+        border: 1px solid var(--sr5-control-icon);
         border-radius: 3px;
     }
 
@@ -96,9 +98,9 @@
         cursor: pointer;
         @include config.font-size(15);
         transition: color 0.2s ease;
-    }
 
-    .effect-control:hover {
-        color: #000;
+        &:hover {
+            color: #000;
+        }
     }
 }

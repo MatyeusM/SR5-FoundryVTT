@@ -7,11 +7,7 @@
 // it asap
 @use 'sass:color';
 
-@mixin basic-rollable {
-    &:hover {
-        @include linkHovered;
-    }
-}
+
 @mixin rollable {
     &:hover {
         @include linkHovered;
@@ -25,31 +21,19 @@
 
 @mixin title {
     font-family: variables.$sans-font-stack;
-    color: theme.$color;
+    color: var(--sr5-text-primary);
     @include textOutline;
 }
 
 @mixin textOutline {
-    color: theme.$color;
-    text-shadow: -1px -1px 0 theme.$outline-color, 1px -1px 0 theme.$outline-color, -1px 1px 0 theme.$outline-color,
-        1px 1px 0 theme.$outline-color;
-}
-
-@mixin shortUnder {
-    position: relative;
-    &:after {
-        content: '';
-        display: block;
-        position: absolute;
-        width: 50%;
-        transform: translateX(50%);
-        border-bottom: theme.$border-under;
-    }
+    color: var(--sr5-text-primary);
+    text-shadow: -1px -1px 0 var(--sr5-text-primary-inverse), 1px -1px 0 var(--sr5-text-primary-inverse), -1px 1px 0 var(--sr5-text-primary-inverse),
+        1px 1px 0 var(--sr5-text-primary-inverse);
 }
 
 @mixin sheet {
     background: var(--sr5-application-background);
-    color: theme.$color;
+    color: var(--sr5-text-primary);
 }
 
 @mixin linkHovered {

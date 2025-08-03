@@ -19,7 +19,7 @@
 
         .clickable:hover {
             cursor: pointer;
-            background: #4b4a44;
+            background: var(--sr5-surface-elevated);
             color: var(--sr5-text-primary);
         }
 
@@ -50,7 +50,7 @@
             border-color: var(--sr5-text-highlight);
         }
         .button {
-            color: config.$color;
+            color: var(--sr5-text-primary);
             border-color: config.$black;
             background: color.adjust(config.$light, $alpha: -0.8);
             border-radius: 0.3em;

@@ -20,7 +20,7 @@ input[type='text'].display {
 }
 
 .settings-sidebar h2 {
-    color: white;
+    color: var(--sr5-text-primary);
 }
 
 .display.text.left.document-name {
@@ -33,7 +33,7 @@ input[type='text'].display {
 }
 
 .entity-link.content-link {
-    color: white;
+    color: var(--sr5-text-primary);
 }
 
 /**
@@ -86,7 +86,7 @@ body:not(.theme-dark) {
     }
 
     tr {
-        color: white;
+        color: var(--sr5-text-primary);
     }
 
     tr:nth-child(even) {

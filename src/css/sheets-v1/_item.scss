@@ -74,7 +74,7 @@
             @include config.systemFonts;
             flex: 0;
             padding: 0 0.5em;
-            color: config.$color;
+            color: var(--sr5-text-primary);
             display: flex;
             flex-flow: column;
             align-content: center;
@@ -204,7 +204,7 @@
                 }
             }
             select {
-                color: config.$color;
+                color: var(--sr5-text-primary);
                 background: rgba(config.$black, 0.05);
                 border-radius: 0.3em;
                 border-color: config.$dark;
@@ -213,7 +213,7 @@
                 }
             }
             input {
-                color: config.$color;
+                color: var(--sr5-text-primary);
                 background: rgba(config.$black, 0.05);
                 border-radius: 0.3em;
                 border-color: config.$dark;
