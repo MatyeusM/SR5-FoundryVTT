@@ -24,7 +24,7 @@
         flex-wrap: wrap;
         align-items: stretch;
         width: 160px;
-        background: rgba(0, 0, 0, 0.6);
+        background: var(--sr5-surface-elevated);
         box-shadow: 0 0 15px var(--sr5-text-primary-inverse);
         border: 1px solid var(--sr5-text-primary-inverse-muted);
         color: var(--sr5-text-primary);

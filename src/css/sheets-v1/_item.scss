@@ -27,7 +27,7 @@
         display: flex;
         flex-flow: row nowrap;
         align-items: stretch;
-        // border: config.$groove;
+
         .item-name {
             @include config.systemFonts;
             border: 0px;
@@ -62,10 +62,6 @@
             }
 
             .display {
-                // padding-top: 1em;
-                // padding-bottom: 1em;
-                // padding-top: 2px;
-                // padding-bottom: 0px;
                 height: auto;
                 border: none;
             }
@@ -82,7 +78,7 @@
         }
         .item-image {
             max-width: 100px;
-            border-right: config.$groove;
+            border-right: 1px solid var(--sr5-control-border);
             margin-bottom: 0;
             padding-bottom: 0;
             border: none;
@@ -90,7 +86,7 @@
         .item-info {
             flex: 1;
             > :not(:last-child) {
-                border-bottom: config.$groove;
+                border-bottom: 1px solid var(--sr5-control-border);
             }
 
             .toggle-fresh-import-off {
@@ -205,18 +201,18 @@
             }
             select {
                 color: var(--sr5-text-primary);
-                background: rgba(config.$black, 0.05);
+                background: var(--sr5-control-background-inverse);
                 border-radius: 0.3em;
-                border-color: config.$dark;
+                border-color: var(--sr5-text-primary-inverse);
                 > option {
-                    background-color: config.$dark;
+                    background-color: var(--sr5-surface);
                 }
             }
             input {
                 color: var(--sr5-text-primary);
-                background: rgba(config.$black, 0.05);
+                background: var(--sr5-control-background-inverse);
                 border-radius: 0.3em;
-                border-color: config.$dark;
+                border-color: var(--sr5-text-primary-inverse);
             }
             label {
                 color: var(--sr5-text-highlight);
@@ -224,14 +220,12 @@
         }
     }
 
-    /** Header Removal **/
-
     &.sheet.window-app {
-        box-shadow: 0 0 10px 0px rgba(235,181,49,0.3);
+        @include config.shadow-elevation(10);
+        background: var(--sr5-application-background);
 
         & .window-header {
             border-bottom: none;
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), config.asset('page.webp') repeat;
             background-repeat: repeat;
             background-size: 100% 20px auto;
             flex: 0 0 20px;
@@ -243,7 +237,7 @@
             display: inline-flex;
             padding: 6px 0 0 0;
             font-size: 0;
-            color: rgb(100, 100, 100);
+            color: var(--sr5-control-icon-muted);
 
             & .fa-solid,
                 & .fas {

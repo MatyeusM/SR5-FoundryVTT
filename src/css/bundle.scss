@@ -1,3 +1,6 @@
+// Comments using /* are forbidden in SCSS files
+// as they are compiled into the css that we bundle
+
 @use 'config';
 @use 'bootstrap';
 

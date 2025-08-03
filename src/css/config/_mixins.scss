@@ -50,3 +50,35 @@
       line-height: $lh;
   }
 }
+
+/// Shadow mixin
+@mixin shadow-elevation($elevation: 1, $color: theme.$shadow, $enhanced: true) {
+  @if $elevation <= 0 {
+    box-shadow: none;
+  } @else {
+    // Define base shadow properties
+    $base-y-offset: math.ceil($elevation * 1.5px);
+    $base-blur: $base-y-offset + math.ceil($elevation * 0.5px);
+    $base-spread: math.floor(-$elevation * 0.25px);
+
+    // Define enhanced (top) shadow properties if enabled
+    $enhanced-y-offset: math.ceil($elevation * 0.5px);
+    $enhanced-blur: $enhanced-y-offset + math.ceil($elevation * 0.25px);
+    $enhanced-spread: math.floor(-$elevation * 0.125px);
+
+    // Set the opacity for the shadows. You might want to make these configurable.
+    $base-opacity: 0.14;
+    $enhanced-opacity: 0.12;
+
+    // Construct the shadow declarations
+    $base-shadow: 0 $base-y-offset $base-blur $base-spread rgb(from $color r g b / $base-opacity);
+    $enhanced-shadow: 0 $enhanced-y-offset $enhanced-blur $enhanced-spread rgb(from $color r g b / $enhanced-opacity);
+
+    // Assemble the final box-shadow value
+    @if $enhanced {
+      box-shadow: $base-shadow, $enhanced-shadow;
+    } @else {
+      box-shadow: $base-shadow;
+    }
+  }
+}

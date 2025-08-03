@@ -214,7 +214,7 @@
 
         &.sheet.window-app {
             background: var(--sr5-application-background);
-        box-shadow: 0 0 10px 0px rgba(235,181,49,0.3);
+            @include config.shadow-elevation(10);
 
         & .window-header {
             border-bottom: none;
@@ -230,7 +230,7 @@
             display: inline-flex;
             padding: 6px 0 0 0;
             font-size: 0;
-            color: rgb(100, 100, 100);
+            color: var(--sr5-control-icon-muted);
 
             & .fa-solid,
                 & .fas {

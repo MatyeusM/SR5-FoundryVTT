@@ -19,7 +19,7 @@ $names: ('grid', 'inline-grid');
 @each $name in $names {
     $display: if($name == 'inline-grid', inline grid, grid);
 
-    @for $number from 1 through 20 {
+    @for $number from 1 through 16 {
         .#{$name}-column-#{$number}
         {
             display: $display;

@@ -18,9 +18,9 @@
     $lightness-base: color.channel($oklch-base, 'lightness');
     $start: math.round(math.div($lightness-base, 10));
 
-    @for $i from 1 through 9 {
-        $step: $i * 100;
-        $offset: ($i - $start) * 10;
+    @for $i from 1 through 19 {
+        $step: $i * 50;
+        $offset: ($i - $start) * 5;
         $new-lightness: math.clamp(0%, $lightness-base + $offset, 100%);
 
         $variant: color.adjust($oklch-base, $lightness: $new-lightness - $lightness-base);

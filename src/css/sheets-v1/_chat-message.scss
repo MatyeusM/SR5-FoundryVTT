@@ -25,7 +25,7 @@
 
         .card-header {
             padding: 0.25em 0;
-            border-bottom: config.$groove;
+            border-bottom: 1px solid var(--sr5-text-primary-inverse);
 
 
             img {
@@ -51,8 +51,8 @@
         }
         .button {
             color: var(--sr5-text-primary);
-            border-color: config.$black;
-            background: color.adjust(config.$light, $alpha: -0.8);
+            border-color: var(--sr5-text-primary-inverse);
+            background: var(--sr5-control-background);
             border-radius: 0.3em;
             text-align: center;
             margin-top: 0.5em;
@@ -71,7 +71,7 @@
         }
         .card-description {
             span {
-                border-right: config.$groove;
+                border-right: 1px solid var(--sr5-text-primary-inverse);
                 padding: 0;
                 padding-right: 0.3em;
                 @include config.font-size(12);
@@ -82,7 +82,7 @@
                 }
             }
             .card-description-content {
-                border-bottom: config.$groove;
+                border-bottom: 1px solid var(--sr5-text-primary-inverse);
             }
         }
 
@@ -100,7 +100,7 @@
 
         .card-title {
             display: flex;
-            border-bottom: config.$groove;
+            border-bottom: 1px solid var(--sr5-text-primary-inverse);
             justify-content: flex-start;
             align-content: center;
             align-items: flex-end;
@@ -178,11 +178,11 @@
         }
         .card-description {
             padding: 0.25em;
-            border-bottom: config.$groove;
+            border-bottom: 1px solid var(--sr5-text-primary-inverse);
             display: none;
         }
         .card-content {
-            border-bottom: config.$groove;
+            border-bottom: 1px solid var(--sr5-text-primary-inverse);
 
             padding: 0.25em 0.25em 0.25em;
             display: flex;
@@ -290,7 +290,7 @@
         }
         .dice-rolls {
             display: none;
-            border-bottom: config.$groove;
+            border-bottom: 1px solid var(--sr5-text-primary-inverse);
         }
         .dice-roll-content {
             padding: 0.5em 0.5em;
@@ -322,7 +322,7 @@
         .glitch-content {
             display: flex;
             flex-flow: column;
-            border-bottom: config.$groove;
+            border-bottom: 1px solid var(--sr5-text-primary-inverse);
 
             .glitch {
                 position: relative;
@@ -412,6 +412,6 @@
     }
     .chat-select-link img:hover {
         padding: 0;
-        border: config.$groove;
+        border: 1px solid var(--sr5-text-primary-inverse);
     }
 }
