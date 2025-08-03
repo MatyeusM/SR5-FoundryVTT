@@ -91,7 +91,7 @@
 
             .toggle-fresh-import-off {
                 flex-grow: 0;
-                background-color: config.$bgrButton;
+                background-color: var(--sr5-text-secondary);
             }
         }
     }

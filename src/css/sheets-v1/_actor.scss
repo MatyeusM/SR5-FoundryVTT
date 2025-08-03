@@ -133,12 +133,12 @@
 
             .toggle-fresh-import-all-off {
                 @include config.font-size(12);
-                background-color: config.$bgrButton;
+                background-color: var(--sr5-text-secondary-muted);
             }
 
             .toggle-fresh-import-all-on {
                 @include config.font-size(12);
-                background-color: config.$bgrButton;
+                background-color: var(--sr5-text-secondary-muted);
             }
 
             .track {

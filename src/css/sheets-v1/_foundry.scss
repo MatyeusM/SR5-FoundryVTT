@@ -12,7 +12,7 @@
 blockquote {
     padding-top: 5px;
     padding-bottom: 5px;
-    background: linear-gradient(to right, rgba(85, 16, 30, 0.304) 0%, rgba(255, 255, 255, 0.2) 100%);
+    background: var(--sr5-surface-elevated);
 }
 
 input[type='text'].display {
@@ -40,12 +40,10 @@ input[type='text'].display {
  * JOURNAL ENTRY STYLING
  */
 // Journal Entry
-body:not(.theme-dark) {
-    .sheet.journal-entry .journal-entry-content,
-    // Journal Entry Page Editor
-    .journal-sheet.journal-entry-page .window-content {
-        background: config.asset('light-page.webp') repeat;
-    }
+.sheet.journal-entry .journal-entry-content,
+// Journal Entry Page Editor
+.journal-sheet.journal-entry-page .window-content {
+    background: var(--sr5-application-background);
 }
 
 .sheet.journal-entry .journal-entry-content,
@@ -54,16 +52,16 @@ body:not(.theme-dark) {
     // As we only change headers in journal-entires, avoid cross styling outside of it.
     // This clashed with Weather Control module and others.
     h1 {
-        color: config.$darkred;
+        color: var(--sr5-text-secondary);
         @include config.font-size(24);
     }
 
     h2 {
-        color: config.$darkred;
+        color: var(--sr5-text-secondary);
     }
 
     table {
-        background: linear-gradient(to bottom, #3d3c3f, #000000);
+        background: var(--sr5-surface-elevated);
         @include config.font-size(13);
         caption{
             background: inherit;
@@ -76,7 +74,7 @@ body:not(.theme-dark) {
 
     th {
         padding: 9px;
-        background: black;
+        background: var(--sr5-surface);
         color: var(--sr5-text-highlight);
         text-align: left;
     }
@@ -90,7 +88,7 @@ body:not(.theme-dark) {
     }
 
     tr:nth-child(even) {
-        background-color: #59595b;
+        background-color: var(--sr5-surface-elevated);
     }
 
     tr:first-child th {
@@ -137,11 +135,11 @@ body:not(.theme-dark) {
 
 
 .journal-sheet h3 {
-    color: config.$darkred;
+    color: var(--sr5-text-secondary);
 }
 
 .journal-sheet select {
-    color: config.$dark;
+    color: var(--sr5-text-primary-inverse);
 }
 
 .journal-sheet option {
@@ -155,26 +153,26 @@ body:not(.theme-dark) {
 .chat-message,
 .chat-message.emote {
     color: var(--sr5-text-primary);
-    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.05)), config.asset('page.webp') repeat;
-    border: 1px solid config.$dark;
+    background: var(--sr5-application-background);
+    border: 1px solid var(--sr5-text-primary-inverse);
 }
 
 // Improve visibility non-default roll modes.
 // Private Roll
 // Self Roll
 .chat-message.whisper {
-    background: linear-gradient(rgba(64, 64, 85, 0.5), rgba(0, 0, 0, 0.5)), config.asset('page.webp') repeat;
+    background: var(--sr5-application-background);
 }
 
 // Blind Roll
 .chat-message.blind {
-    background: linear-gradient(rgba(87, 51, 87, 0.25), rgba(0, 0, 0, 0.5)), config.asset('page.webp') repeat;
+    background: var(--sr5-application-background);
 }
 
 .chat-message .message-header,
 .chat-message.blind .message-header,
 .chat-message.whisper .message-header {
-    color: config.$light-2;
+    color: var(--sr5-text-primary-muted);
 }
 
 // Description for roll tables shown on chat messages for a rolled result drawn.
@@ -195,7 +193,7 @@ body:not(.theme-dark) {
         text-transform: uppercase;
 
         &:hover {
-            text-shadow: 0 0 8px var(--color-text-hyperlink);
+            text-shadow: 0 0 8px var(--sr5-text-secondary);
         }
     }
 }
@@ -214,7 +212,7 @@ body:not(.theme-dark) {
 
 .dialog-button.remove-token-modifiers-from-scene,
 .dialog-button.remove-modifiers-from-target{
-    background-color: config.$bgrButton;
+    background-color: var(--sr5-text-secondary-muted);
 }
 .far-right {
     justify-content: center;
@@ -241,7 +239,7 @@ body:not(.theme-dark) {
 }
 .fas.fa-file-pdf //.fas.fa-suitcase.sr5, .fas.fa-book-open.sr5 For now these can´t get changed
 {
-    color: config.$pdfColor;
+    color: var(--sr5-text-highlight-muted);
 }
 .window-resizable-handle {
     .fa-solid {
