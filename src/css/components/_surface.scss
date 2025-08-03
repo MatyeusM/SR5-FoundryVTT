@@ -1,0 +1,25 @@
+// -----------------------------------------------------------------------------
+// SCSS Component File: SR5 Surface Styles
+//
+// Purpose:
+// - Defines the base visual appearance and layout within the `.sr5` scope.
+// - Sets default typography, colors, spacing, and element styles for the SR5 system.
+// - Provides a consistent and clean “surface” layer for all SR5 UI components.
+//
+// Scope:
+// - All styles are strictly scoped under the `.sr5` class to avoid conflicts.
+// - Contains foundational theming and design tokens usage (colors, fonts, etc.).
+// - Does NOT override Foundry global defaults (handled separately).
+//
+// Examples:
+// - Setting default font-family, font-weight, and text color inside `.sr5`
+// - Resetting margins and paddings on headings, paragraphs, and links scoped to `.sr5`
+// -----------------------------------------------------------------------------
+
+@use '../config';
+
+.sr5 {
+    font-family: config.$sans-font-stack;
+    font-weight: 500;
+    color: var(--sr5-text-primary);
+}
