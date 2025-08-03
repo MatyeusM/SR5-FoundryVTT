@@ -213,7 +213,7 @@
     }
 
         &.sheet.window-app {
-            background: var(--sr5-application-background);
+            background: var(--sr5-backdrop);
             @include config.shadow-elevation(10);
 
         & .window-header {

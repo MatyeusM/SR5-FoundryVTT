@@ -252,7 +252,7 @@ body #forien-quest-log .quest-log .table ul .title p {
 .chat-message,
 .chat-message.emote {
     color: var(--sr5-text-primary);
-    background: var(--sr5-application-background);
+    background: var(--sr5-backdrop);
     border: 1px solid var(--sr5-control-border);
     .message-content.h2{
         color: var(--sr5-text-highlight);

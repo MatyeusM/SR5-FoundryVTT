@@ -222,7 +222,7 @@
 
     &.sheet.window-app {
         @include config.shadow-elevation(10);
-        background: var(--sr5-application-background);
+        background: var(--sr5-backdrop);
 
         & .window-header {
             border-bottom: none;

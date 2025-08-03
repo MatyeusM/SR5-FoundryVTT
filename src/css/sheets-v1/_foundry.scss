@@ -43,7 +43,7 @@ input[type='text'].display {
 .sheet.journal-entry .journal-entry-content,
 // Journal Entry Page Editor
 .journal-sheet.journal-entry-page .window-content {
-    background: var(--sr5-application-background);
+    background: var(--sr5-backdrop);
 }
 
 .sheet.journal-entry .journal-entry-content,
@@ -153,7 +153,7 @@ input[type='text'].display {
 .chat-message,
 .chat-message.emote {
     color: var(--sr5-text-primary);
-    background: var(--sr5-application-background);
+    background: var(--sr5-backdrop);
     border: 1px solid var(--sr5-text-primary-inverse);
 }
 
@@ -161,12 +161,12 @@ input[type='text'].display {
 // Private Roll
 // Self Roll
 .chat-message.whisper {
-    background: var(--sr5-application-background);
+    background: var(--sr5-backdrop);
 }
 
 // Blind Roll
 .chat-message.blind {
-    background: var(--sr5-application-background);
+    background: var(--sr5-backdrop);
 }
 
 .chat-message .message-header,

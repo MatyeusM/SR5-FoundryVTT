@@ -82,7 +82,7 @@ body {
     --sr5-surface-elevated: #{functions.getColor($color-scheme, 'neutral', 800)};
     --sr5-surface-secondary: #{functions.getColor($color-scheme, 'primary', 400)};
     --sr5-surface-secondary-elevated: #{functions.getColor($color-scheme, 'primary', 200)};
-    --sr5-application-background: #{functions.asset('light-page.webp')};
+    --sr5-backdrop: #{functions.asset('light-page.webp')};
     --sr5-application-title-background: linear-gradient(
         to right,
         #{functions.getColor($color-scheme, 'primary', 700)} 30%,
@@ -117,7 +117,7 @@ body {
         --sr5-surface-elevated: #{functions.getColor($color-scheme, 'neutral', 200)};
         --sr5-surface-secondary: #{functions.getColor($color-scheme, 'secondary', 200)};
         --sr5-surface-secondary-elevated: #{functions.getColor($color-scheme, 'secondary', 400)};
-        --sr5-application-background: linear-gradient(rgb(0 0 0 / 0.6), rgb(0 0 0 / 0.6)),
+        --sr5-backdrop: linear-gradient(rgb(0 0 0 / 0.6), rgb(0 0 0 / 0.6)),
             #{functions.asset('page.webp')} repeat;
         --sr5-application-title-background: linear-gradient(
             to right,
