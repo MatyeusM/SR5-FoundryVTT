@@ -51,7 +51,7 @@
             height: 2em;
 
             .source-button {
-                color: config.$light;
+                color: var(--sr5-text-primary);
                 @include config.font-size(16);
                 height: 2em;
                 left: .5em;
@@ -112,7 +112,7 @@
         }
 
         label {
-          color: config.$yellow;
+          color: var(--sr5-text-highlight);
         }
 
         .tech-adjustable-label {
@@ -156,7 +156,7 @@
         .header {
             @include config.title;
             @include config.font-size(18);
-            color: config.$yellow;
+            color: var(--sr5-text-highlight);
         }
         .form-line {
             display: flex;
@@ -165,17 +165,17 @@
             align-content: center;
             padding: 0.1em 0.25em;
             &.advanced{
-                color: config.$yellow;
+                color: var(--sr5-text-highlight);
             }
             > * {
                 flex: 1;
             }
             .label {
-                color: config.$light;
+                color: var(--sr5-text-primary);
                 @include config.font-size(16);
                 @include config.systemFonts;
                 &.advanced{
-                    color: config.$yellow;
+                    color: var(--sr5-text-highlight);
                 }
             }
             .inputs {
@@ -219,7 +219,7 @@
                 border-color: config.$dark;
             }
             label {
-                color: config.$yellow;
+                color: var(--sr5-text-highlight);
             }
         }
     }

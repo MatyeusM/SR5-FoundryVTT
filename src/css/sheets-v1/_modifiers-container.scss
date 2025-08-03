@@ -36,18 +36,18 @@
         }
 
         >.value-modifiers-base {
-            border-bottom: 1px solid config.$yellow;
-            color: config.$white;
+            border-bottom: 1px solid var(--sr5-text-highlight);
+            color: var(--sr5-text-primary);
         }
 
         >.value-modifiers-modifier {
-            color: config.$white;
+            color: var(--sr5-text-primary);
         }
 
         >.value-modifiers-total {
             font-weight: bold;
-            border-top: 1px double config.$yellow;
-            color: config.$white;
+            border-top: 1px double var(--sr5-text-highlight);
+            color: var(--sr5-text-primary);
         }
 
         >.value-modifiers-invalid-total {

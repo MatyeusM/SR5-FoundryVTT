@@ -50,7 +50,7 @@
             @include config.title;
 
             align-items: center;
-            color: config.$yellow;
+            color: var(--sr5-text-highlight);
             display: flex;
             flex-flow: column nowrap;
             flex: 1 0 auto;

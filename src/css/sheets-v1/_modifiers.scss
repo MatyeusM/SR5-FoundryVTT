@@ -67,15 +67,15 @@
     }
 
     h1 {
-        border-bottom: 1px solid config.$yellow;
-        color: config.$yellow;
+        border-bottom: 1px solid var(--sr5-text-highlight);
+        color: var(--sr5-text-highlight);
         font-weight: bold;
     }
 
     // Add back in stylings as necessary
     h2,
     h3 {
-        color: config.$yellow;
+        color: var(--sr5-text-highlight);
         border-bottom: none;
         font-weight: normal;
     }

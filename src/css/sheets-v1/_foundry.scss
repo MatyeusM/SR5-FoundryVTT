@@ -68,7 +68,7 @@ body:not(.theme-dark) {
         caption{
             background: inherit;
             text-align: left;
-            color: config.$yellow;
+            color: var(--sr5-text-highlight);
             @include config.font-size(16);
             padding: 9px;
         }
@@ -77,7 +77,7 @@ body:not(.theme-dark) {
     th {
         padding: 9px;
         background: black;
-        color: config.$yellow;
+        color: var(--sr5-text-highlight);
         text-align: left;
     }
     td{
@@ -94,15 +94,15 @@ body:not(.theme-dark) {
     }
 
     tr:first-child th {
-        border-top: 1px solid config.$yellow;
+        border-top: 1px solid var(--sr5-text-highlight);
     }
 
     tr:first-child th {
-        border-bottom: 1px solid config.$yellow;
+        border-bottom: 1px solid var(--sr5-text-highlight);
     }
 
     tr:last-child td {
-        border-bottom: 1px solid config.$yellow;
+        border-bottom: 1px solid var(--sr5-text-highlight);
     }
 
     table .content-link {
@@ -145,7 +145,7 @@ body:not(.theme-dark) {
 }
 
 .journal-sheet option {
-    color: config.$white;
+    color: var(--sr5-text-primary);
 }
 
 /**
@@ -154,7 +154,7 @@ body:not(.theme-dark) {
 // Public Roll
 .chat-message,
 .chat-message.emote {
-    color: config.$white;
+    color: var(--sr5-text-primary);
     background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.05)), config.asset('page.webp') repeat;
     border: 1px solid config.$dark;
 }
@@ -179,7 +179,7 @@ body:not(.theme-dark) {
 
 // Description for roll tables shown on chat messages for a rolled result drawn.
 .chat-message .table-draw .table-description {
-    color: config.$light;
+    color: var(--sr5-text-primary);
 }
 /**
  * Settings Sidebar
@@ -222,14 +222,14 @@ body:not(.theme-dark) {
 }
 
 .list-header.item-section[data-item-id="weapon"][data-item-type=""] {
-    color: config.$yellow;  /* set the color to yellow */
+    color: var(--sr5-text-highlight);  /* set the color to yellow */
     @include config.font-size(13);
 }
 
 .common-test{
     margin-bottom: 4px;
     margin-top: 4px;
-    color: config.$white;
+    color: var(--sr5-text-primary);
     display: flex;
     .test-icon {
         width: 17px;

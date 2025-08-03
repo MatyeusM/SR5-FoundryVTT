@@ -20,7 +20,7 @@
         .clickable:hover {
             cursor: pointer;
             background: #4b4a44;
-            color: config.$white;
+            color: var(--sr5-text-primary);
         }
 
         .card-header {
@@ -46,8 +46,8 @@
             }
         }
         .card-header:first-of-type {
-            color: config.$yellow;
-            border-color: config.$yellow;
+            color: var(--sr5-text-highlight);
+            border-color: var(--sr5-text-highlight);
         }
         .button {
             color: config.$color;
@@ -129,7 +129,7 @@
                 white-space: nowrap;
                 // Override Foundry default header styling.
                 border-bottom: none;
-                color: config.$white;
+                color: var(--sr5-text-primary);
 
                 &:hover {
                     text-shadow: -1px -1px 0 #6495ed, 1px -1px 0 #6495ed, -1px 1px 0 #6495ed, 1px 1px 0 #6495ed;

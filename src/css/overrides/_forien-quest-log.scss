@@ -33,7 +33,7 @@
 #forien-quest-log .actions i.fa-play, .window-app.forien-quest-preview .actions i.fa-play {
     @include config.font-size(14);
     padding-top: 2px;
-    color: config.$yellow;
+    color: var(--sr5-text-highlight);
 }
 body #forien-quest-log .quest-log .log-body header {
     // removed the background asset, to better support light mode
@@ -43,7 +43,7 @@ body #forien-quest-log .quest-log .log-body header {
     border-radius: 0;
     text-align: left !important;
     text-indent: 5px;
-    color: config.$white;
+    color: var(--sr5-text-primary);
     border-width: 0;
     height: 80px;
     border-block-end: 2px solid var(--sr5-text-secondary);
@@ -95,7 +95,7 @@ body #forien-quest-log .actions-single i, .window-app.forien-quest-preview .acti
     cursor: pointer;
     @include config.font-size(18);
     transition: color .3s ease;
-    color: config.$yellow;
+    color: var(--sr5-text-highlight);
 }
 //h1 quest Log
 body #forien-quest-log h1, .window-app.forien-quest-preview h1 {
@@ -109,7 +109,7 @@ body #forien-quest-log h1, .window-app.forien-quest-preview h1 {
 }
 // h1 quest log header
 body #forien-quest-log h1, .window-app.forien-quest-preview h1 {
-    color: config.$white;
+    color: var(--sr5-text-primary);
 }
 
 body #forien-quest-log h1, body .window-app.forien-quest-preview h1 {
@@ -120,7 +120,7 @@ body #forien-quest-log h1, body .window-app.forien-quest-preview h1 {
 
 // h4 Quest Log
 body #quest-tracker .window-header h4 {
-    color: config.$yellow;
+    color: var(--sr5-text-highlight);
     @include config.font-size(20);
 }
 //h2
@@ -138,7 +138,7 @@ body #forien-quest-log .quest-log .table ul .title h2, body .window-app.forien-q
 body #quest-tracker .quest .title a, #quest-tracker .quest .title i {
     filter: drop-shadow(1px 1px 1px #000);
     @include config.font-size(16);
-    color: config.$yellow;
+    color: var(--sr5-text-highlight);
 }
 
 body .window-app.forien-quest-preview .quest-body .details-header .quest-setup .quest-title {
@@ -153,7 +153,7 @@ body .window-app.forien-quest-preview .quest-body .details-header .quest-setup .
 }
 
 body .window-app.forien-quest-preview .quest-body .quest-info .quest-col-right .quest-tasks .toggleState:hover {
-    color: var(--palette-primary,var(--default-primary-accent,config.$yellow));
+    color: var(--palette-primary,var(--default-primary-accent,var(--sr5-text-highlight)));
 }
 
 body #forien-quest-log .actions i.fa-times-circle, .window-app.forien-quest-preview .actions i.fa-times-circle {
@@ -203,7 +203,7 @@ body .window-app.forien-quest-preview .quest-body .quest-info .quest-col-right b
     line-height: 1;
     white-space: nowrap;
     background: config.$darkred;
-    color: config.$white;
+    color: var(--sr5-text-primary);
 }
 
 #forien-quest-log button, .window-app.forien-quest-preview button {
@@ -215,7 +215,7 @@ body .window-app.forien-quest-preview .quest-body .quest-info .quest-col-right b
     margin-top: 2px;
     transition: border-color .3s ease,background .3s ease,box-shadow .3s ease;
     background: config.$darkred;
-    color: config.$white;
+    color: var(--sr5-text-primary);
 }
 //Play
 #forien-quest-log .actions i.move.fas.fa-play:hover, .window-app.forien-quest-preview .actions i.move.fas.fa-play:hover {
@@ -240,7 +240,7 @@ body #forien-quest-log .actions i.move.fas.fa-stop-circle:hover, body .window-ap
 }
 
 body #forien-quest-log .quest-log .table ul .title p {
-    color: config.$white;
+    color: var(--sr5-text-primary);
 }
 //End Quest Log Styles
 
@@ -251,32 +251,32 @@ body #forien-quest-log .quest-log .table ul .title p {
 // Public Roll
 .chat-message,
 .chat-message.emote {
-    color: config.$white;
+    color: var(--sr5-text-primary);
     background: var(--sr5-application-background);
     border: 1px solid var(--sr5-control-border);
     .message-content.h2{
-        color: config.$yellow;
+        color: var(--sr5-text-highlight);
     }
     a.content-link{
         background: none;
-        color: config.$light;
+        color: var(--sr5-text-primary);
     }
 }
 
 //Icons
 span.fa.fa-calendar{
-    color: config.$yellow;
+    color: var(--sr5-text-highlight);
 }
 
 //headers
 .message-content{
 h2{
-    color: config.$yellow;
+    color: var(--sr5-text-highlight);
     @include config.font-size(20); // i do not know what the parent was, it was parent +50%
     border-bottom: 1px solid config.$edge;
 }}
 h4.message-sender{
     @include config.font-size(13);
-    color: config.$white;
+    color: var(--sr5-text-primary);
 }
 //End Simple Calendar
