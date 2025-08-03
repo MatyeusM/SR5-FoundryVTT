@@ -213,11 +213,12 @@
     }
 
         &.sheet.window-app {
+            background: var(--sr5-application-background);
         box-shadow: 0 0 10px 0px rgba(235,181,49,0.3);
 
         & .window-header {
             border-bottom: none;
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), config.asset('page.webp') repeat;
+            background: transparent;
             background-repeat: repeat;
             background-size: 100% 20px auto;
             flex: 0 0 20px;

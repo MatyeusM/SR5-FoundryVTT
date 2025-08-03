@@ -25,9 +25,9 @@
         align-items: stretch;
         width: 160px;
         background: rgba(0, 0, 0, 0.6);
-        box-shadow: 0 0 15px #000;
-        border: 1px solid #333;
-        color: #DDD;
+        box-shadow: 0 0 15px var(--sr5-text-primary-inverse);
+        border: 1px solid var(--sr5-text-primary-inverse-muted);
+        color: var(--sr5-text-primary);
         height: 40px;
         line-height: 40px;
         margin-bottom: 18px;
@@ -49,7 +49,7 @@
             cursor: pointer;
 
             &:hover {
-                box-shadow: 0 0 0.25em 0.15em config.$white;
+                box-shadow: 0 0 0.25em 0.15em var(--sr5-text-primary);
                 border-radius: 8px;
             }
         }

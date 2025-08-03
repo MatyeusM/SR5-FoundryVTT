@@ -58,12 +58,12 @@ body #forien-quest-log .quest-log .log-body header {
 //table list hover
 body #forien-quest-log .quest-log .table ul li.drag-quest:hover {
     border-color: var(--sr5-text-secondary);
-    box-shadow: 0 0 2px var(--sr5-text-secondary) inset; //config.$red is the var for Red
+    box-shadow: 0 0 2px var(--sr5-text-secondary) inset;
 }
 
 body .window-app.forien-quest-preview .quest-body .details-header .quest-setup .quest-giver-name h2:hover {
     color: var(--sr5-text-secondary);
-    text-shadow: 0 0 5px var(--sr5-text-primary), 0 0 3px var(--sr5-text-primary), 0 0 4px var(--sr5-text-secondary), 0 0 5px var(--sr5-text-secondary), 0 0 5px config.$darkred, 0 0 4px config.$darkred, 0 0 4px var(--sr5-text-primary); /* Add this line for glow */
+    text-shadow: 0 0 5px var(--sr5-text-primary), 0 0 3px var(--sr5-text-primary), 0 0 4px var(--sr5-text-secondary), 0 0 5px var(--sr5-text-secondary), 0 0 5px var(--sr5-text-secondary), 0 0 4px var(--sr5-text-secondary), 0 0 4px var(--sr5-text-primary); /* Add this line for glow */
 }
 
 .tox .tox-tbtn svg {
@@ -177,7 +177,7 @@ body .window-app.forien-quest-preview .quest-body .quest-info .quest-col-right h
 body #forien-quest-log .quest-log .table ul li.drag-quest {
     align-items: center;
     background: var(--sr5-surface-elevated);
-    border: 1px solid #0000;
+    border: 1px solid var(--sr5-control-border);
     border-radius: 5px;
     display: flex;
     justify-content: flex-start;

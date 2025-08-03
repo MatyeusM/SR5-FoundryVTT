@@ -575,7 +575,8 @@ input[type='text'].display {
     }
 
     .window-content {
-        @include config.sheet;
+        background: transparent;
+        color: var(--sr5-text-primary);
         overflow: hidden;
         border: 1px solid var(--sr5-control-border);
         border-top: 0px;

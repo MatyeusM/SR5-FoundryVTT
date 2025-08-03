@@ -53,6 +53,8 @@ $color-scheme: (
 // new properties should be scoped to .sr5 classes, however since we do not
 // universally apply .sr5 to all properties that should be styled, we instead
 // use :root --sr5-varname properties until we can do so.
+
+//
 body {
     // shadowrun-related colors
     --sr5-color-stun: #{functions.getColor($color-scheme, 'mental', 600)};
@@ -93,6 +95,7 @@ body {
         --sr5-color-physical: #{functions.getColor($color-scheme, 'physical', 400)};
         --sr5-color-overflow: #{functions.getColor($color-scheme, 'overflow', 400)};
         --sr5-color-matrix: #{functions.getColor($color-scheme, 'matrix', 400)};
+        --sr5-color-magic: #{functions.getColor($color-scheme, 'magic', 400)};
         --sr5-color-edge: #{functions.getColor($color-scheme, 'primary', 400)};
         // text-colors
         --sr5-text-primary: #{functions.getColor($color-scheme, 'neutral', 900)};

@@ -4,6 +4,9 @@
 @use '../config';
 
 .sr5.form-dialog {
+    color: var(--sr5-text-primary);
+    background: var(--sr5-application-background);
+
   .dialog-title {
     font-weight: bold;
   }
