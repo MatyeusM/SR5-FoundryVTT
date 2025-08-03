@@ -37,8 +37,8 @@
 }
 
 @mixin linkHovered {
-    text-shadow: 0 0 8px var(--color-shadow-primary);
-    color: theme.$fLightRed;
+    text-shadow: 0 0 8px var(--sr5-color-secondary);
+    color: var(--sr5-color-secondary);
 }
 
 /// Apply a FoundryVTT font size using a CSS variable fallback.

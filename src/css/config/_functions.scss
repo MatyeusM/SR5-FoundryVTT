@@ -16,7 +16,7 @@
     $result-map: ();
     $oklch-base: color.to-space($inputColor, oklch);
     $lightness-base: color.channel($oklch-base, 'lightness');
-    $start: math.round(math.div($lightness-base, 10));
+    $start: math.round(math.div($lightness-base, 5));
 
     @for $i from 1 through 19 {
         $step: $i * 50;
