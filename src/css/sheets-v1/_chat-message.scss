@@ -228,12 +228,8 @@
                 justify-content: flex-start;
                 align-items: flex-end;
                 text-align: left;
-                > :not(:first-child) {
-                    margin-left: 0.1em;
-                }
-                > :not(:last-child) {
-                    margin-right: 0.1em;
-                }
+                gap: 0.2em;
+
                 .icon {
                     font-style: italic;
                 }
