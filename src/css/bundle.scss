@@ -9,15 +9,29 @@
 
 
 // .Roll class is used for labels that will look for data-roll-id on itself or a parent RollId
+// TODO: Refactor html to replace with .roll
 .Roll {
-    @include config.rollable;
+    @include config.hover-transition($color: var(--sr5-text-secondary));
 }
 
-/**
- * These are default FoundryVTT classes that have been used within Shadowrun5 CSS while not behaving as default.
- * TODO: This is abusing default FoundryVTT CSS classing, which often can cause default FoundryVTT styling to break.
- */
+//
+// These are default FoundryVTT classes that have been used within Shadowrun5 CSS while not behaving as default.
+// TODO: This is abusing default FoundryVTT CSS classing, which often can cause default FoundryVTT styling to break.
+//
 .sr5 {
+    :where(input:hover, input:focus) {
+        // fixes the blinking on disabled inputs
+        outline-color: transparent;
+    }
+
+    input[type="text"], input[type="number"], input[type="password"], input[type="date"], input[type="time"], input[type="datetime-local"], input[type="search"], input[type="file"], select {
+        box-shadow: none;
+    }
+
+    *:hover {
+        text-shadow: none;
+    }
+
     .flexcol {
         display: flex;
         flex-direction: column;
@@ -89,7 +103,7 @@
     }
 
     .show-situation-modifiers-application {
-        @include config.rollable;
+        @include config.hover-transition($color: var(--sr5-text-secondary));
     }
     .grid-2-col {
         display: grid;
@@ -105,14 +119,14 @@
         padding: 1px !important;
     }
 
-    /* New or updated rules */
+    // New or updated rules
     .license-section .item-text.rtg.rate,
     .license-section .rtg-rate.item-text {
-        /* Updated */
+        // Updated
         margin-left: 0;
         padding-left: 0;
         text-align: left;
-        width: 22px; /* Updated */
+        width: 22px;
     }
     //Header Rating
     .license-section .item-text.rtg.rate-header {
@@ -132,12 +146,12 @@
         max-width: 1em;
     }
     .item-name-field {
-        max-width: 11em; /* Set to your desired max width */
+        max-width: 11em;
     }
 
     .display.left.name-display {
-        width: 100%; /* Takes the maximum width of the parent */
-        max-width: 100%; /* Optional, ensures it doesn't go beyond parent */
+        width: 100%;
+        max-width: 100%;
     }
     // This class is only used for sin license descriptions and seems to be mostly a hack to get the description to better align with the license rating.
     .display.desc-sin {
@@ -150,16 +164,14 @@
     }
 
     .item-text.item-name-header {
-        /* Set to your desired width */
-        max-width: 11em; /* Optional, ensures it doesn't go beyond the set width */
+        max-width: 11em;
     }
 
     .license-section .list-item.item-section .item-text.rtg.rate,
     .license-section .list-item .rtg-rate.item-text {
-        /* Updated */
         flex-basis: calc(25% - 1em);
         text-align: left;
-        width: 22px; /* Updated */
+        width: 22px;
     }
 
     .license-section .list-item.item-section .item-text.desc.detail,
@@ -168,10 +180,9 @@
         text-align: left;
     }
 
-    /* Specifics for the rtg-rate input field */
+    // Specifics for the rtg-rate input field
     .license-section .list-item .rtg-rate.item-text input {
-        /* Updated */
-        width: 22px; /* Updated */
+        width: 22px;
     }
 
     // Specific em
@@ -208,6 +219,19 @@
         display: flex;
         margin: 0.2em;
     }
+
+    // more specifivity hacks
+    a.control, a.control > i, a.document-id-link > i {
+        @include config.hover-transition($color: var(--sr5-text-highlight-muted));
+
+        &:hover {
+            text-shadow: none;
+        }
+    }
+
+    .window-resizable-handle {
+        background: var(--sr5-surface-high);
+    }
 }
 
 .align-items-center {
@@ -242,7 +266,7 @@
     position: relative;
 
     .unit {
-        @include config.textOutline;
+        font-weight: 700;
         position: absolute;
         display: block;
         left: 5px;
@@ -258,17 +282,7 @@ label.checkbox {
     left: 0;
     cursor: pointer;
     user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
 
-    // why are we coloring the checkbox for just screenreaders?
-    // the input is set to display: none;
-    // set to a normal text-color hover effect
-    // TODO: Remove?
-    &:hover input ~ .checkmark {
-        color: var(--sr5-text-highlight-muted);
-    }
 
     &.init-edge-label {
         margin-right: 1.75em;
@@ -296,22 +310,6 @@ label.checkbox {
     }
 }
 
-// TODO: removal of the class
-// a quick search reveals neither foundry nor we are using it
-// so assigning normal colors to it
-button.plus1_button {
-    padding: 2px;
-    color: var(--sr5-text-primary);
-    line-height: 0;
-    flex: 0;
-    background: var(--sr5-surface-elevated);
-    border-radius: 0.3em;
-    text-align: center;
-
-    &:hover {
-        cursor: pointer;
-    }
-}
 input[type='checkbox'].toggle {
     display: none;
 }
@@ -349,7 +347,7 @@ input[type='text'].disabled-for-display {
 }
 
 input[type='text'].display {
-    @include config.textOutline;
+    font-weight: 700;
     background: var(--sr5-control-background);
     color: var(--sr5-text-primary);
     border-radius: 0.3em;
@@ -404,9 +402,9 @@ input[type='text'].display {
         }
     }
 }
-/**
-     * Special SR5 hr and select display
-     */
+//
+// Special SR5 hr and select display
+//
 .sr5 {
     hr {
         border-color: var(--sr5-text-highlight);
@@ -415,7 +413,7 @@ input[type='text'].display {
     select.display,
     select {
         color: var(--sr5-text-primary);
-        background: var(--sr5-surface-elevated);
+        background: var(--sr5-surface-high);
         border-radius: 0.3em;
         border-color: var(--sr5-control-border);
 
@@ -424,9 +422,9 @@ input[type='text'].display {
         }
     }
 
-    /**
-     * Overwrite FoundryVTT default styling within sheets.
-     */
+    //
+    // Overwrite FoundryVTT default styling within sheets.
+    //
     .form-group {
         label {
             color: var(--sr5-text-primary);
@@ -456,19 +454,19 @@ input[type='text'].display {
         }
     }
 
-    /**
-     * Elements used for inline editing
-     */
+    //
+    // Elements used for inline editing
+    //
     .inline-input-inventory {
         display: none;
     }
 
-    /**
-     * Elements used for linkable documents / entities.
-     *
-     * This is also present in foundry.scss, but is overwritten by Monks Enhanced Journals module.
-     * Let's force it within the SR5 context, while leaving it everywhere else.
-     */
+    //
+    // Elements used for linkable documents / entities.
+    //
+    // This is also present in foundry.scss, but is overwritten by Monks Enhanced Journals module.
+    // Let's force it within the SR5 context, while leaving it everywhere else.
+    //
     .entity-link,
     .content-link,
     .inline-roll {
@@ -493,7 +491,7 @@ input[type='text'].display {
     }
 
     .roll {
-        @include config.rollable;
+        @include config.hover-transition($color: var(--sr5-text-secondary));
     }
 
     .editor {
@@ -649,13 +647,36 @@ input[type='text'].display {
             padding: 0.25em;
             margin-bottom: 0;
             position: relative;
+            isolation: isolate;
+            text-shadow: none;
+            font-weight: 600;
             @include config.font-size(16);
-            @include config.rollable;
+            @include config.hover-transition($color: var(--sr5-text-highlight-muted));
+
+            &::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 100%;
+                height: 0;
+                background-color: transparent;
+                transition:
+                    height 250ms linear,
+                    background-color 250ms linear;
+                z-index: -1;
+            }
+
+            &:hover::before,
+            &:focus::before,
+            &.active::before {
+                height: 100%;
+                background-color: var(--sr5-control-background);
+            }
 
             &.active {
-                @include config.linkHovered;
-                color: var(--sr5-text-primary);
-                background: var(--sr5-control-background);
+                color: var(--sr5-text-highlight);
             }
         }
 
@@ -705,23 +726,23 @@ input[type='text'].display {
     .split-container {
         display: flex;
         flex-flow: row nowrap;
-        justify-content: center;
         align-items: stretch;
-        align-content: stretch;
         height: 100%;
+        gap: 0.4375rem;
 
         > * {
             flex: 1;
-            width: 100%;
-        }
+            position: relative;
 
-        > *:not(:first-child) {
-            margin-left: 0.25em;
-        }
-
-        > *:not(:last-child) {
-            border-right:  1px solid var(--sr5-control-border);
-            padding-right: 0.25em;
+            &:not(:first-child)::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: -0.21875rem;
+                width: 1px;
+                background: var(--sr5-control-border);
+            }
         }
     }
 
@@ -793,13 +814,7 @@ input[type='text'].display {
             }
 
             &.gap-4 {
-                > :not(:first-child) {
-                    margin-left: 4px;
-                }
-
-                > :not(:last-child) {
-                    margin-right: 4px;
-                }
+                gap: 0.5rem;
             }
         }
     }
@@ -810,25 +825,11 @@ input[type='text'].display {
         justify-content: start;
         padding: 4px;
 
-        &.stun .cell {
-            box-shadow: 0 0 5px 1px var(--sr5-color-stun);
-        }
-
-        &.physical .cell {
-            box-shadow: 0 0 5px 1px var(--sr5-color-physical);
-        }
-
-        &.edge .cell {
-            box-shadow: 0 0 5px 1px var(--sr5-color-edge);
-        }
-
-        &.matrix .cell {
-            box-shadow: 0 0 5px 1px var(--sr5-color-matrix);
-        }
-
-        &.overflow .cell {
-            box-shadow: 0 0 5px 1px var(--sr5-color-overflow);
-        }
+        @include config.condition-monitor-style('stun', 'sr5-color-stun', 'sr5-color-stun-strong');
+        @include config.condition-monitor-style('physical', 'sr5-color-physical', 'sr5-color-physical-strong');
+        @include config.condition-monitor-style('edge', 'sr5-color-edge', 'sr5-color-edge-strong');
+        @include config.condition-monitor-style('matrix', 'sr5-color-matrix', 'sr5-color-matrix-strong');
+        @include config.condition-monitor-style('overflow', 'sr5-color-overflow', 'sr5-color-overflow-strong');
 
         .roll {
             width: 60px;
@@ -839,35 +840,33 @@ input[type='text'].display {
             display: flex;
             flex-flow: row;
             justify-content: stretch;
+            gap: 0.25rem;
+        }
 
-            .cell {
-                cursor: pointer;
-                text-align: center;
-                @include config.font-size(11);
-                border:  1px solid var(--sr5-control-border);
-                color: var(--sr5-control-icon);
-                border-radius: 4px;
-                background: var(--sr5-surface);
-                min-width: 26px;
-                height: 18px;
+        .cell {
+            cursor: pointer;
+            transition:
+                border-color 250ms ease-in-out,
+                box-shadow 250ms ease-in-out;
+            text-align: center;
+            @include config.font-size(11);
+            border:  1px solid var(--sr5-control-border);
+            color: var(--sr5-text-primary-muted);
+            background: var(--sr5-surface);
+            min-width: 26px;
+            height: 18px;
+            border-radius: 0.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-                &:not(:first-child) {
-                    margin-left: 2px;
-                }
+            &.filled {
+                background: var(--sr5-control-icon);
+                color: var(--sr5-text-primary-inverse);
+            }
 
-                &:not(:last-child) {
-                    margin-right: 2px;
-                }
-
-                &.filled {
-                    background: var(--sr5-control-icon);
-                    border-color: var(--sr5-text-primary-inverse);
-                    color: var(--sr5-text-primary-inverse);
-                }
-
-                &:hover {
-                    border-color: var(--sr5-text-primary);
-                }
+            &:hover {
+                border-color: var(--sr5-text-primary);
             }
         }
     }
@@ -880,11 +879,16 @@ input[type='text'].display {
         flex-flow: column nowrap;
     }
 
+    .list-header .item-text, .item-section .item-text {
+        font-weight: 700;
+    }
+
     .list-header,
     .list-item {
+        --list-item-min-height: 26px;
         @include config.font-size(12);
         padding: 0.1em 0.25em;
-        min-height: 26px;
+        min-height: var(--list-item-min-height);
         margin: 0.1em;
         margin-inline: 1px;
 
@@ -892,7 +896,7 @@ input[type='text'].display {
             color: var(--sr5-text-primary);
         }
         .has-desc {
-            @include config.rollable;
+            @include config.hover-transition($color: var(--sr5-text-secondary));
         }
 
         &.no-border {
@@ -938,10 +942,8 @@ input[type='text'].display {
             align-items: center;
             align-content: center;
 
-            // vertically center the rows, using a table would have
-            // been better, but i pray for V2 or during the rework.
             &:not(.list-header > .list-item-content) {
-              margin-top: 0.3125rem;
+                min-height: calc(var(--list-item-min-height) - 0.2em);
             }
 
             .item-center {
@@ -972,7 +974,7 @@ input[type='text'].display {
                 max-width: 50px;
 
                 &.item-roll {
-                    @include config.rollable;
+                    @include config.hover-transition($color: var(--sr5-text-secondary));
 
                     &:hover {
                         > img {
@@ -1086,7 +1088,7 @@ input[type='text'].display {
             }
 
             &.skill-header {
-                @include config.rollable;
+                @include config.hover-transition($color: var(--sr5-text-secondary));
             }
         }
     }
@@ -1235,9 +1237,9 @@ input[type='text'].display {
         }
     }
 
-    /** CSS for the Environmental Modifier Application Window
-     *
-     */
+    // CSS for the Environmental Modifier Application Window
+    //
+    //
     button.env-modifier {
         text-align: left;
         @include config.font-size(13);
@@ -1264,16 +1266,15 @@ input[type='text'].display {
         font-style: italic;
     }
 
-    /** Input element for inventory name editing */
+    // Input element for inventory name editing
     input#input-inventory {
         // Otherwise the other classes used will break styling.
         width: auto;
     }
 
     .document-name {
-        @include config.systemFonts;
         @include config.font-size(18);
-        font-weight: bold;
+        font-weight: 700;
     }
 
     .cell-input-roll {
@@ -1288,7 +1289,7 @@ input[type='text'].display {
 //END SR5 Style
 
 .custom-item-element {
-    color: var(--sr5-text-primary); /* Text color */
+    color: var(--sr5-text-primary); // Text color
 }
 //lable back to white color
 .matrix-label {
@@ -1303,9 +1304,9 @@ input[type='text'].display {
 //table in any Item
 .SR5 th {
     color: var(--sr5-text-highlight);
-    padding: 10px; /* Padding */
-    text-align: left; /* Left text */
-    border-bottom: 2px solid var(--sr5-color-edge); /* Add a border at the bottom */
+    padding: 10px;
+    text-align: left;
+    border-bottom: 2px solid var(--sr5-color-edge);
     @include config.font-size(14);
 }
 .SR5 th:hover {
@@ -1328,5 +1329,5 @@ input[type='text'].display {
     color: var(--sr5-text-highlight-muted);
 }
 .SR5 tr p:not(th p) {
-    padding-left: 10px; /* Padding on the left */
+    padding-left: 10px;
 }

@@ -1,9 +1,9 @@
-/**
- * Everything relating to the SR5ActiveEffectConfig sheet
- *
- * In general the effect config isn't changed much from default Foundry styling.
- * Design here is only for added elements to adhere to Foundry styling.
-*/
+//
+// Everything relating to the SR5ActiveEffectConfig sheet
+//
+// In general the effect config isn't changed much from default Foundry styling.
+// Design here is only for added elements to adhere to Foundry styling.
+//
 @use '../config';
 
 // TODO: this is always in light-mode,
@@ -16,7 +16,7 @@
         border-radius: 3px;
     }
 
-    /* Effects Tab Container */
+    // Effects Tab Container
     section.tab[data-tab="effects"] {
         padding: 0.75em;
         padding-top: 0;
@@ -24,7 +24,7 @@
         color: #111;
     }
 
-    /* Header Row */
+    // Header Row
     .effects-header {
         font-weight: bold;
         padding: 0.25em 0;
@@ -33,7 +33,7 @@
         align-items: center;
     }
 
-    /* Key, Mode, Value Columns */
+    // Key, Mode, Value Columns
     .effect-change > .key,
     .effect-change > .value,
     .effect-change > .mode {
@@ -53,7 +53,7 @@
         min-width: 14ch;
     }
 
-    /* Control Buttons Column */
+    // Control Buttons Column
     .effect-controls {
         flex: 0 0 auto;
         display: flex;
@@ -62,7 +62,7 @@
         align-items: center;
     }
 
-    /* Input Fields */
+    // Input Fields
     .effect-change input[type="text"],
     .effect-change select {
         width: 100%;
@@ -80,7 +80,7 @@
         white-space: nowrap;
     }
 
-    /* Row Items */
+    // Row Items
     .changes-list {
         margin: 0.5em 0 0;
         padding: 0;
@@ -92,7 +92,7 @@
         align-items: center;
     }
 
-    /* Add/Delete Buttons */
+    // Add/Delete Buttons
     .effect-control {
         color: #444;
         cursor: pointer;

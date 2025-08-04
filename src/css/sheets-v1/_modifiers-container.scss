@@ -1,16 +1,18 @@
-/**
- * Rules around the value modifier pop up that's shown for Value style data structures like Attributes, Skills, etc.
- */
+//
+// Rules around the value modifier pop up that's shown for Value style data structures like Attributes, Skills, etc.
+//
 @use '../config';
 
 .sr5 .value {
+    position: relative;
+    isolation: isolate;
+
     >.value-modifiers-container {
         display: none;
         visibility: hidden;
 
         position: absolute;
-        /* We WILL be on top! */
-        z-index: 2147483647;
+        z-index: 2;
 
         opacity: 0;
         transition: opacity 0.3s;
@@ -32,7 +34,7 @@
         font-weight: normal;
 
         >.value-modifier-name {
-            font-weight: bold;
+            font-weight: 600;
         }
 
         >.value-modifiers-base {
@@ -45,7 +47,7 @@
         }
 
         >.value-modifiers-total {
-            font-weight: bold;
+            font-weight: 600;
             border-top: 1px double var(--sr5-text-highlight);
             color: var(--sr5-text-primary);
         }

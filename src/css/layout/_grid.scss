@@ -20,7 +20,7 @@ $names: ('grid', 'inline-grid');
     $display: if($name == 'inline-grid', inline grid, grid);
 
     @for $number from 1 through 16 {
-        .#{$name}-column-#{$number}
+        .#{$name}-columns-#{$number}
         {
             display: $display;
             grid-template-columns: repeat(#{$number}, minmax(0, 1fr));

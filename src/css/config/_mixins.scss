@@ -15,44 +15,89 @@
 // - Visual effects: `shadow-elevation`
 // -----------------------------------------------------------------------------
 
-
+@use 'sass:list';
+@use 'sass:meta';
+@use 'sass:map';
 @use 'sass:math';
+@use 'sass:string';
 @use 'variables';
 @use 'theme';
 @use 'functions';
 
-// Legacy Section
-@mixin rollable {
-    &:hover {
-        @include linkHovered;
-        cursor: pointer;
+// Generic hover helper
+@mixin hover-transition(
+  $color: null,
+  $background-color: null,
+  $border-color: null,
+  $transition-duration: 250ms,
+  $transition-timing-function: ease-in-out
+) {
+  $transition-properties: ();
+
+  @if $color {
+    $transition-properties: list.append($transition-properties, color);
+  }
+  @if $background-color {
+    $transition-properties: list.append($transition-properties, background-color);
+  }
+  @if $border-color {
+    $transition-properties: list.append($transition-properties, border-color);
+  }
+
+  @if list.length($transition-properties) > 0 {
+    $transition-string: '';
+    @each $property in $transition-properties {
+      $transition-string: $transition-string + $property + ' ' + $transition-duration + ' ' + $transition-timing-function + ', ';
     }
+    $transition-string: string.slice($transition-string, 1, string.length($transition-string) - 2);
+
+    transition: string.unquote($transition-string);
+  }
+
+  cursor: pointer;
+
+  &:hover {
+    @if $color {
+      color: $color;
+    }
+    @if $background-color {
+      background-color: $background-color;
+    }
+    @if $border-color {
+      border-color: $border-color;
+    }
+  }
 }
 
-@mixin systemFonts {
-    font-family: variables.$sans-font-stack;
-}
+// font-family mixin allow additional weights of 'none' and 'default'
+@mixin use-font($family: 'sans', $weight: 'none') {
+    $font-stacks: (
+      'sans': (
+        stack: variables.$sans-font-stack,
+        default-weight: variables.$default-sans-weight
+      ),
+      'serif': (
+        stack: variables.$serif-font-stack,
+        default-weight: variables.$default-serif-weight
+      ),
+      'mono': (
+        stack: variables.$mono-font-stack,
+        default-weight: variables.$default-mono-weight
+      )
+    );
 
-@mixin title {
-    font-family: variables.$sans-font-stack;
-    color: var(--sr5-text-primary);
-    @include textOutline;
-}
+    $font-data: map.get($font-stacks, $family);
 
-@mixin textOutline {
-    color: var(--sr5-text-primary);
-    text-shadow: -1px -1px 0 var(--sr5-text-primary-inverse), 1px -1px 0 var(--sr5-text-primary-inverse), -1px 1px 0 var(--sr5-text-primary-inverse),
-        1px 1px 0 var(--sr5-text-primary-inverse);
-}
+    @if $font-data {
+        font-family: map.get($font-data, stack);
 
-@mixin sheet {
-    background: var(--sr5-backdrop);
-    color: var(--sr5-text-primary);
-}
-
-@mixin linkHovered {
-    text-shadow: 0 0 8px var(--sr5-text-secondary);
-    color: var(--sr5-text-secondary);
+        @if $weight != 'none' and ($weight == 'default' or meta.type-of($weight) == 'number') {
+          font-weight: if($weight == 'default', map.get($font-data, default-weight), $weight);
+        }
+    }
+    @else {
+      @warn "Unknown font family `#{$family}` passed to use-font mixin.";
+    }
 }
 
 /// Apply a FoundryVTT font size using a CSS variable fallback.
@@ -80,7 +125,7 @@
     $enhanced-blur: $enhanced-y-offset + math.ceil($elevation * 0.25px);
     $enhanced-spread: math.floor(-$elevation * 0.125px);
 
-    // Set the opacity for the shadows. You might want to make these configurable.
+    // Set the opacity for the shadows.
     $base-opacity: 0.14;
     $enhanced-opacity: 0.12;
 
@@ -93,6 +138,26 @@
       box-shadow: $base-shadow, $enhanced-shadow;
     } @else {
       box-shadow: $base-shadow;
+    }
+  }
+}
+
+// Utility Mixin for condition box styles
+@mixin condition-monitor-style($name, $color-var, $strong-color-var: null) {
+  &.#{$name} .cell {
+    box-shadow: inset 0 0 6px var(--#{$color-var});
+    border: 1px solid var(--#{$color-var});
+
+    @if $strong-color-var != null {
+      &:hover {
+        border-color: var(--#{$strong-color-var});
+        box-shadow: inset 0 0 12px var(--#{$strong-color-var});
+      }
+    }
+
+    &.filled {
+      background: oklch(from var(--#{$color-var}) l c h / 0.5);
+      color: var(--sr5-text-primary);
     }
   }
 }

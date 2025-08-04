@@ -19,7 +19,6 @@
 @use '../config';
 
 .sr5 {
-    font-family: config.$sans-font-stack;
-    font-weight: 500;
+    @include config.use-font($weight: 'default');
     color: var(--sr5-text-primary);
 }

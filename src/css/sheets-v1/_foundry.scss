@@ -1,18 +1,18 @@
-/**
- * Rules related to FoundryVTT styling meant to not be limited to the system id.
- * Everything here will overwrite default Foundry Styling.
- */
+//
+// Rules related to FoundryVTT styling meant to not be limited to the system id.
+// Everything here will overwrite default Foundry Styling.
+//
 
-/**
-  * GENERAL ELEMENT STYLING
-  */
+//
+// GENERAL ELEMENT STYLING
+//
 
 @use '../config';
 
 blockquote {
     padding-top: 5px;
     padding-bottom: 5px;
-    background: var(--sr5-surface-elevated);
+    background: var(--sr5-surface-high);
 }
 
 input[type='text'].display {
@@ -25,7 +25,7 @@ input[type='text'].display {
 
 .display.text.left.document-name {
     @include config.font-size(24);
-    border: 0;
+    border: none;
 }
 
 .ProseMirror-selectednode {
@@ -36,9 +36,9 @@ input[type='text'].display {
     color: var(--sr5-text-primary);
 }
 
-/**
- * JOURNAL ENTRY STYLING
- */
+//
+// JOURNAL ENTRY STYLING
+//
 // Journal Entry
 .sheet.journal-entry .journal-entry-content,
 // Journal Entry Page Editor
@@ -54,14 +54,16 @@ input[type='text'].display {
     h1 {
         color: var(--sr5-text-secondary);
         @include config.font-size(24);
+        border-color: var(--sr5-text-secondary);
     }
 
     h2 {
         color: var(--sr5-text-secondary);
+        border-color: var(--sr5-text-secondary);
     }
 
     table {
-        background: var(--sr5-surface-elevated);
+        background: var(--sr5-surface-high);
         @include config.font-size(13);
         caption{
             background: inherit;
@@ -88,7 +90,7 @@ input[type='text'].display {
     }
 
     tr:nth-child(even) {
-        background-color: var(--sr5-surface-elevated);
+        background-color: var(--sr5-surface-high);
     }
 
     tr:first-child th {
@@ -146,9 +148,9 @@ input[type='text'].display {
     color: var(--sr5-text-primary);
 }
 
-/**
- * CHAT MESSAGE STYLING
- */
+//
+// CHAT MESSAGE STYLING
+//
 // Public Roll
 .chat-message,
 .chat-message.emote {
@@ -179,9 +181,10 @@ input[type='text'].display {
 .chat-message .table-draw .table-description {
     color: var(--sr5-text-primary);
 }
-/**
- * Settings Sidebar
- */
+
+//
+// Settings Sidebar
+//
 // Links for system information in the settings sidebar.
 #game-details > .system-links {
     gap: 0.5rem;
@@ -197,9 +200,9 @@ input[type='text'].display {
         }
     }
 }
-/** Replicate Foundry .dialog stiling for flex row buttons. FormDialog sublcasses simply adding class dialog will
- * otherwise cause issues with custom button styling.
- */
+// Replicate Foundry .dialog stiling for flex row buttons. FormDialog sublcasses simply adding class dialog will
+// otherwise cause issues with custom button styling.
+//
 .form-dialog .window-content .dialog-buttons {
     display: flex;
     flex-direction: row;
@@ -220,7 +223,7 @@ input[type='text'].display {
 }
 
 .list-header.item-section[data-item-id="weapon"][data-item-type=""] {
-    color: var(--sr5-text-highlight);  /* set the color to yellow */
+    color: var(--sr5-text-highlight);
     @include config.font-size(13);
 }
 

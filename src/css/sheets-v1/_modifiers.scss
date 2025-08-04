@@ -1,6 +1,6 @@
-/**
-  * Is used on TokenHUDs to display a additional segment per situational modifer.
-  */
+//
+// Is used on TokenHUDs to display a additional segment per situational modifer.
+//
 
 @use '../config';
 
@@ -24,7 +24,7 @@
         flex-wrap: wrap;
         align-items: stretch;
         width: 160px;
-        background: var(--sr5-surface-elevated);
+        background: var(--sr5-surface-high);
         box-shadow: 0 0 15px var(--sr5-text-primary-inverse);
         border: 1px solid var(--sr5-text-primary-inverse-muted);
         color: var(--sr5-text-primary);
@@ -56,9 +56,9 @@
     }
 }
 
-/**
- * All stylings necessary for situation modifiers
- */
+//
+// All stylings necessary for situation modifiers
+//
 .sr5#situational-modifiers-application {
 
     // Remove other sr5 window styles.

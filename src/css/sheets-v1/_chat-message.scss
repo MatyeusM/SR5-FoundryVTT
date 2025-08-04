@@ -5,21 +5,21 @@
 
 .sr5 {
     &.chat-card {
-        @include config.sheet;
+        background: var(--sr5-backdrop);
         font-style: normal;
         @include config.font-size(16);
 
-        /**
-         * Content with this class should be hidden from players eyes
-         * Check SuccessTest._showGmOnlyContent for when to show it to users.
-         */
+        //
+        // Content with this class should be hidden from players eyes
+        // Check SuccessTest._showGmOnlyContent for when to show it to users.
+        //
         .gm-only-content {
             display: none !important;
         }
 
         .clickable:hover {
             cursor: pointer;
-            background: var(--sr5-surface-elevated);
+            background: var(--sr5-surface-high);
             color: var(--sr5-text-primary);
         }
 
@@ -66,7 +66,7 @@
             &:hover {
                 cursor: pointer;
                 outline: none;
-                box-shadow: 0 0 5px var(--color-shadow-primary);
+                box-shadow: 0 0 5px var(--sr5-text-secondary);
             }
         }
         .card-description {
@@ -272,7 +272,6 @@
                 }
             }
             .test-code {
-                @include config.systemFonts;
                 @include config.font-size(12);
             }
             &.can-wrap {
@@ -293,15 +292,17 @@
             border-bottom: 1px solid var(--sr5-text-primary-inverse);
         }
         .dice-roll-content {
-            padding: 0.5em 0.5em;
+            gap: 0.25rem;
             display: flex;
             flex-flow: row wrap;
             justify-content: center;
             .dice-roll {
-                background-image: config.asset('d6-grey.svg', 'icons/svg/');
-                background-size: 24px 24px;
+                // asset no longer exists
+                // background-image: config.asset('d6-grey.svg', 'icons/svg/');
+                background: var(--sr5-surface-highest);
+                border-radius: 0.25rem;
                 @include config.font-size(16);
-                font-weight: bold;
+                font-weight: 700;
                 text-align: center;
                 width: 24px;
                 line-height: 24px;
@@ -311,11 +312,9 @@
 
                 &.red {
                     color: var(--sr5-color-physical);
-                    filter: sepia(0.5) hue-rotate(-60deg);
                 }
                 &.green {
                     color: var(--sr5-color-matrix);
-                    filter: sepia(0.5) hue-rotate(60deg);
                 }
             }
         }

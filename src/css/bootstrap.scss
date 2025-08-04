@@ -13,12 +13,13 @@
 // Note:
 // - To add new sheets/components/config files, forward them here.
 // -----------------------------------------------------------------------------
-//@forward 'fonts';
+@forward 'fonts';
 
 // do not uncomment until purgecss + postcss.config.mjs is running
 // as it will pollute the final .css file otherwise
 // @forward 'layout/flex';
 // @forward 'layout/grid';
+// @forward 'layout/sizing';
 // @forward 'layout/spacing';
 
 // Legacy Section

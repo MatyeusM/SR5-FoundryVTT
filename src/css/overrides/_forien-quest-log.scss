@@ -1,5 +1,5 @@
-/** This is intended to replace foriens Quest Log to Match its CSS to Shadowrun Styles
- */
+// This is intended to replace foriens Quest Log to Match its CSS to Shadowrun Styles
+//
 @use '../config';
 
  #forien-quest-log.window-app .window-content {
@@ -63,7 +63,6 @@ body #forien-quest-log .quest-log .table ul li.drag-quest:hover {
 
 body .window-app.forien-quest-preview .quest-body .details-header .quest-setup .quest-giver-name h2:hover {
     color: var(--sr5-text-secondary);
-    text-shadow: 0 0 5px var(--sr5-text-primary), 0 0 3px var(--sr5-text-primary), 0 0 4px var(--sr5-text-secondary), 0 0 5px var(--sr5-text-secondary), 0 0 5px var(--sr5-text-secondary), 0 0 4px var(--sr5-text-secondary), 0 0 4px var(--sr5-text-primary); /* Add this line for glow */
 }
 
 .tox .tox-tbtn svg {
@@ -113,7 +112,7 @@ body #forien-quest-log h1, .window-app.forien-quest-preview h1 {
 }
 
 body #forien-quest-log h1, body .window-app.forien-quest-preview h1 {
-    line-height: 1;  /* or whatever line-height value you want */
+    line-height: 1;
     text-indent: 10px;
     padding-top: 2px;
 }
@@ -131,7 +130,7 @@ body #forien-quest-log .quest-log .table ul .title h2, body .window-app.forien-q
     margin: 4px;
     padding: 0px;
     color: var(--sr5-text-highlight);
-    background: var(--sr5-surface-elevated);
+    background: var(--sr5-surface-high);
 }
 
 
@@ -171,12 +170,12 @@ body .window-app.forien-quest-preview .quest-body .quest-info .quest-col-right h
     display: flex;
     flex: 0 0 1px;
     margin-bottom: 4px;
-    background: var(--sr5-surface-elevated);
+    background: var(--sr5-surface-high);
 }
 //table h2
 body #forien-quest-log .quest-log .table ul li.drag-quest {
     align-items: center;
-    background: var(--sr5-surface-elevated);
+    background: var(--sr5-surface-high);
     border: 1px solid var(--sr5-control-border);
     border-radius: 5px;
     display: flex;
@@ -192,7 +191,7 @@ body #forien-quest-log .quest-log .table ul .title h2 {
 }
 
 body .open-quest.tasks {
-    color: var(--sr5-text-primary); /* Sets the background color */
+    color: var(--sr5-text-primary);
 }
 
 //Buttons
@@ -245,9 +244,9 @@ body #forien-quest-log .quest-log .table ul .title p {
 //End Quest Log Styles
 
 //Start Simple Calendar
-/**
- * CHAT MESSAGE STYLING
- */
+//
+// CHAT MESSAGE STYLING
+//
 // Public Roll
 .chat-message,
 .chat-message.emote {

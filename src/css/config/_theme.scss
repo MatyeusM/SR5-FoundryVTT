@@ -57,11 +57,29 @@ $color-scheme: (
 // use :root --sr5-varname properties.
 body {
     // shadowrun-related colors
+    --sr5-color-stun-strong: #{functions.getColor($color-scheme, 'mental', 450)};
     --sr5-color-stun: #{functions.getColor($color-scheme, 'mental', 600)};
+    --sr5-color-stun-subtle: #{functions.getColor($color-scheme, 'mental', 750)};
+
+    --sr5-color-physical-strong: #{functions.getColor($color-scheme, 'physical', 450)};
     --sr5-color-physical: #{functions.getColor($color-scheme, 'physical', 600)};
+    --sr5-color-physical-subtle: #{functions.getColor($color-scheme, 'physical', 750)};
+
+    --sr5-color-overflow-strong: #{functions.getColor($color-scheme, 'overflow', 450)};
     --sr5-color-overflow: #{functions.getColor($color-scheme, 'overflow', 600)};
+    --sr5-color-overflow-subtle: #{functions.getColor($color-scheme, 'overflow', 750)};
+
+    --sr5-color-matrix-strong: #{functions.getColor($color-scheme, 'matrix', 450)};
     --sr5-color-matrix: #{functions.getColor($color-scheme, 'matrix', 600)};
+    --sr5-color-matrix-subtle: #{functions.getColor($color-scheme, 'matrix', 750)};
+
+    --sr5-color-magic-strong: #{functions.getColor($color-scheme, 'magic', 450)};
+    --sr5-color-magic: #{functions.getColor($color-scheme, 'magic', 600)};
+    --sr5-color-magic-subtle: #{functions.getColor($color-scheme, 'magic', 750)};
+
+    --sr5-color-edge-strong: #{functions.getColor($color-scheme, 'primary', 450)};
     --sr5-color-edge: #{functions.getColor($color-scheme, 'primary', 600)};
+    --sr5-color-edge-subtle: #{functions.getColor($color-scheme, 'primary', 750)};
     // text-colors
     --sr5-text-primary: #{functions.getColor($color-scheme, 'neutral', 300)};
     --sr5-text-primary-muted: #{functions.getColor($color-scheme, 'neutral', 500)};
@@ -79,7 +97,7 @@ body {
     --sr5-control-icon-muted: #{functions.getColor($color-scheme, 'neutral', 500)};
     // background elements
     --sr5-surface: #{functions.getColor($color-scheme, 'neutral', 900)};
-    --sr5-surface-elevated: #{functions.getColor($color-scheme, 'neutral', 800)};
+    --sr5-surface-high: #{functions.getColor($color-scheme, 'neutral', 800)};
     --sr5-surface-secondary: #{functions.getColor($color-scheme, 'primary', 400)};
     --sr5-surface-secondary-elevated: #{functions.getColor($color-scheme, 'primary', 200)};
     --sr5-backdrop: #{functions.asset('light-page.webp')};
@@ -91,12 +109,29 @@ body {
 
     &.theme-dark {
         // shadowrun-related colors
+        --sr5-color-stun-strong: #{functions.getColor($color-scheme, 'mental', 550)};
         --sr5-color-stun: #{functions.getColor($color-scheme, 'mental', 400)};
+        --sr5-color-stun-subtle: #{functions.getColor($color-scheme, 'mental', 250)};
+
+        --sr5-color-physical-strong: #{functions.getColor($color-scheme, 'physical', 550)};
         --sr5-color-physical: #{functions.getColor($color-scheme, 'physical', 400)};
+        --sr5-color-physical-subtle: #{functions.getColor($color-scheme, 'physical', 250)};
+
+        --sr5-color-overflow-strong: #{functions.getColor($color-scheme, 'overflow', 550)};
         --sr5-color-overflow: #{functions.getColor($color-scheme, 'overflow', 400)};
+        --sr5-color-overflow-subtle: #{functions.getColor($color-scheme, 'overflow', 250)};
+
+        --sr5-color-matrix-strong: #{functions.getColor($color-scheme, 'matrix', 550)};
         --sr5-color-matrix: #{functions.getColor($color-scheme, 'matrix', 400)};
+        --sr5-color-matrix-subtle: #{functions.getColor($color-scheme, 'matrix', 250)};
+
+        --sr5-color-magic-strong: #{functions.getColor($color-scheme, 'magic', 550)};
         --sr5-color-magic: #{functions.getColor($color-scheme, 'magic', 400)};
+        --sr5-color-magic-subtle: #{functions.getColor($color-scheme, 'magic', 250)};
+
+        --sr5-color-edge-strong: #{functions.getColor($color-scheme, 'primary', 550)};
         --sr5-color-edge: #{functions.getColor($color-scheme, 'primary', 400)};
+        --sr5-color-edge-subtle: #{functions.getColor($color-scheme, 'primary', 250)};
         // text-colors
         --sr5-text-primary: #{functions.getColor($color-scheme, 'neutral', 900)};
         --sr5-text-primary-muted: #{functions.getColor($color-scheme, 'neutral', 700)};
@@ -114,7 +149,8 @@ body {
         --sr5-control-icon-muted: #{functions.getColor($color-scheme, 'neutral', 500)};
         // background elements
         --sr5-surface: #{functions.getColor($color-scheme, 'neutral', 100)};
-        --sr5-surface-elevated: #{functions.getColor($color-scheme, 'neutral', 200)};
+        --sr5-surface-high: #{functions.getColor($color-scheme, 'neutral', 200)};
+        --sr5-surface-highest: #{functions.getColor($color-scheme, 'neutral', 300)};
         --sr5-surface-secondary: #{functions.getColor($color-scheme, 'secondary', 200)};
         --sr5-surface-secondary-elevated: #{functions.getColor($color-scheme, 'secondary', 400)};
         --sr5-backdrop: linear-gradient(rgb(0 0 0 / 0.6), rgb(0 0 0 / 0.6)),

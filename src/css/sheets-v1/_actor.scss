@@ -16,11 +16,28 @@
         overflow: hidden;
     }
     .name {
-        @include config.systemFonts;
         background: var(--sr5-application-title-background);
         @include config.font-size(28); // bastardization, this sets the height of the container not the font size!
         margin-bottom: 0;
         padding-left: 5px;
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 2px;
+            width: 0%;
+            background-color: var(--sr5-text-highlight);
+            transition: width 300ms ease;
+            transform-origin: left center;
+        }
+
+        &:has(input:focus)::after {
+          width: 100%;
+        }
+
         input[type=text].display {
             background: none;
         }
@@ -48,7 +65,7 @@
             flex-wrap: wrap;
         }
         .attribute {
-            @include config.title;
+            font-weight: 600;
 
             align-items: center;
             color: var(--sr5-text-highlight);
@@ -95,6 +112,7 @@
                 > .attribute-value-total {
                     color: var(--sr5-text-primary);
                     @include config.font-size(18);
+                    font-weight: 700;
                     width: 100%;
                     text-align: center;
                 }
@@ -109,7 +127,7 @@
                     @include config.font-size(12);
                 }
                 &.roll {
-                    @include config.rollable;
+                    @include config.hover-transition($color: var(--sr5-text-highlight-muted));
                 }
             }
 
@@ -148,14 +166,10 @@
                 justify-content: space-evenly;
                 margin-bottom: 0.1em;
                 width: 100%;
+
                 &.center {
                     justify-content: center;
-                    & > *:not(:first-child) {
-                        margin-left: 4px;
-                    }
-                    & > *:not(:last-child) {
-                        margin-right: 4px;
-                    }
+                    gap: 0.5rem;
                 }
                 &.between {
                     justify-content: space-between;
@@ -183,7 +197,6 @@
         }
     }
     .limit {
-        @include config.systemFonts;
         padding: 0 0.1em;
         margin-top: -2px;
         text-align: center;
@@ -197,7 +210,7 @@
 
     // Interaction Element for Skill Lists
     .skill-header {
-        @include config.rollable;
+        @include config.hover-transition($color: var(--sr5-text-secondary));
     }
 
     // Sprite sheet power tab list had broken flex/block relations, causing missing a scrollbar.
@@ -246,17 +259,25 @@
     }
 }
 
-.sr5 #filter-skills.display.text.left {
-    @include config.font-size(15);
+.sr5 #filter-skills {
+    @include config.font-size(14);
+    border: 1px solid var(--sr5-control-border);
+    width: 100%;
 }
 
-/**
- * Skill Editing Application
- */
+.sr5 .list-item:has(#filter-skills) {
+    padding: 0;
+}
+
+//
+// Skill Editing Application
+//
 .sr5.skill-edit-window {
     min-height: 200px;
     min-width: 370px;
     display: inline-block;
+    background: var(--sr5-backdrop);
+    padding-block: 0.25rem 0;
 
     .wholesheet {
         height: auto;
@@ -269,4 +290,10 @@
 .sr5 .flexcol-skills {
     display: flex;
     flex-direction: column;
+}
+
+// got to hack specifitivity, restore box-shadow behaviour
+// explicitly
+div input.attribute-input {
+    box-shadow: inset 0 0 6px oklch(from var(--sr5-control-border) l c h / 0.1);
 }
