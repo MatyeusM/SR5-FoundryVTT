@@ -90,7 +90,7 @@ body {
     --sr5-accent: #{functions.getColor($color-scheme, 'secondary', 300)};
     --sr5-accent-subtle: #{functions.getColor($color-scheme, 'secondary', 400)};
 
-    --sr5-action: #{functions.getColor($color-scheme, 'primary', 500)};
+    --sr5-action-strong: #{functions.getColor($color-scheme, 'primary', 500)};
     --sr5-action: #{functions.getColor($color-scheme, 'primary', 600)};
     --sr5-action-subtle: #{functions.getColor($color-scheme, 'primary', 700)};
 
@@ -170,11 +170,11 @@ body {
 
         --sr5-border-default-strong: #{functions.getColor($color-scheme, 'neutral', 100)};
         --sr5-border-default: #{functions.getColor($color-scheme, 'neutral', 100)};
-        --sr5-border-default-muted: #{functions.getColor($color-scheme, 'neutral', 100)};
+        --sr5-border-default-subtle: #{functions.getColor($color-scheme, 'neutral', 100)};
 
         --sr5-border-variant-strong: #{functions.getColor($color-scheme, 'primary', 950)};
         --sr5-border-variant: #{functions.getColor($color-scheme, 'primary', 800)};
-        --sr5-border-variant-muted: #{functions.getColor($color-scheme, 'primary', 650)};
+        --sr5-border-variant-subtle: #{functions.getColor($color-scheme, 'primary', 650)};
 
         --sr5-surface: #{functions.getColor($color-scheme, 'neutral', 100)};
         --sr5-surface-high: #{functions.getColor($color-scheme, 'neutral', 200)};
