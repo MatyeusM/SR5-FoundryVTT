@@ -4,15 +4,12 @@
 @use '../config';
 
 .sr5 .value {
-    position: relative;
-    isolation: isolate;
-
     >.value-modifiers-container {
         display: none;
         visibility: hidden;
 
         position: absolute;
-        z-index: 2;
+        z-index: 2147483647;
 
         opacity: 0;
         transition: opacity 0.3s;
@@ -28,7 +25,7 @@
         display: grid;
         grid-template-columns: 200px 50px;
         background: var(--sr5-backdrop);
-        border: 1px solid var(--sr5-text-primary-inverse);
+        border: 1px solid var(--sr5-text-inverse);
         padding: 0.5em 0.5em 0.5em 0.5em;
         text-align: left;
         font-weight: normal;
@@ -38,18 +35,18 @@
         }
 
         >.value-modifiers-base {
-            border-bottom: 1px solid var(--sr5-text-highlight);
-            color: var(--sr5-text-primary);
+            border-bottom: 1px solid var(--sr5-accent);
+            color: var(--sr5-text);
         }
 
         >.value-modifiers-modifier {
-            color: var(--sr5-text-primary);
+            color: var(--sr5-text);
         }
 
         >.value-modifiers-total {
             font-weight: 600;
-            border-top: 1px double var(--sr5-text-highlight);
-            color: var(--sr5-text-primary);
+            border-top: 1px double var(--sr5-accent);
+            color: var(--sr5-text);
         }
 
         >.value-modifiers-invalid-total {

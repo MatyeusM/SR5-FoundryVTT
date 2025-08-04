@@ -25,9 +25,9 @@
         align-items: stretch;
         width: 160px;
         background: var(--sr5-surface-high);
-        box-shadow: 0 0 15px var(--sr5-text-primary-inverse);
-        border: 1px solid var(--sr5-text-primary-inverse-muted);
-        color: var(--sr5-text-primary);
+        box-shadow: 0 0 15px var(--sr5-text-inverse);
+        border: 1px solid var(--sr5-text-inverse-muted);
+        color: var(--sr5-text);
         height: 40px;
         line-height: 40px;
         margin-bottom: 18px;
@@ -49,7 +49,7 @@
             cursor: pointer;
 
             &:hover {
-                box-shadow: 0 0 0.25em 0.15em var(--sr5-text-primary);
+                box-shadow: 0 0 0.25em 0.15em var(--sr5-text);
                 border-radius: 8px;
             }
         }
@@ -67,15 +67,15 @@
     }
 
     h1 {
-        border-bottom: 1px solid var(--sr5-text-highlight);
-        color: var(--sr5-text-highlight);
+        border-bottom: 1px solid var(--sr5-accent);
+        color: var(--sr5-accent);
         font-weight: bold;
     }
 
     // Add back in stylings as necessary
     h2,
     h3 {
-        color: var(--sr5-text-highlight);
+        color: var(--sr5-accent);
         border-bottom: none;
         font-weight: normal;
     }

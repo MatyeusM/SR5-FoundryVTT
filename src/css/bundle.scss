@@ -11,7 +11,7 @@
 // .Roll class is used for labels that will look for data-roll-id on itself or a parent RollId
 // TODO: Refactor html to replace with .roll
 .Roll {
-    @include config.hover-transition($color: var(--sr5-text-secondary));
+    @include config.hover-transition($color: var(--sr5-action));
 }
 
 //
@@ -103,7 +103,7 @@
     }
 
     .show-situation-modifiers-application {
-        @include config.hover-transition($color: var(--sr5-text-secondary));
+        @include config.hover-transition($color: var(--sr5-action));
     }
     .grid-2-col {
         display: grid;
@@ -222,7 +222,7 @@
 
     // more specifivity hacks
     a.control, a.control > i, a.document-id-link > i {
-        @include config.hover-transition($color: var(--sr5-text-highlight-muted));
+        @include config.hover-transition($color: var(--sr5-accent-subtle));
 
         &:hover {
             text-shadow: none;
@@ -321,7 +321,7 @@ input[type='checkbox'].toggle {
     max-height: 0;
     overflow-y: auto;
     transition: max-height 0.25s ease-in-out;
-    color: var(--sr5-text-primary);
+    color: var(--sr5-text);
 }
 
 .toggle:checked + .list-item-content + .collapsible-content {
@@ -330,33 +330,33 @@ input[type='checkbox'].toggle {
 //Collapsible End
 input[type='checkbox'].display {
     background: transparent;
-    color: var(--sr5-text-primary);
+    color: var(--sr5-text);
     border: none;
     text-align: center;
     @include config.font-size(16);
 
     &:hover {
         background: transparent;
-        border:  1px solid var(--sr5-control-border);
+        border:  1px solid var(--sr5-border-default);
     }
 }
 
 input[type='text'].disabled-for-display {
-    color: var(--sr5-text-primary-muted);
+    color: var(--sr5-text-subtle);
     background-color: transparent;
 }
 
 input[type='text'].display {
     font-weight: 700;
     background: var(--sr5-control-background);
-    color: var(--sr5-text-primary);
+    color: var(--sr5-text);
     border-radius: 0.3em;
-    border-color: var(--sr5-control-border);
+    border-color: var(--sr5-border-default);
     text-align: center;
     min-height: 1em;
 
     &::placeholder {
-        color: var(--sr5-text-primary-muted);
+        color: var(--sr5-text-subtle);
     }
 
     &.short {
@@ -377,7 +377,7 @@ input[type='text'].display {
     }
 
     &:disabled {
-        color: var(--sr5-text-primary);
+        color: var(--sr5-text);
         background: transparent;
         border-color: transparent;
         padding-left: 0;
@@ -407,15 +407,15 @@ input[type='text'].display {
 //
 .sr5 {
     hr {
-        border-color: var(--sr5-text-highlight);
+        border-color: var(--sr5-accent);
     }
 
     select.display,
     select {
-        color: var(--sr5-text-primary);
+        color: var(--sr5-text);
         background: var(--sr5-surface-high);
         border-radius: 0.3em;
-        border-color: var(--sr5-control-border);
+        border-color: var(--sr5-border-default);
 
         > option {
             background-color: var(--sr5-surface);
@@ -427,12 +427,12 @@ input[type='text'].display {
     //
     .form-group {
         label {
-            color: var(--sr5-text-primary);
+            color: var(--sr5-text);
             font-weight: bold;
         }
 
         input {
-            color: var(--sr5-text-primary);
+            color: var(--sr5-text);
         }
 
         .form-group-element-numerical {
@@ -440,7 +440,7 @@ input[type='text'].display {
             flex-direction: row;
 
             button {
-                border-color: var(--sr5-control-icon);
+                border-color: var(--sr5-neutral);
             }
 
             button,
@@ -472,26 +472,26 @@ input[type='text'].display {
     .inline-roll {
         border: 0;
         background: none;
-        color: var(--sr5-text-primary) !important;
+        color: var(--sr5-text) !important;
     }
 
     .entity-link.content-link {
-        color: var(--sr5-text-primary) !important;
+        color: var(--sr5-text) !important;
     }
 
     // An origin link is a uuid based entity link, without drag support.
     .origin-link {
-        background: var(--sr5-text-primary);
+        background: var(--sr5-text);
         padding: 1px 4px;
-        border: 1px solid var(--sr5-control-border);
+        border: 1px solid var(--sr5-border-default);
         border-radius: 2px;
         white-space: nowrap;
         word-break: break-all;
-        color: var(--sr5-text-primary-inverse);
+        color: var(--sr5-text-inverse);
     }
 
     .roll {
-        @include config.hover-transition($color: var(--sr5-text-secondary));
+        @include config.hover-transition($color: var(--sr5-action));
     }
 
     .editor {
@@ -500,14 +500,14 @@ input[type='text'].display {
     }
 
     .editor .tox-edit-area {
-        background: var(--sr5-control-icon);
+        background: var(--sr5-neutral);
     }
 
     // Styling for any prosemirror editors within shadowrun applications.
     .editor.prosemirror {
         // handles dropdown menus, not select based.
         .pm-dropdown {
-            color: var(--sr5-text-primary);
+            color: var(--sr5-text);
             background: var(--sr5-control-background-inverse);
             border-radius: 0.3em;
             border-color: var(--sr5-control-background-inverse);
@@ -515,7 +515,7 @@ input[type='text'].display {
             // Icons like chevron and ticks.
             i,
             i:hover {
-                color: var(--sr5-text-primary);
+                color: var(--sr5-text);
             }
 
             // ul will contain menus and sub-menus and can be nested.
@@ -525,7 +525,7 @@ input[type='text'].display {
 
             // li represents each menu entry in both menus and sub-menus
             ul > li:hover {
-                color: var(--sr5-text-primary);
+                color: var(--sr5-text);
                 border-color: var(--sr5-control-background);
                 background: var(--sr5-control-background-inverse);
             }
@@ -533,7 +533,7 @@ input[type='text'].display {
 
         // HTML editing uses a class-less textarea
         textarea {
-            color: var(--sr5-text-primary);
+            color: var(--sr5-text);
         }
     }
 
@@ -577,9 +577,9 @@ input[type='text'].display {
 
     .window-content {
         background: transparent;
-        color: var(--sr5-text-primary);
+        color: var(--sr5-text);
         overflow: hidden;
-        border: 1px solid var(--sr5-control-border);
+        border: 1px solid var(--sr5-border-default);
         border-top: 0px;
     }
 
@@ -587,7 +587,7 @@ input[type='text'].display {
         height: 95%;
         min-height: 15em;
         width: 100%;
-        color: var(--sr5-text-primary);
+        color: var(--sr5-text);
     }
 
     .mods-scroll,
@@ -595,7 +595,7 @@ input[type='text'].display {
         margin-bottom: 0.5em;
         flex: 1;
         overflow-y: auto;
-        color: var(--sr5-text-primary);
+        color: var(--sr5-text);
     }
     .flexcontainer-skills {
         display: flex;
@@ -625,7 +625,7 @@ input[type='text'].display {
 
     img {
         box-sizing: border-box;
-        border: 1px solid var(--sr5-text-primary-inverse);
+        border: 1px solid var(--sr5-text-inverse);
         border-radius: 2px;
         max-width: 100%;
         object-fit: contain;
@@ -640,7 +640,7 @@ input[type='text'].display {
     .tabs {
         flex: 0;
         align-items: stretch; // Make tabs stretch instead of space horizontally.
-        border-bottom: 1px solid var(--sr5-text-highlight);
+        border-bottom: 1px solid var(--sr5-accent);
 
         > a {
             margin: 0.25em;
@@ -651,7 +651,7 @@ input[type='text'].display {
             text-shadow: none;
             font-weight: 600;
             @include config.font-size(16);
-            @include config.hover-transition($color: var(--sr5-text-highlight-muted));
+            @include config.hover-transition($color: var(--sr5-accent-subtle));
 
             &::before {
                 content: "";
@@ -676,19 +676,19 @@ input[type='text'].display {
             }
 
             &.active {
-                color: var(--sr5-text-highlight);
+                color: var(--sr5-accent);
             }
         }
 
         > .item {
             // Make tabs stretch across horizontally.
-            color: var(--sr5-text-primary);
+            color: var(--sr5-text);
             flex: 1;
             text-align: center;
         }
     }
     .sheet .editor-content {
-        color: var(--sr5-text-primary);
+        color: var(--sr5-text);
         height: 100%;
         overflow-y: auto;
         word-break: break-word;
@@ -698,11 +698,11 @@ input[type='text'].display {
     }
 
     label.item-text.item-name[for='select-inventory'] {
-        color: var(--sr5-text-highlight);
+        color: var(--sr5-accent);
     }
 
     label.item-text.item-name {
-        color: var(--sr5-text-primary);
+        color: var(--sr5-text);
     }
 
     .tab {
@@ -741,7 +741,7 @@ input[type='text'].display {
                 bottom: 0;
                 left: -0.21875rem;
                 width: 1px;
-                background: var(--sr5-control-border);
+                background: var(--sr5-border-default);
             }
         }
     }
@@ -810,7 +810,7 @@ input[type='text'].display {
             }
 
             &.border-bottom {
-                border-bottom:  1px solid var(--sr5-control-border);
+                border-bottom:  1px solid var(--sr5-border-default);
             }
 
             &.gap-4 {
@@ -850,8 +850,8 @@ input[type='text'].display {
                 box-shadow 250ms ease-in-out;
             text-align: center;
             @include config.font-size(11);
-            border:  1px solid var(--sr5-control-border);
-            color: var(--sr5-text-primary-muted);
+            border:  1px solid var(--sr5-border-default);
+            color: var(--sr5-text-subtle);
             background: var(--sr5-surface);
             min-width: 26px;
             height: 18px;
@@ -861,12 +861,12 @@ input[type='text'].display {
             justify-content: center;
 
             &.filled {
-                background: var(--sr5-control-icon);
-                color: var(--sr5-text-primary-inverse);
+                background: var(--sr5-neutral);
+                color: var(--sr5-text-inverse);
             }
 
             &:hover {
-                border-color: var(--sr5-text-primary);
+                border-color: var(--sr5-text);
             }
         }
     }
@@ -893,10 +893,10 @@ input[type='text'].display {
         margin-inline: 1px;
 
         &.matrix {
-            color: var(--sr5-text-primary);
+            color: var(--sr5-text);
         }
         .has-desc {
-            @include config.hover-transition($color: var(--sr5-text-secondary));
+            @include config.hover-transition($color: var(--sr5-action));
         }
 
         &.no-border {
@@ -913,16 +913,16 @@ input[type='text'].display {
 
         &.item-section {
             background: var(--sr5-surface);
-            color: var(--sr5-text-highlight);
+            color: var(--sr5-accent);
             margin-right: 0;
             margin-left: 0;
-            border-bottom: 1px solid var(--sr5-text-highlight);
+            border-bottom: 1px solid var(--sr5-accent);
             padding-top: 5px;
             &.sprite {
                 background: none;
             }
             &.faded {
-                color: var(--sr5-text-primary-muted);
+                color: var(--sr5-text-subtle);
             }
 
             &.subcategory-header {
@@ -974,7 +974,7 @@ input[type='text'].display {
                 max-width: 50px;
 
                 &.item-roll {
-                    @include config.hover-transition($color: var(--sr5-text-secondary));
+                    @include config.hover-transition($color: var(--sr5-action));
 
                     &:hover {
                         > img {
@@ -1003,7 +1003,7 @@ input[type='text'].display {
                 flex-flow: row nowrap;
                 justify-content: space-evenly;
                 align-items: center;
-                color: var(--sr5-control-icon);
+                color: var(--sr5-neutral);
                 @include config.font-size(12);
                 height: 100%;
             }
@@ -1014,11 +1014,11 @@ input[type='text'].display {
                 flex: 1 0 auto;
                 text-align: center;
                 height: 100%;
-                border: var(--sr5-text-primary);
+                border: var(--sr5-text);
                 padding-right: 10px;
 
                 &.faded {
-                    color: var(--sr5-text-primary-muted);
+                    color: var(--sr5-text-subtle);
                 }
 
                 &.center {
@@ -1035,10 +1035,10 @@ input[type='text'].display {
                     width: auto;
 
                     &.fresh-import {
-                        color: var(--sr5-text-highlight);
+                        color: var(--sr5-accent);
                     }
                     &.mods-label {
-                        color: var(--sr5-text-primary);
+                        color: var(--sr5-text);
                     }
                 }
 
@@ -1075,7 +1075,7 @@ input[type='text'].display {
                     width: 16em;
                 }
                 .content-inner {
-                    color: var(--sr5-text-primary);
+                    color: var(--sr5-text);
                 }
             }
 
@@ -1088,7 +1088,7 @@ input[type='text'].display {
             }
 
             &.skill-header {
-                @include config.hover-transition($color: var(--sr5-text-secondary));
+                @include config.hover-transition($color: var(--sr5-action));
             }
         }
     }
@@ -1110,8 +1110,8 @@ input[type='text'].display {
 
                 > * {
                     flex-shrink: 0;
-                    border-right: 1px solid var(--sr5-control-border);
-                    border-bottom: 1px solid var(--sr5-control-border);
+                    border-right: 1px solid var(--sr5-border-default);
+                    border-bottom: 1px solid var(--sr5-border-default);
                     padding: 0.25em 0.5em;
                     margin: 0.1em 0.25em;
                     box-shadow: 0.2em 0.2em 0.3em config.$shadow;
@@ -1154,8 +1154,8 @@ input[type='text'].display {
 
     button,
     button.display {
-        color: var(--sr5-text-primary);
-        border-color: var(--sr5-text-primary-inverse);
+        color: var(--sr5-text);
+        border-color: var(--sr5-text-inverse);
         background: var(--sr5-control-background);
         border-radius: 0.3em;
         text-align: center;
@@ -1170,15 +1170,15 @@ input[type='text'].display {
         }
 
         &.light {
-            color: var(--sr5-text-primary-inverse);
-            background: var(--sr5-text-primary);
+            color: var(--sr5-text-inverse);
+            background: var(--sr5-text);
         }
     }
 
     button.display.import-character {
-        color: var(--sr5-text-primary);
-        border-color: var(--sr5-text-primary-inverse);
-        background: var(--sr5-text-primary-inverse-muted);
+        color: var(--sr5-text);
+        border-color: var(--sr5-text-inverse);
+        background: var(--sr5-text-inverse-muted);
         border-radius: 0.3em;
         text-align: center;
 
@@ -1191,13 +1191,13 @@ input[type='text'].display {
         }
 
         &.light {
-            color: var(--sr5-text-primary-inverse);
-            background: var(--sr5-text-primary);
+            color: var(--sr5-text-inverse);
+            background: var(--sr5-text);
         }
     }
     button.display.show-hidden-skills {
-        color: var(--sr5-text-primary);
-        border-color: var(--sr5-text-primary-inverse);
+        color: var(--sr5-text);
+        border-color: var(--sr5-text-inverse);
         background: var(--sr5-surface-secondary);
         border-radius: 0.3em;
         text-align: center;
@@ -1211,14 +1211,14 @@ input[type='text'].display {
         }
 
         &.light {
-            color: var(--sr5-text-primary-inverse);
-            background: var(--sr5-text-primary);
+            color: var(--sr5-text-inverse);
+            background: var(--sr5-text);
         }
     }
 
     button.display.reset-actor-run-data {
-        color: var(--sr5-text-primary);
-        border-color: var(--sr5-text-primary-inverse);
+        color: var(--sr5-text);
+        border-color: var(--sr5-text-inverse);
         background: var(--sr5-surface-secondary);
         border-radius: 0.3em;
         text-align: center;
@@ -1232,8 +1232,8 @@ input[type='text'].display {
         }
 
         &.light {
-            color: var(--sr5-text-primary-inverse);
-            background: var(--sr5-text-primary);
+            color: var(--sr5-text-inverse);
+            background: var(--sr5-text);
         }
     }
 
@@ -1251,7 +1251,7 @@ input[type='text'].display {
     .env-modifier-active {
         border-radius: 8px;
         background-color: var(--sr5-surface-secondary-elevated);
-        color: var(--sr5-text-highlight);
+        color: var(--sr5-accent);
     }
 
     .env-modifier-total {
@@ -1278,55 +1278,55 @@ input[type='text'].display {
     }
 
     .cell-input-roll {
-        color: var(--sr5-text-highlight);
+        color: var(--sr5-accent);
     }
 
     // Intended to affect icons only within the url/pdf source controls.
     .source-button i.fas {
-        color:  var(--sr5-text-highlight-muted);
+        color:  var(--sr5-accent-subtle);
     }
 }
 //END SR5 Style
 
 .custom-item-element {
-    color: var(--sr5-text-primary); // Text color
+    color: var(--sr5-text); // Text color
 }
 //lable back to white color
 .matrix-label {
-    color: var(--sr5-text-primary);
+    color: var(--sr5-text);
 }
 
 .scroll-area-matrix {
     overflow-y: auto;
-    color: var(--sr5-text-primary);
+    color: var(--sr5-text);
 }
 
 //table in any Item
 .SR5 th {
-    color: var(--sr5-text-highlight);
+    color: var(--sr5-accent);
     padding: 10px;
     text-align: left;
     border-bottom: 2px solid var(--sr5-color-edge);
     @include config.font-size(14);
 }
 .SR5 th:hover {
-    color: var(--sr5-text-highlight-muted);
+    color: var(--sr5-accent-subtle);
 }
 .SR5 caption {
     background: none;
-    color: var(--sr5-text-highlight);
+    color: var(--sr5-accent);
     padding: 6px;
     text-align: left;
     @include config.font-size(14);
 }
 .SR5 caption:hover {
-    color: var(--sr5-text-secondary);
+    color: var(--sr5-action);
 }
 .SR5 tr {
-    color: var(--sr5-text-primary);
+    color: var(--sr5-text);
 }
 .SR5 tr:hover {
-    color: var(--sr5-text-highlight-muted);
+    color: var(--sr5-accent-subtle);
 }
 .SR5 tr p:not(th p) {
     padding-left: 10px;

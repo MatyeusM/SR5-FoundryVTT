@@ -4,7 +4,7 @@
 @use '../config';
 
 .sr5.form-dialog {
-    color: var(--sr5-text-primary);
+    color: var(--sr5-text);
     background: var(--sr5-backdrop);
 
   .dialog-title {
@@ -29,7 +29,7 @@
   .dialog-content-common {
     h2 {
       border: none;
-      color: var(--sr5-text-primary);
+      color: var(--sr5-text);
       margin: 0;
       text-underline: none;
     }

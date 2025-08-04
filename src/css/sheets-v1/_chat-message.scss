@@ -20,12 +20,12 @@
         .clickable:hover {
             cursor: pointer;
             background: var(--sr5-surface-high);
-            color: var(--sr5-text-primary);
+            color: var(--sr5-text);
         }
 
         .card-header {
             padding: 0.25em 0;
-            border-bottom: 1px solid var(--sr5-text-primary-inverse);
+            border-bottom: 1px solid var(--sr5-text-inverse);
 
 
             img {
@@ -46,12 +46,12 @@
             }
         }
         .card-header:first-of-type {
-            color: var(--sr5-text-highlight);
-            border-color: var(--sr5-text-highlight);
+            color: var(--sr5-accent);
+            border-color: var(--sr5-accent);
         }
         .button {
-            color: var(--sr5-text-primary);
-            border-color: var(--sr5-text-primary-inverse);
+            color: var(--sr5-text);
+            border-color: var(--sr5-text-inverse);
             background: var(--sr5-control-background);
             border-radius: 0.3em;
             text-align: center;
@@ -66,23 +66,18 @@
             &:hover {
                 cursor: pointer;
                 outline: none;
-                box-shadow: 0 0 5px var(--sr5-text-secondary);
+                box-shadow: 0 0 5px var(--sr5-action);
             }
         }
         .card-description {
             span {
-                border-right: 1px solid var(--sr5-text-primary-inverse);
+                border-right: 1px solid var(--sr5-text-inverse);
                 padding: 0;
-                padding-right: 0.3em;
+                gap: 0.3em;
                 @include config.font-size(12);
-
-                &:last-child {
-                    border-right: none;
-                    padding-right: 0;
-                }
             }
             .card-description-content {
-                border-bottom: 1px solid var(--sr5-text-primary-inverse);
+                border-bottom: 1px solid var(--sr5-text-inverse);
             }
         }
 
@@ -100,7 +95,7 @@
 
         .card-title {
             display: flex;
-            border-bottom: 1px solid var(--sr5-text-primary-inverse);
+            border-bottom: 1px solid var(--sr5-text-inverse);
             justify-content: flex-start;
             align-content: center;
             align-items: flex-end;
@@ -128,7 +123,7 @@
                 white-space: nowrap;
                 // Override Foundry default header styling.
                 border-bottom: none;
-                color: var(--sr5-text-primary);
+                color: var(--sr5-text);
 
                 &:hover {
                     text-shadow: -1px -1px 0 var(--sr5-color-stun), 1px -1px 0 var(--sr5-color-stun), -1px 1px 0 var(--sr5-color-stun), 1px 1px 0 var(--sr5-color-stun);
@@ -178,11 +173,11 @@
         }
         .card-description {
             padding: 0.25em;
-            border-bottom: 1px solid var(--sr5-text-primary-inverse);
+            border-bottom: 1px solid var(--sr5-text-inverse);
             display: none;
         }
         .card-content {
-            border-bottom: 1px solid var(--sr5-text-primary-inverse);
+            border-bottom: 1px solid var(--sr5-text-inverse);
 
             padding: 0.25em 0.25em 0.25em;
             display: flex;
@@ -289,7 +284,7 @@
         }
         .dice-rolls {
             display: none;
-            border-bottom: 1px solid var(--sr5-text-primary-inverse);
+            border-bottom: 1px solid var(--sr5-text-inverse);
         }
         .dice-roll-content {
             gap: 0.25rem;
@@ -321,7 +316,7 @@
         .glitch-content {
             display: flex;
             flex-flow: column;
-            border-bottom: 1px solid var(--sr5-text-primary-inverse);
+            border-bottom: 1px solid var(--sr5-text-inverse);
 
             .glitch {
                 position: relative;
@@ -411,6 +406,6 @@
     }
     .chat-select-link img:hover {
         padding: 0;
-        border: 1px solid var(--sr5-text-primary-inverse);
+        border: 1px solid var(--sr5-text-inverse);
     }
 }

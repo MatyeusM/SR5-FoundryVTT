@@ -80,32 +80,40 @@ body {
     --sr5-color-edge-strong: #{functions.getColor($color-scheme, 'primary', 450)};
     --sr5-color-edge: #{functions.getColor($color-scheme, 'primary', 600)};
     --sr5-color-edge-subtle: #{functions.getColor($color-scheme, 'primary', 750)};
-    // text-colors
-    --sr5-text-primary: #{functions.getColor($color-scheme, 'neutral', 300)};
-    --sr5-text-primary-muted: #{functions.getColor($color-scheme, 'neutral', 500)};
-    --sr5-text-primary-inverse: #{functions.getColor($color-scheme, 'neutral', 700)};
-    --sr5-text-primary-inverse-muted: #{functions.getColor($color-scheme, 'neutral', 500)};
-    --sr5-text-highlight: #{functions.getColor($color-scheme, 'secondary', 200)};
-    --sr5-text-highlight-muted: #{functions.getColor($color-scheme, 'secondary', 400)};
-    --sr5-text-secondary: #{functions.getColor($color-scheme, 'primary', 600)};
-    --sr5-text-secondary-muted: #{functions.getColor($color-scheme, 'primary', 500)};
-    // controls [form elements, buttons]
-    --sr5-control-background: #{color.adjust(functions.getColor($color-scheme, 'neutral', 100), $alpha: -0.9)};
-    --sr5-control-background-inverse: #{color.adjust(functions.getColor($color-scheme, 'neutral', 700), $alpha: -0.9)};
-    --sr5-control-border: #{functions.getColor($color-scheme, 'neutral', 700)};
-    --sr5-control-icon: #{functions.getColor($color-scheme, 'neutral', 400)};
-    --sr5-control-icon-muted: #{functions.getColor($color-scheme, 'neutral', 500)};
-    // background elements
+
+    // ui colors
+    --sr5-text: #{functions.getColor($color-scheme, 'neutral', 300)};
+    --sr5-text-subtle: #{functions.getColor($color-scheme, 'neutral', 500)};
+
+    --sr5-accent: #{functions.getColor($color-scheme, 'secondary', 200)};
+    --sr5-accent-subtle: #{functions.getColor($color-scheme, 'secondary', 400)};
+
+    --sr5-action: #{functions.getColor($color-scheme, 'primary', 600)};
+    --sr5-action-subtle: #{functions.getColor($color-scheme, 'primary', 500)};
+
+    --sr5-neutral: #{functions.getColor($color-scheme, 'neutral', 400)};
+    --sr5-neutral-subtle: #{functions.getColor($color-scheme, 'neutral', 500)};
+
+    --sr5-border-default: #{functions.getColor($color-scheme, 'neutral', 700)};
+
     --sr5-surface: #{functions.getColor($color-scheme, 'neutral', 900)};
     --sr5-surface-high: #{functions.getColor($color-scheme, 'neutral', 800)};
+    --sr5-surface-highest: #{functions.getColor($color-scheme, 'neutral', 700)};
+
+    --sr5-backdrop: #{functions.asset('light-page.webp')};
+
+    // legacy support, should be culled asap
     --sr5-surface-secondary: #{functions.getColor($color-scheme, 'primary', 400)};
     --sr5-surface-secondary-elevated: #{functions.getColor($color-scheme, 'primary', 200)};
-    --sr5-backdrop: #{functions.asset('light-page.webp')};
     --sr5-application-title-background: linear-gradient(
         to right,
         #{functions.getColor($color-scheme, 'primary', 700)} 30%,
         transparent 100%
     );
+    --sr5-text-inverse: #{functions.getColor($color-scheme, 'neutral', 700)};
+    --sr5-text-inverse-muted: #{functions.getColor($color-scheme, 'neutral', 500)};
+    --sr5-control-background: #{color.adjust(functions.getColor($color-scheme, 'neutral', 100), $alpha: -0.9)};
+    --sr5-control-background-inverse: #{color.adjust(functions.getColor($color-scheme, 'neutral', 700), $alpha: -0.9)};
 
     &.theme-dark {
         // shadowrun-related colors
@@ -132,33 +140,52 @@ body {
         --sr5-color-edge-strong: #{functions.getColor($color-scheme, 'primary', 550)};
         --sr5-color-edge: #{functions.getColor($color-scheme, 'primary', 400)};
         --sr5-color-edge-subtle: #{functions.getColor($color-scheme, 'primary', 250)};
-        // text-colors
-        --sr5-text-primary: #{functions.getColor($color-scheme, 'neutral', 900)};
-        --sr5-text-primary-muted: #{functions.getColor($color-scheme, 'neutral', 700)};
-        --sr5-text-primary-inverse: #{functions.getColor($color-scheme, 'neutral', 100)};
-        --sr5-text-primary-inverse-muted: #{functions.getColor($color-scheme, 'neutral', 300)};
-        --sr5-text-highlight: #{functions.getColor($color-scheme, 'primary', 800)};
-        --sr5-text-highlight-muted: #{functions.getColor($color-scheme, 'primary', 600)};
-        --sr5-text-secondary: #{functions.getColor($color-scheme, 'secondary', 400)};
-        --sr5-text-secondary-muted: #{functions.getColor($color-scheme, 'secondary', 500)};
-        // controls [form elements, buttons]
-        --sr5-control-background: #{color.adjust(functions.getColor($color-scheme, 'neutral', 900), $alpha: -0.9)};
-        --sr5-control-background-inverse: #{color.adjust(functions.getColor($color-scheme, 'neutral', 300), $alpha: -0.9)};
-        --sr5-control-border: #{functions.getColor($color-scheme, 'neutral', 100)};
-        --sr5-control-icon: #{functions.getColor($color-scheme, 'neutral', 600)};
-        --sr5-control-icon-muted: #{functions.getColor($color-scheme, 'neutral', 500)};
-        // background elements
+
+        // ui colors
+        --sr5-text-strong: #{functions.getColor($color-scheme, 'neutral', 950)};
+        --sr5-text: #{functions.getColor($color-scheme, 'neutral', 850)};
+        --sr5-text-subtle: #{functions.getColor($color-scheme, 'neutral', 750)};
+
+        --sr5-accent-strong: #{functions.getColor($color-scheme, 'primary', 950)};
+        --sr5-accent: #{functions.getColor($color-scheme, 'primary', 800)};
+        --sr5-accent-subtle: #{functions.getColor($color-scheme, 'primary', 650)};
+
+        --sr5-action-strong: #{functions.getColor($color-scheme, 'secondary', 500)};
+        --sr5-action: #{functions.getColor($color-scheme, 'secondary', 400)};
+        --sr5-action-subtle: #{functions.getColor($color-scheme, 'secondary', 500)};
+
+        --sr5-neutral-strong: #{functions.getColor($color-scheme, 'neutral', 700)};
+        --sr5-neutral: #{functions.getColor($color-scheme, 'neutral', 600)};
+        --sr5-neutral-subtle: #{functions.getColor($color-scheme, 'neutral', 500)};
+
+        --sr5-border-default-strong: #{functions.getColor($color-scheme, 'neutral', 100)};
+        --sr5-border-default: #{functions.getColor($color-scheme, 'neutral', 100)};
+        --sr5-border-default-muted: #{functions.getColor($color-scheme, 'neutral', 100)};
+
+        --sr5-border-variant-strong: #{functions.getColor($color-scheme, 'primary', 950)};
+        --sr5-border-variant: #{functions.getColor($color-scheme, 'primary', 800)};
+        --sr5-border-variant-muted: #{functions.getColor($color-scheme, 'primary', 650)};
+
         --sr5-surface: #{functions.getColor($color-scheme, 'neutral', 100)};
         --sr5-surface-high: #{functions.getColor($color-scheme, 'neutral', 200)};
         --sr5-surface-highest: #{functions.getColor($color-scheme, 'neutral', 300)};
+
+        --sr5-backdrop: linear-gradient(rgb(0 0 0 / 0.6), rgb(0 0 0 / 0.6)), #{functions.asset('page.webp')} repeat;
+
+        // legacy support, should be culled asap
         --sr5-surface-secondary: #{functions.getColor($color-scheme, 'secondary', 200)};
         --sr5-surface-secondary-elevated: #{functions.getColor($color-scheme, 'secondary', 400)};
-        --sr5-backdrop: linear-gradient(rgb(0 0 0 / 0.6), rgb(0 0 0 / 0.6)),
-            #{functions.asset('page.webp')} repeat;
         --sr5-application-title-background: linear-gradient(
             to right,
             #{functions.getColor($color-scheme, 'secondary', 300)} 30%,
             transparent 100%
         );
+        --sr5-text-inverse: #{functions.getColor($color-scheme, 'neutral', 100)};
+        --sr5-text-inverse-muted: #{functions.getColor($color-scheme, 'neutral', 300)};
+        --sr5-control-background: #{color.adjust(functions.getColor($color-scheme, 'neutral', 900), $alpha: -0.9)};
+        --sr5-control-background-inverse: #{color.adjust(
+                functions.getColor($color-scheme, 'neutral', 300),
+                $alpha: -0.9
+            )};
     }
 }

@@ -20,7 +20,7 @@ input[type='text'].display {
 }
 
 .settings-sidebar h2 {
-    color: var(--sr5-text-primary);
+    color: var(--sr5-text);
 }
 
 .display.text.left.document-name {
@@ -33,7 +33,7 @@ input[type='text'].display {
 }
 
 .entity-link.content-link {
-    color: var(--sr5-text-primary);
+    color: var(--sr5-text);
 }
 
 //
@@ -52,14 +52,14 @@ input[type='text'].display {
     // As we only change headers in journal-entires, avoid cross styling outside of it.
     // This clashed with Weather Control module and others.
     h1 {
-        color: var(--sr5-text-secondary);
+        color: var(--sr5-action);
         @include config.font-size(24);
-        border-color: var(--sr5-text-secondary);
+        border-color: var(--sr5-action);
     }
 
     h2 {
-        color: var(--sr5-text-secondary);
-        border-color: var(--sr5-text-secondary);
+        color: var(--sr5-action);
+        border-color: var(--sr5-action);
     }
 
     table {
@@ -68,7 +68,7 @@ input[type='text'].display {
         caption{
             background: inherit;
             text-align: left;
-            color: var(--sr5-text-highlight);
+            color: var(--sr5-accent);
             @include config.font-size(16);
             padding: 9px;
         }
@@ -77,7 +77,7 @@ input[type='text'].display {
     th {
         padding: 9px;
         background: var(--sr5-surface);
-        color: var(--sr5-text-highlight);
+        color: var(--sr5-accent);
         text-align: left;
     }
     td{
@@ -86,7 +86,7 @@ input[type='text'].display {
     }
 
     tr {
-        color: var(--sr5-text-primary);
+        color: var(--sr5-text);
     }
 
     tr:nth-child(even) {
@@ -94,15 +94,15 @@ input[type='text'].display {
     }
 
     tr:first-child th {
-        border-top: 1px solid var(--sr5-text-highlight);
+        border-top: 1px solid var(--sr5-accent);
     }
 
     tr:first-child th {
-        border-bottom: 1px solid var(--sr5-text-highlight);
+        border-bottom: 1px solid var(--sr5-accent);
     }
 
     tr:last-child td {
-        border-bottom: 1px solid var(--sr5-text-highlight);
+        border-bottom: 1px solid var(--sr5-accent);
     }
 
     table .content-link {
@@ -129,7 +129,7 @@ input[type='text'].display {
     border-radius: 0;
     text-align: left !important;
     text-indent: 5px;
-    color: var(--sr5-text-primary);
+    color: var(--sr5-text);
     border-width: 0;
     height: 80px;
 }
@@ -137,15 +137,15 @@ input[type='text'].display {
 
 
 .journal-sheet h3 {
-    color: var(--sr5-text-secondary);
+    color: var(--sr5-action);
 }
 
 .journal-sheet select {
-    color: var(--sr5-text-primary-inverse);
+    color: var(--sr5-text-inverse);
 }
 
 .journal-sheet option {
-    color: var(--sr5-text-primary);
+    color: var(--sr5-text);
 }
 
 //
@@ -154,9 +154,9 @@ input[type='text'].display {
 // Public Roll
 .chat-message,
 .chat-message.emote {
-    color: var(--sr5-text-primary);
+    color: var(--sr5-text);
     background: var(--sr5-backdrop);
-    border: 1px solid var(--sr5-text-primary-inverse);
+    border: 1px solid var(--sr5-text-inverse);
 }
 
 // Improve visibility non-default roll modes.
@@ -174,12 +174,12 @@ input[type='text'].display {
 .chat-message .message-header,
 .chat-message.blind .message-header,
 .chat-message.whisper .message-header {
-    color: var(--sr5-text-primary-muted);
+    color: var(--sr5-text-subtle);
 }
 
 // Description for roll tables shown on chat messages for a rolled result drawn.
 .chat-message .table-draw .table-description {
-    color: var(--sr5-text-primary);
+    color: var(--sr5-text);
 }
 
 //
@@ -196,7 +196,7 @@ input[type='text'].display {
         text-transform: uppercase;
 
         &:hover {
-            text-shadow: 0 0 8px var(--sr5-text-secondary);
+            text-shadow: 0 0 8px var(--sr5-action);
         }
     }
 }
@@ -215,7 +215,7 @@ input[type='text'].display {
 
 .dialog-button.remove-token-modifiers-from-scene,
 .dialog-button.remove-modifiers-from-target{
-    background-color: var(--sr5-text-secondary-muted);
+    background-color: var(--sr5-action-subtle);
 }
 .far-right {
     justify-content: center;
@@ -223,14 +223,14 @@ input[type='text'].display {
 }
 
 .list-header.item-section[data-item-id="weapon"][data-item-type=""] {
-    color: var(--sr5-text-highlight);
+    color: var(--sr5-accent);
     @include config.font-size(13);
 }
 
 .common-test{
     margin-bottom: 4px;
     margin-top: 4px;
-    color: var(--sr5-text-primary);
+    color: var(--sr5-text);
     display: flex;
     .test-icon {
         width: 17px;
@@ -242,7 +242,7 @@ input[type='text'].display {
 }
 .fas.fa-file-pdf //.fas.fa-suitcase.sr5, .fas.fa-book-open.sr5 For now these can´t get changed
 {
-    color: var(--sr5-text-highlight-muted);
+    color: var(--sr5-accent-subtle);
 }
 .window-resizable-handle {
     .fa-solid {

@@ -33,7 +33,7 @@
 #forien-quest-log .actions i.fa-play, .window-app.forien-quest-preview .actions i.fa-play {
     @include config.font-size(14);
     padding-top: 2px;
-    color: var(--sr5-text-highlight);
+    color: var(--sr5-accent);
 }
 body #forien-quest-log .quest-log .log-body header {
     // removed the background asset, to better support light mode
@@ -43,11 +43,11 @@ body #forien-quest-log .quest-log .log-body header {
     border-radius: 0;
     text-align: left !important;
     text-indent: 5px;
-    color: var(--sr5-text-primary);
+    color: var(--sr5-text);
     border-width: 0;
     height: 80px;
-    border-block-end: 2px solid var(--sr5-text-secondary);
-    border-bottom: 2px solid var(--sr5-text-secondary);
+    border-block-end: 2px solid var(--sr5-action);
+    border-bottom: 2px solid var(--sr5-action);
     display: flex;
     justify-content: space-between;
     margin-bottom: 4px;
@@ -57,17 +57,17 @@ body #forien-quest-log .quest-log .log-body header {
 
 //table list hover
 body #forien-quest-log .quest-log .table ul li.drag-quest:hover {
-    border-color: var(--sr5-text-secondary);
-    box-shadow: 0 0 2px var(--sr5-text-secondary) inset;
+    border-color: var(--sr5-action);
+    box-shadow: 0 0 2px var(--sr5-action) inset;
 }
 
 body .window-app.forien-quest-preview .quest-body .details-header .quest-setup .quest-giver-name h2:hover {
-    color: var(--sr5-text-secondary);
+    color: var(--sr5-action);
 }
 
 .tox .tox-tbtn svg {
     display: block;
-    fill: var(--sr5-text-primary);
+    fill: var(--sr5-text);
 }
 
 
@@ -87,14 +87,14 @@ body .window-app.forien-quest-preview .quest-body .details-header .quest-setup .
     margin: 0;
     transition: color .3s ease;
     background: transparent;
-    color: var(--sr5-text-secondary);
+    color: var(--sr5-action);
 }
 
 body #forien-quest-log .actions-single i, .window-app.forien-quest-preview .actions-single i {
     cursor: pointer;
     @include config.font-size(18);
     transition: color .3s ease;
-    color: var(--sr5-text-highlight);
+    color: var(--sr5-accent);
 }
 //h1 quest Log
 body #forien-quest-log h1, .window-app.forien-quest-preview h1 {
@@ -104,11 +104,11 @@ body #forien-quest-log h1, .window-app.forien-quest-preview h1 {
     line-height: 1;
     margin: 0 0 8px;
     padding: 0 0 30px;
-    color: var(--sr5-text-primary);
+    color: var(--sr5-text);
 }
 // h1 quest log header
 body #forien-quest-log h1, .window-app.forien-quest-preview h1 {
-    color: var(--sr5-text-primary);
+    color: var(--sr5-text);
 }
 
 body #forien-quest-log h1, body .window-app.forien-quest-preview h1 {
@@ -119,7 +119,7 @@ body #forien-quest-log h1, body .window-app.forien-quest-preview h1 {
 
 // h4 Quest Log
 body #quest-tracker .window-header h4 {
-    color: var(--sr5-text-highlight);
+    color: var(--sr5-accent);
     @include config.font-size(20);
 }
 //h2
@@ -129,7 +129,7 @@ body #forien-quest-log .quest-log .table ul .title h2, body .window-app.forien-q
     font-weight: 700;
     margin: 4px;
     padding: 0px;
-    color: var(--sr5-text-highlight);
+    color: var(--sr5-accent);
     background: var(--sr5-surface-high);
 }
 
@@ -137,7 +137,7 @@ body #forien-quest-log .quest-log .table ul .title h2, body .window-app.forien-q
 body #quest-tracker .quest .title a, #quest-tracker .quest .title i {
     filter: drop-shadow(1px 1px 1px config.$shadow);
     @include config.font-size(16);
-    color: var(--sr5-text-highlight);
+    color: var(--sr5-accent);
 }
 
 body .window-app.forien-quest-preview .quest-body .details-header .quest-setup .quest-title {
@@ -152,11 +152,11 @@ body .window-app.forien-quest-preview .quest-body .details-header .quest-setup .
 }
 
 body .window-app.forien-quest-preview .quest-body .quest-info .quest-col-right .quest-tasks .toggleState:hover {
-    color: var(--palette-primary,var(--default-primary-accent,var(--sr5-text-highlight)));
+    color: var(--palette-primary,var(--default-primary-accent,var(--sr5-accent)));
 }
 
 body #forien-quest-log .actions i.fa-times-circle, .window-app.forien-quest-preview .actions i.fa-times-circle {
-    color: var(--sr5-text-secondary);
+    color: var(--sr5-action);
 }
 
 body .quest-tasks ul {
@@ -164,9 +164,9 @@ body .quest-tasks ul {
 }
 
 body .window-app.forien-quest-preview .quest-body .quest-info .quest-col-right header {
-    border-block-end: 2px solid var(--sr5-text-secondary);
-    border-bottom: 2px solid var(--sr5-text-secondary);
-    color: var(--sr5-text-highlight);
+    border-block-end: 2px solid var(--sr5-action);
+    border-bottom: 2px solid var(--sr5-action);
+    color: var(--sr5-accent);
     display: flex;
     flex: 0 0 1px;
     margin-bottom: 4px;
@@ -176,7 +176,7 @@ body .window-app.forien-quest-preview .quest-body .quest-info .quest-col-right h
 body #forien-quest-log .quest-log .table ul li.drag-quest {
     align-items: center;
     background: var(--sr5-surface-high);
-    border: 1px solid var(--sr5-control-border);
+    border: 1px solid var(--sr5-border-default);
     border-radius: 5px;
     display: flex;
     justify-content: flex-start;
@@ -186,12 +186,12 @@ body #forien-quest-log .quest-log .table ul li.drag-quest {
 }
 //title h2
 body #forien-quest-log .quest-log .table ul .title h2 {
-    color: var(--sr5-text-highlight);
+    color: var(--sr5-accent);
     background: transparent;
 }
 
 body .open-quest.tasks {
-    color: var(--sr5-text-primary);
+    color: var(--sr5-text);
 }
 
 //Buttons
@@ -202,7 +202,7 @@ body .window-app.forien-quest-preview .quest-body .quest-info .quest-col-right b
     line-height: 1;
     white-space: nowrap;
     background: var(--sr5-surface-secondary);
-    color: var(--sr5-text-primary);
+    color: var(--sr5-text);
 }
 
 #forien-quest-log button, .window-app.forien-quest-preview button {
@@ -214,7 +214,7 @@ body .window-app.forien-quest-preview .quest-body .quest-info .quest-col-right b
     margin-top: 2px;
     transition: border-color .3s ease,background .3s ease,box-shadow .3s ease;
     background: var(--sr5-surface-secondary);
-    color: var(--sr5-text-primary);
+    color: var(--sr5-text);
 }
 //Play
 #forien-quest-log .actions i.move.fas.fa-play:hover, .window-app.forien-quest-preview .actions i.move.fas.fa-play:hover {
@@ -222,24 +222,24 @@ body .window-app.forien-quest-preview .quest-body .quest-info .quest-col-right b
 }
 //Trashbin
 body #forien-quest-log .actions i.delete.fas.fa-trash:hover, body .window-app.forien-quest-preview .actions i.delete.fas.fa-trash:hover {
-    color: var(--sr5-text-secondary-muted);
+    color: var(--sr5-action-subtle);
 }
 
 body #forien-quest-log .actions i.fa-trash, body .window-app.forien-quest-preview .actions i.fa-trash {
-    color: var(--sr5-text-secondary);
+    color: var(--sr5-action);
 }
 //Back to deactive
 body #forien-quest-log .actions i.move.fas.fa-stop-circle:hover, body .window-app.forien-quest-preview .actions i.move.fas.fa-stop-circle:hover {
-    color: var(--sr5-text-highlight);
+    color: var(--sr5-accent);
 }
 
 //Make Available
 #forien-quest-log .actions i.move.fas.fa-clipboard:hover, .window-app.forien-quest-preview .actions i.move.fas.fa-clipboard:hover {
-    color: var(--sr5-text-highlight);
+    color: var(--sr5-accent);
 }
 
 body #forien-quest-log .quest-log .table ul .title p {
-    color: var(--sr5-text-primary);
+    color: var(--sr5-text);
 }
 //End Quest Log Styles
 
@@ -250,32 +250,32 @@ body #forien-quest-log .quest-log .table ul .title p {
 // Public Roll
 .chat-message,
 .chat-message.emote {
-    color: var(--sr5-text-primary);
+    color: var(--sr5-text);
     background: var(--sr5-backdrop);
-    border: 1px solid var(--sr5-control-border);
+    border: 1px solid var(--sr5-border-default);
     .message-content.h2{
-        color: var(--sr5-text-highlight);
+        color: var(--sr5-accent);
     }
     a.content-link{
         background: none;
-        color: var(--sr5-text-primary);
+        color: var(--sr5-text);
     }
 }
 
 //Icons
 span.fa.fa-calendar{
-    color: var(--sr5-text-highlight);
+    color: var(--sr5-accent);
 }
 
 //headers
 .message-content{
 h2{
-    color: var(--sr5-text-highlight);
+    color: var(--sr5-accent);
     @include config.font-size(20); // i do not know what the parent was, it was parent +50%
-    border-bottom: 1px solid var(--sr5-text-highlight);
+    border-bottom: 1px solid var(--sr5-accent);
 }}
 h4.message-sender{
     @include config.font-size(13);
-    color: var(--sr5-text-primary);
+    color: var(--sr5-text);
 }
 //End Simple Calendar

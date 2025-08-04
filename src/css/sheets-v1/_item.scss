@@ -50,7 +50,7 @@
             height: 2em;
 
             .source-button {
-                color: var(--sr5-text-primary);
+                color: var(--sr5-text);
                 @include config.font-size(16);
                 height: 2em;
                 left: .5em;
@@ -68,7 +68,7 @@
         .item-type {
             flex: 0;
             padding: 0 0.5em;
-            color: var(--sr5-text-primary);
+            color: var(--sr5-text);
             display: flex;
             flex-flow: column;
             align-content: center;
@@ -76,7 +76,7 @@
         }
         .item-image {
             max-width: 100px;
-            border-right: 1px solid var(--sr5-control-border);
+            border-right: 1px solid var(--sr5-border-default);
             margin-bottom: 0;
             padding-bottom: 0;
             border: none;
@@ -84,12 +84,12 @@
         .item-info {
             flex: 1;
             > :not(:last-child) {
-                border-bottom: 1px solid var(--sr5-control-border);
+                border-bottom: 1px solid var(--sr5-border-default);
             }
 
             .toggle-fresh-import-off {
                 flex-grow: 0;
-                background-color: var(--sr5-text-secondary);
+                background-color: var(--sr5-action);
             }
         }
     }
@@ -105,7 +105,7 @@
         }
 
         label {
-          color: var(--sr5-text-highlight);
+          color: var(--sr5-accent);
         }
 
         .tech-adjustable-label {
@@ -149,7 +149,7 @@
         .header {
             font-weight: 700;
             @include config.font-size(18);
-            color: var(--sr5-text-highlight);
+            color: var(--sr5-accent);
         }
         .form-line {
             display: flex;
@@ -158,16 +158,16 @@
             align-content: center;
             padding: 0.1em 0.25em;
             &.advanced{
-                color: var(--sr5-text-highlight);
+                color: var(--sr5-accent);
             }
             > * {
                 flex: 1;
             }
             .label {
-                color: var(--sr5-text-primary);
+                color: var(--sr5-text);
                 @include config.font-size(16);
                 &.advanced{
-                    color: var(--sr5-text-highlight);
+                    color: var(--sr5-accent);
                 }
             }
             .inputs {
@@ -196,22 +196,22 @@
                 }
             }
             select {
-                color: var(--sr5-text-primary);
+                color: var(--sr5-text);
                 background: var(--sr5-control-background-inverse);
                 border-radius: 0.3em;
-                border-color: var(--sr5-text-primary-inverse);
+                border-color: var(--sr5-text-inverse);
                 > option {
                     background-color: var(--sr5-surface);
                 }
             }
             input {
-                color: var(--sr5-text-primary);
+                color: var(--sr5-text);
                 background: var(--sr5-control-background-inverse);
                 border-radius: 0.3em;
-                border-color: var(--sr5-text-primary-inverse);
+                border-color: var(--sr5-text-inverse);
             }
             label {
-                color: var(--sr5-text-highlight);
+                color: var(--sr5-accent);
             }
         }
     }
@@ -233,7 +233,7 @@
             display: inline-flex;
             padding: 6px 0 0 0;
             font-size: 0;
-            color: var(--sr5-control-icon-muted);
+            color: var(--sr5-neutral-subtle);
 
             & .fa-solid,
                 & .fas {

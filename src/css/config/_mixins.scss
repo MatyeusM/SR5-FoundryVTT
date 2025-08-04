@@ -26,64 +26,70 @@
 
 // Generic hover helper
 @mixin hover-transition(
-  $color: null,
-  $background-color: null,
-  $border-color: null,
-  $transition-duration: 250ms,
-  $transition-timing-function: ease-in-out
+    $color: null,
+    $background-color: null,
+    $border-color: null,
+    $transition-duration: 250ms,
+    $transition-timing-function: ease-in-out
 ) {
-  $transition-properties: ();
+    $transition-properties: ();
 
-  @if $color {
-    $transition-properties: list.append($transition-properties, color);
-  }
-  @if $background-color {
-    $transition-properties: list.append($transition-properties, background-color);
-  }
-  @if $border-color {
-    $transition-properties: list.append($transition-properties, border-color);
-  }
-
-  @if list.length($transition-properties) > 0 {
-    $transition-string: '';
-    @each $property in $transition-properties {
-      $transition-string: $transition-string + $property + ' ' + $transition-duration + ' ' + $transition-timing-function + ', ';
-    }
-    $transition-string: string.slice($transition-string, 1, string.length($transition-string) - 2);
-
-    transition: string.unquote($transition-string);
-  }
-
-  cursor: pointer;
-
-  &:hover {
     @if $color {
-      color: $color;
+        $transition-properties: list.append($transition-properties, color);
     }
     @if $background-color {
-      background-color: $background-color;
+        $transition-properties: list.append($transition-properties, background-color);
     }
     @if $border-color {
-      border-color: $border-color;
+        $transition-properties: list.append($transition-properties, border-color);
     }
-  }
+
+    @if list.length($transition-properties) > 0 {
+        $transition-string: '';
+        @each $property in $transition-properties {
+            $transition-string: $transition-string +
+                $property +
+                ' ' +
+                $transition-duration +
+                ' ' +
+                $transition-timing-function +
+                ', ';
+        }
+        $transition-string: string.slice($transition-string, 1, string.length($transition-string) - 2);
+
+        transition: string.unquote($transition-string);
+    }
+
+    cursor: pointer;
+
+    &:hover {
+        @if $color {
+            color: $color;
+        }
+        @if $background-color {
+            background-color: $background-color;
+        }
+        @if $border-color {
+            border-color: $border-color;
+        }
+    }
 }
 
 // font-family mixin allow additional weights of 'none' and 'default'
 @mixin use-font($family: 'sans', $weight: 'none') {
     $font-stacks: (
-      'sans': (
-        stack: variables.$sans-font-stack,
-        default-weight: variables.$default-sans-weight
-      ),
-      'serif': (
-        stack: variables.$serif-font-stack,
-        default-weight: variables.$default-serif-weight
-      ),
-      'mono': (
-        stack: variables.$mono-font-stack,
-        default-weight: variables.$default-mono-weight
-      )
+        'sans': (
+            stack: variables.$sans-font-stack,
+            default-weight: variables.$default-sans-weight,
+        ),
+        'serif': (
+            stack: variables.$serif-font-stack,
+            default-weight: variables.$default-serif-weight,
+        ),
+        'mono': (
+            stack: variables.$mono-font-stack,
+            default-weight: variables.$default-mono-weight,
+        ),
     );
 
     $font-data: map.get($font-stacks, $family);
@@ -92,11 +98,10 @@
         font-family: map.get($font-data, stack);
 
         @if $weight != 'none' and ($weight == 'default' or meta.type-of($weight) == 'number') {
-          font-weight: if($weight == 'default', map.get($font-data, default-weight), $weight);
+            font-weight: if($weight == 'default', map.get($font-data, default-weight), $weight);
         }
-    }
-    @else {
-      @warn "Unknown font family `#{$family}` passed to use-font mixin.";
+    } @else {
+        @warn "Unknown font family `#{$family}` passed to use-font mixin.";
     }
 }
 
@@ -104,60 +109,64 @@
 /// Example: @include font-size(16);
 /// Base size that foundry uses at the moment (v13) is 14.
 @mixin font-size($px, $lh: null) {
-  font-size: var(--font-size-#{$px}, #{math.div($px, 16)}rem);
-  @if $lh != null {
-      line-height: $lh;
-  }
+    font-size: var(--font-size-#{$px}, #{math.div($px, 16)}rem);
+    @if $lh != null {
+        line-height: $lh;
+    }
 }
 
 /// Shadow mixin
 @mixin shadow-elevation($elevation: 1, $color: theme.$shadow, $enhanced: true) {
-  @if $elevation <= 0 {
-    box-shadow: none;
-  } @else {
-    // Define base shadow properties
-    $base-y-offset: math.ceil($elevation * 1.5px);
-    $base-blur: $base-y-offset + math.ceil($elevation * 0.5px);
-    $base-spread: math.floor(-$elevation * 0.25px);
-
-    // Define enhanced (top) shadow properties if enabled
-    $enhanced-y-offset: math.ceil($elevation * 0.5px);
-    $enhanced-blur: $enhanced-y-offset + math.ceil($elevation * 0.25px);
-    $enhanced-spread: math.floor(-$elevation * 0.125px);
-
-    // Set the opacity for the shadows.
-    $base-opacity: 0.14;
-    $enhanced-opacity: 0.12;
-
-    // Construct the shadow declarations
-    $base-shadow: 0 $base-y-offset $base-blur $base-spread rgb(from $color r g b / $base-opacity);
-    $enhanced-shadow: 0 $enhanced-y-offset $enhanced-blur $enhanced-spread rgb(from $color r g b / $enhanced-opacity);
-
-    // Assemble the final box-shadow value
-    @if $enhanced {
-      box-shadow: $base-shadow, $enhanced-shadow;
+    @if $elevation <= 0 {
+        box-shadow: none;
     } @else {
-      box-shadow: $base-shadow;
+        // Define base shadow properties
+        $base-y-offset: math.ceil($elevation * 1.5px);
+        $base-blur: $base-y-offset + math.ceil($elevation * 0.5px);
+        $base-spread: math.floor(-$elevation * 0.25px);
+
+        // Define enhanced (top) shadow properties if enabled
+        $enhanced-y-offset: math.ceil($elevation * 0.5px);
+        $enhanced-blur: $enhanced-y-offset + math.ceil($elevation * 0.25px);
+        $enhanced-spread: math.floor(-$elevation * 0.125px);
+
+        // Set the opacity for the shadows.
+        $base-opacity: 0.14;
+        $enhanced-opacity: 0.12;
+
+        // Construct the shadow declarations
+        $base-shadow: 0 $base-y-offset $base-blur $base-spread rgb(from $color r g b / $base-opacity);
+        $enhanced-shadow: 0
+            $enhanced-y-offset
+            $enhanced-blur
+            $enhanced-spread
+            rgb(from $color r g b / $enhanced-opacity);
+
+        // Assemble the final box-shadow value
+        @if $enhanced {
+            box-shadow: $base-shadow, $enhanced-shadow;
+        } @else {
+            box-shadow: $base-shadow;
+        }
     }
-  }
 }
 
 // Utility Mixin for condition box styles
 @mixin condition-monitor-style($name, $color-var, $strong-color-var: null) {
-  &.#{$name} .cell {
-    box-shadow: inset 0 0 6px var(--#{$color-var});
-    border: 1px solid var(--#{$color-var});
+    &.#{$name} .cell {
+        box-shadow: inset 0 0 6px var(--#{$color-var});
+        border: 1px solid var(--#{$color-var});
 
-    @if $strong-color-var != null {
-      &:hover {
-        border-color: var(--#{$strong-color-var});
-        box-shadow: inset 0 0 12px var(--#{$strong-color-var});
-      }
-    }
+        @if $strong-color-var != null {
+            &:hover {
+                border-color: var(--#{$strong-color-var});
+                box-shadow: inset 0 0 12px var(--#{$strong-color-var});
+            }
+        }
 
-    &.filled {
-      background: oklch(from var(--#{$color-var}) l c h / 0.5);
-      color: var(--sr5-text-primary);
+        &.filled {
+            background: oklch(from var(--#{$color-var}) l c h / 0.5);
+            color: var(--sr5-text);
+        }
     }
-  }
 }

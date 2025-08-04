@@ -29,7 +29,7 @@
             bottom: 0;
             height: 2px;
             width: 0%;
-            background-color: var(--sr5-text-highlight);
+            background-color: var(--sr5-accent);
             transition: width 300ms ease;
             transform-origin: left center;
         }
@@ -68,7 +68,7 @@
             font-weight: 600;
 
             align-items: center;
-            color: var(--sr5-text-highlight);
+            color: var(--sr5-accent);
             display: flex;
             flex-flow: column nowrap;
             flex: 1 0 auto;
@@ -110,7 +110,7 @@
             }
             > .attribute-value {
                 > .attribute-value-total {
-                    color: var(--sr5-text-primary);
+                    color: var(--sr5-text);
                     @include config.font-size(18);
                     font-weight: 700;
                     width: 100%;
@@ -127,7 +127,7 @@
                     @include config.font-size(12);
                 }
                 &.roll {
-                    @include config.hover-transition($color: var(--sr5-text-highlight-muted));
+                    @include config.hover-transition($color: var(--sr5-accent-subtle));
                 }
             }
 
@@ -152,12 +152,12 @@
 
             .toggle-fresh-import-all-off {
                 @include config.font-size(12);
-                background-color: var(--sr5-text-secondary-muted);
+                background-color: var(--sr5-action-subtle);
             }
 
             .toggle-fresh-import-all-on {
                 @include config.font-size(12);
-                background-color: var(--sr5-text-secondary-muted);
+                background-color: var(--sr5-action-subtle);
             }
 
             .track {
@@ -210,7 +210,7 @@
 
     // Interaction Element for Skill Lists
     .skill-header {
-        @include config.hover-transition($color: var(--sr5-text-secondary));
+        @include config.hover-transition($color: var(--sr5-action));
     }
 
     // Sprite sheet power tab list had broken flex/block relations, causing missing a scrollbar.
@@ -244,7 +244,7 @@
             display: inline-flex;
             padding: 6px 0 0 0;
             font-size: 0;
-            color: var(--sr5-control-icon-muted);
+            color: var(--sr5-neutral-subtle);
 
             & .fa-solid,
                 & .fas {
@@ -261,7 +261,7 @@
 
 .sr5 #filter-skills {
     @include config.font-size(14);
-    border: 1px solid var(--sr5-control-border);
+    border: 1px solid var(--sr5-border-default);
     width: 100%;
 }
 
@@ -295,5 +295,5 @@
 // got to hack specifitivity, restore box-shadow behaviour
 // explicitly
 div input.attribute-input {
-    box-shadow: inset 0 0 6px oklch(from var(--sr5-control-border) l c h / 0.1);
+    box-shadow: inset 0 0 6px oklch(from var(--sr5-border-default) l c h / 0.1);
 }

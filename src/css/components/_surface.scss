@@ -20,5 +20,5 @@
 
 .sr5 {
     @include config.use-font($weight: 'default');
-    color: var(--sr5-text-primary);
+    color: var(--sr5-text);
 }
