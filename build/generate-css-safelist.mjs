@@ -43,7 +43,7 @@ const generateSafelist = async () => {
 
     fs.writeFileSync(
         path.resolve(__dirname, 'purgecss-safelist.mjs'),
-        `export const safelist = ${JSON.stringify(safelistArray, null, 2)};`,
+        `export const safelist = ${JSON.stringify(safelistArray)};`,
     );
 
     console.log(`Safelist generated with ${safelistArray.length} entries.`);
