@@ -1162,7 +1162,7 @@ input[type='text'].display {
 
         &:hover {
             cursor: pointer;
-            background: var(--sr5-surface-secondary);
+            background: var(--sr5-action-subtle);
         }
 
         &.short {
@@ -1198,7 +1198,7 @@ input[type='text'].display {
     button.display.show-hidden-skills {
         color: var(--sr5-text);
         border-color: var(--sr5-text-inverse);
-        background: var(--sr5-surface-secondary);
+        background: var(--sr5-action-subtle);
         border-radius: 0.3em;
         text-align: center;
 
@@ -1219,7 +1219,7 @@ input[type='text'].display {
     button.display.reset-actor-run-data {
         color: var(--sr5-text);
         border-color: var(--sr5-text-inverse);
-        background: var(--sr5-surface-secondary);
+        background: var(--sr5-action-subtle);
         border-radius: 0.3em;
         text-align: center;
 
@@ -1250,7 +1250,7 @@ input[type='text'].display {
 
     .env-modifier-active {
         border-radius: 8px;
-        background-color: var(--sr5-surface-secondary-elevated);
+        background-color: var(--sr5-action);
         color: var(--sr5-accent);
     }
 

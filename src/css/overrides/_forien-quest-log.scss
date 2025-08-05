@@ -201,7 +201,7 @@ body .window-app.forien-quest-preview .quest-body .quest-info .quest-col-right b
     height: 20px;
     line-height: 1;
     white-space: nowrap;
-    background: var(--sr5-surface-secondary);
+    background: var(--sr5-action-subtle);
     color: var(--sr5-text);
 }
 
@@ -213,7 +213,7 @@ body .window-app.forien-quest-preview .quest-body .quest-info .quest-col-right b
     margin-right: 4px;
     margin-top: 2px;
     transition: border-color .3s ease,background .3s ease,box-shadow .3s ease;
-    background: var(--sr5-surface-secondary);
+    background: var(--sr5-action-subtle);
     color: var(--sr5-text);
 }
 //Play
@@ -222,7 +222,7 @@ body .window-app.forien-quest-preview .quest-body .quest-info .quest-col-right b
 }
 //Trashbin
 body #forien-quest-log .actions i.delete.fas.fa-trash:hover, body .window-app.forien-quest-preview .actions i.delete.fas.fa-trash:hover {
-    color: var(--sr5-action-subtle);
+    color: var(--sr5-action-strong);
 }
 
 body #forien-quest-log .actions i.fa-trash, body .window-app.forien-quest-preview .actions i.fa-trash {

@@ -113,8 +113,6 @@ body {
     --sr5-backdrop: #{functions.asset('light-page.webp')};
 
     // legacy support, should be culled asap
-    --sr5-surface-secondary: #{functions.getColor($color-scheme, 'primary', 400)};
-    --sr5-surface-secondary-elevated: #{functions.getColor($color-scheme, 'primary', 200)};
     --sr5-application-title-background: linear-gradient(
         to right,
         #{functions.getColor($color-scheme, 'primary', 700)} 30%,
@@ -162,7 +160,7 @@ body {
 
         --sr5-action-strong: #{functions.getColor($color-scheme, 'secondary', 500)};
         --sr5-action: #{functions.getColor($color-scheme, 'secondary', 400)};
-        --sr5-action-subtle: #{functions.getColor($color-scheme, 'secondary', 500)};
+        --sr5-action-subtle: #{functions.getColor($color-scheme, 'secondary', 300)};
 
         --sr5-neutral-strong: #{functions.getColor($color-scheme, 'neutral', 700)};
         --sr5-neutral: #{functions.getColor($color-scheme, 'neutral', 600)};
@@ -183,8 +181,6 @@ body {
         --sr5-backdrop: linear-gradient(rgb(0 0 0 / 0.6), rgb(0 0 0 / 0.6)), #{functions.asset('page.webp')} repeat;
 
         // legacy support, should be culled asap
-        --sr5-surface-secondary: #{functions.getColor($color-scheme, 'secondary', 200)};
-        --sr5-surface-secondary-elevated: #{functions.getColor($color-scheme, 'secondary', 400)};
         --sr5-application-title-background: linear-gradient(
             to right,
             #{functions.getColor($color-scheme, 'secondary', 300)} 30%,
