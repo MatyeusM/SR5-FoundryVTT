@@ -17,12 +17,12 @@
 
 // do not uncomment until purgecss + postcss.config.mjs is running
 // as it will pollute the final .css file otherwise
-// @forward 'layout/display';
-// @forward 'layout/flex';
-// @forward 'layout/grid';
-// @forward 'layout/object';
-// @forward 'layout/sizing';
-// @forward 'layout/spacing';
+@forward 'layout/display';
+@forward 'layout/flex';
+@forward 'layout/grid';
+@forward 'layout/object';
+@forward 'layout/sizing';
+@forward 'layout/spacing';
 
 // Legacy Section
 // TODO: Remove when migrated.

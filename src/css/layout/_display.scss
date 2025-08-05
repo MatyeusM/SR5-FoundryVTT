@@ -19,7 +19,7 @@ $display-keymap: (
     'hidden': none,
 );
 
-@each $key, $value from $display-keymap {
+@each $key, $value in $display-keymap {
     .#{$key} {
         display: $value;
     }
