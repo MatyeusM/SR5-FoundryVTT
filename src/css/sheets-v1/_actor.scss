@@ -16,7 +16,7 @@
         overflow: hidden;
     }
     .name {
-        background: var(--sr5-application-title-background);
+        background: linear-gradient(to right, var(--sr5-action-subtle) 30%, transparent 100%) no-repeat;
         @include config.font-size(28); // bastardization, this sets the height of the container not the font size!
         margin-bottom: 0;
         padding-left: 5px;

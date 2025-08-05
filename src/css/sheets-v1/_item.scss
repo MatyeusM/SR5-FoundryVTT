@@ -34,7 +34,7 @@
             height: 60px;
             @include config.font-size(20);
             .display {
-                background: var(--sr5-application-title-background);
+                background: linear-gradient(to right, var(--sr5-action-subtle) 30%, transparent 100%) no-repeat;
                 border: none;
                 height: 35px;
                 margin-top: 11px;

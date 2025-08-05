@@ -16,7 +16,7 @@
     border-radius: 0 0 5px 5px;
     margin: 0;
     padding: 0;
-    background: var(--sr5-application-title-background);
+    background: linear-gradient(to right, var(--sr5-action-subtle) 30%, transparent 100%) no-repeat;
 }
 
 .window-app .window-content {
@@ -37,7 +37,7 @@
 }
 body #forien-quest-log .quest-log .log-body header {
     // removed the background asset, to better support light mode
-    background: var(--sr5-application-title-background) no-repeat;
+    background: linear-gradient(to right, var(--sr5-action-subtle) 30%, transparent 100%) no-repeat;
     background-size: 100% var(--font-size-40, 2.5rem), auto; // first layer = 60px tall
     background-position: center, top;
     border-radius: 0;
@@ -145,7 +145,7 @@ body .window-app.forien-quest-preview .quest-body .details-header .quest-setup .
     display: flex;
     justify-content: space-between;
     // removed background asset to better support light mode
-    background: var(--sr5-application-title-background) no repeat;
+    background: linear-gradient(to right, var(--sr5-action-subtle) 30%, transparent 100%) no-repeat;
     background-size: 100%  var(--font-size-40, 2.5rem), auto;
     background-position: center, top;
     border-radius: 0;

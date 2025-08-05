@@ -113,11 +113,6 @@ body {
     --sr5-backdrop: #{functions.asset('light-page.webp')};
 
     // legacy support, should be culled asap
-    --sr5-application-title-background: linear-gradient(
-        to right,
-        #{functions.getColor($color-scheme, 'primary', 700)} 30%,
-        transparent 100%
-    );
     --sr5-text-inverse: #{functions.getColor($color-scheme, 'neutral', 700)};
     --sr5-text-inverse-muted: #{functions.getColor($color-scheme, 'neutral', 500)};
     --sr5-control-background: #{color.adjust(functions.getColor($color-scheme, 'neutral', 100), $alpha: -0.9)};
@@ -181,11 +176,6 @@ body {
         --sr5-backdrop: linear-gradient(rgb(0 0 0 / 0.6), rgb(0 0 0 / 0.6)), #{functions.asset('page.webp')} repeat;
 
         // legacy support, should be culled asap
-        --sr5-application-title-background: linear-gradient(
-            to right,
-            #{functions.getColor($color-scheme, 'secondary', 300)} 30%,
-            transparent 100%
-        );
         --sr5-text-inverse: #{functions.getColor($color-scheme, 'neutral', 100)};
         --sr5-text-inverse-muted: #{functions.getColor($color-scheme, 'neutral', 300)};
         --sr5-control-background: #{color.adjust(functions.getColor($color-scheme, 'neutral', 900), $alpha: -0.9)};
