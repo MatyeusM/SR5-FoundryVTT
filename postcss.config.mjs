@@ -1,5 +1,5 @@
 import { purgeCSSPlugin } from '@fullhuman/postcss-purgecss';
-import { safelist } from './build/purgecss-safelist.js';
+import { safelist } from './build/purgecss-safelist.mjs';
 
 export default {
     plugins: [
