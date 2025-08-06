@@ -17,10 +17,8 @@
             display: none !important;
         }
 
-        .clickable:hover {
-            cursor: pointer;
-            background: var(--sr5-surface-high);
-            color: var(--sr5-text);
+        .clickable {
+            @include config.hover-transition($background-color: var(--sr5-surface-high));
         }
 
         .card-header {
@@ -94,6 +92,7 @@
         @include config.font-size(12);
 
         .card-title {
+            font-weight: 600;
             display: flex;
             border-bottom: 1px solid var(--sr5-text-inverse);
             justify-content: flex-start;
@@ -280,7 +279,7 @@
         }
         .dice-rolls {
             display: none;
-            border-bottom: 1px solid var(--sr5-text-inverse);
+            border-bottom: 1px solid var(--sr5-border-default);
         }
         .dice-roll-content {
             gap: 0.25rem;
@@ -293,8 +292,9 @@
             .dice-roll {
                 // asset no longer exists
                 // background-image: config.asset('d6-grey.svg', 'icons/svg/');
+                // use clip-path instead to make them look more geometrical
+                clip-path: polygon(0 0.25rem, 0.25rem 0, calc(100% - 0.25rem) 0, 100% 0.25rem, 100% calc(100% - 0.25rem), calc(100% - 0.25rem) 100%, 0.25rem 100%, 0 calc(100% - 0.25rem));
                 background: var(--sr5-surface-highest);
-                border-radius: 0.25rem;
                 @include config.font-size(16);
                 font-weight: 700;
                 text-align: center;

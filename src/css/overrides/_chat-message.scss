@@ -1,3 +1,21 @@
+// -----------------------------------------------------------------------------
+// Chat Message Styles SCSS File
+//
+// Purpose:
+// - Provides custom styling overrides for Foundry VTT chat message elements
+// - Applies consistent theming to message headers, content blocks, and inline links
+//
+// Usage:
+// - Targets `.chat-message` and its children within FoundryVTT's chat log
+// - Relies on theme variables and config mixins for consistent appearance
+//
+// Notes:
+// - Font and color styles must currently be re-applied within each message
+// - If all system content includes an `.sr5` tag, we could wrap styles with
+//   a parent selector using `:has(.sr5)` to remove potential side-effects
+//   and the content from the overrides folder.
+// -----------------------------------------------------------------------------
+
 @use '../config';
 
 .chat-message {
@@ -41,10 +59,4 @@
         @include config.font-size(13);
         color: var(--sr5-text);
     }
-}
-
-// Description for roll tables shown on chat messages for a rolled result drawn.
-// Not sure what this styles.
-.chat-message .table-draw .table-description {
-    color: var(--sr5-text);
 }

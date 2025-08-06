@@ -109,8 +109,17 @@
 /// Example: @include font-size(16);
 /// Base size that foundry uses at the moment (v13) is 14.
 @mixin font-size($px, $lh: null) {
-    font-size: var(--font-size-#{$px}, #{math.div($px, 16)}rem);
-    @if $lh != null {
+    $rem: math.div($px, 16);
+    font-size: var(--font-size-#{$px}, #{$rem}rem);
+
+    @if $lh == auto {
+        $lh-val: 1;
+        @if $rem > 0 {
+            $denominator: (12 * math.pow($rem, 2) - 22 * $rem + 12);
+            $lh-val: math.div($rem, $denominator) + 1;
+        }
+        line-height: functions.round-decimals($lh-val, 6);
+    } @else if $lh != null {
         line-height: $lh;
     }
 }
