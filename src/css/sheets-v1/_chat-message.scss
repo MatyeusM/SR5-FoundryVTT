@@ -5,7 +5,7 @@
 
 .sr5 {
     &.chat-card {
-        background: var(--sr5-backdrop);
+        background: transparent;
         font-style: normal;
         @include config.font-size(16);
 
@@ -302,10 +302,10 @@
                 margin-top: 5px;
 
                 &.red {
-                    color: var(--sr5-color-physical);
+                    color: var(--sr5-color-physical-strong);
                 }
                 &.green {
-                    color: var(--sr5-color-matrix);
+                    color: var(--sr5-color-matrix-strong);
                 }
             }
         }
@@ -402,6 +402,6 @@
     }
     .chat-select-link img:hover {
         padding: 0;
-        border: 1px solid var(--sr5-text-inverse);
+        border: 1px solid var(--sr5-border-default);
     }
 }

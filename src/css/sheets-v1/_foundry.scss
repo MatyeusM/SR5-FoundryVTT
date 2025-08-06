@@ -149,40 +149,6 @@ input[type='text'].display {
 }
 
 //
-// CHAT MESSAGE STYLING
-//
-// Public Roll
-.chat-message,
-.chat-message.emote {
-    color: var(--sr5-text);
-    background: var(--sr5-backdrop);
-    border: 1px solid var(--sr5-text-inverse);
-}
-
-// Improve visibility non-default roll modes.
-// Private Roll
-// Self Roll
-.chat-message.whisper {
-    background: var(--sr5-backdrop);
-}
-
-// Blind Roll
-.chat-message.blind {
-    background: var(--sr5-backdrop);
-}
-
-.chat-message .message-header,
-.chat-message.blind .message-header,
-.chat-message.whisper .message-header {
-    color: var(--sr5-text-subtle);
-}
-
-// Description for roll tables shown on chat messages for a rolled result drawn.
-.chat-message .table-draw .table-description {
-    color: var(--sr5-text);
-}
-
-//
 // Settings Sidebar
 //
 // Links for system information in the settings sidebar.
