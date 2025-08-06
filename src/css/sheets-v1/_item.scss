@@ -199,7 +199,7 @@
                 color: var(--sr5-text);
                 background: var(--sr5-control-background-inverse);
                 border-radius: 0.3em;
-                border-color: var(--sr5-text-inverse);
+                border-color: var(--sr5-border-default);
                 > option {
                     background-color: var(--sr5-surface);
                 }
@@ -208,7 +208,7 @@
                 color: var(--sr5-text);
                 background: var(--sr5-control-background-inverse);
                 border-radius: 0.3em;
-                border-color: var(--sr5-text-inverse);
+                border-color: var(--sr5-border-default);
             }
             label {
                 color: var(--sr5-accent);
@@ -219,6 +219,8 @@
     &.sheet.window-app {
         @include config.shadow-elevation(10);
         background: var(--sr5-backdrop);
+        border: 1px solid var(--sr5-border-default-subtle);
+        box-sizing: border-box;
 
         & .window-header {
             border-bottom: none;

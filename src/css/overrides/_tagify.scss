@@ -1,9 +1,49 @@
-// TODO: Override might not be needed, TEST.
+@use '../config';
+
 /*! purgecss start ignore */
 @use '/node_modules/@yaireo/tagify/dist/tagify';
+
+// tagify adds its dropdowns as the last element in the body
+// TODO: once we passed to the js that the class of sr5,
+// we can hide this behind our tag to minimize side effects.
+.tagify__dropdown {
+    border: none;
+
+    &__wrapper {
+        background: var(--sr5-surface);
+        border: 1px solid var(--sr5-border-variant);
+    }
+    &__item {
+        @include config.use-font($weight: 500);
+        background-color: var(--sr5-surface-high);
+        color: var(--sr5-text);
+
+        &--active {
+            color: var(--sr5-text-strong);
+            background-color: var(--sr5-action-subtle);
+        }
+    }
+}
+
 .sr5 {
+    // TODO: Make tagify conform to the styling proper
     .tagify-selection {
-        border-color: var(--sr5-border-default);
+        --tags-border-color: var(--sr5-border-default);
+        --tags-hover-border-color: var(--sr5-border-default-strong);
+        --tags-focus-border-color: var(--sr5-border-variant-subtle);
+
+        --tag-text-color: var(--sr5-text);
+        --tag-bg: var(--sr5-surface-highest);
+        --tag-hover: var(--sr5-surface-high);
+
+        --tag-remove-btn-color: var(--sr5-text);
+        --tag-remove-bg: var(--sr5-color-physical-subtle);
+        --tag-remove-btn-bg--hover: var(--sr5-color-physical);
+
+        // focus color is for some reason not correctly applied, so we overwrite it
+        &.tagify--focus {
+            border: 1px solid var(--sr5-border-variant-subtle);
+        }
     }
 }
 /*! purgecss end ignore */

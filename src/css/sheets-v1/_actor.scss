@@ -228,6 +228,7 @@
 
         &.sheet.window-app {
             background: var(--sr5-backdrop);
+            border: 1px solid var(--sr5-border-default-subtle);
             @include config.shadow-elevation(10);
 
         & .window-header {
