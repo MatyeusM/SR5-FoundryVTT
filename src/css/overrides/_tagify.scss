@@ -1,3 +1,19 @@
+// -----------------------------------------------------------------------------
+// Tagify Styles Override SCSS File
+//
+// Purpose:
+// - Applies visual overrides to the Tagify input UI component
+// - Ensures Tagify integrates visually with the SR5 system theme
+//
+// Usage:
+// - Targets Tagify-generated DOM elements (e.g., `.tagify`, `.tagify__tag`, etc.)
+//
+// Notes:
+// - Adjusts colors, borders, and spacing to match SR5 design tokens
+// - Overrides default Tagify styles to improve contrast and usability
+// - Tagify JS should be initialized with appropriate options for consistent structure
+// -----------------------------------------------------------------------------
+
 @use '../config';
 
 /*! purgecss start ignore */
@@ -26,7 +42,6 @@
 }
 
 .sr5 {
-    // TODO: Make tagify conform to the styling proper
     .tagify-selection {
         --tags-border-color: var(--sr5-border-default);
         --tags-hover-border-color: var(--sr5-border-default-strong);

@@ -32,27 +32,6 @@
         text-shadow: none;
     }
 
-    &.form-dialog {
-        border: 1px solid var(--sr5-border-default);
-
-        .window-header {
-            border: none;
-
-            h4 {
-                @include config.use-font($weight: 500);
-            }
-        }
-        .window-content {
-            border: none;
-
-            h3 {
-                @include config.use-font($weight: 600);
-                color: var(--sr5-accent);
-                border-bottom: 1px solid var(--sr5-border-variant);
-            }
-        }
-    }
-
     .flexcol {
         display: flex;
         flex-direction: column;
@@ -511,7 +490,7 @@ input[type='text'].display {
         color: var(--sr5-text-inverse);
     }
 
-    .roll {
+    .roll:not(button) {
         @include config.hover-transition($color: var(--sr5-action));
     }
 

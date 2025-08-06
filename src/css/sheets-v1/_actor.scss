@@ -278,13 +278,34 @@
     min-width: 370px;
     display: inline-block;
     background: var(--sr5-backdrop);
+    border: 1px solid var(--sr5-border-default);
     padding-block: 0.25rem 0;
 
+    .window-header, .window-content {
+        border: none;
+    }
+
+    h4 {
+        @include config.use-font($weight: 600);
+    }
+
     .wholesheet {
-        height: auto;
-        display: flex;
-        flex-flow: column nowrap;
-        overflow: hidden;
+        .inventory > .list-item.item-section {
+            background: transparent;
+            border: none;
+        }
+
+        .list-item.item-section:nth-child(odd):not(:first-child) {
+            border-top: 1px solid var(--sr5-border-variant);
+        }
+
+        .list-item.item-section:nth-child(even) {
+            border: none;
+        }
+
+        .item-text .open-source {
+            justify-self: end;
+        }
     }
 }
 

@@ -3,35 +3,51 @@
  */
 @use '../config';
 
-.sr5.form-dialog {
-    color: var(--sr5-text);
-    background: var(--sr5-backdrop);
+.sr5 {
+    &.form-dialog {
+        border: 1px solid var(--sr5-border-default);
+        color: var(--sr5-text);
+        background: var(--sr5-backdrop);
 
-  .dialog-title {
-    font-weight: bold;
-  }
+        .window-header {
+            border: none;
 
-  .form-group {
-     //
-     // Lazy hack to allow for a two segment elemnt style, with the right ones text
-     // being flush to the end.
-     //
-    .form-group-element-2 {
-      flex: 2
+            h4 {
+                @include config.use-font($weight: 600);
+            }
+        }
+        .window-content {
+            border: none;
+
+            h3 {
+                @include config.use-font($weight: 600);
+                color: var(--sr5-accent);
+                border-bottom: 1px solid var(--sr5-border-variant);
+            }
+        }
+
+        .form-group {
+          .form-group-element-2 {
+            flex: 2;
+            display: flex;
+            gap: 0.25em;
+          }
+
+          .form-group-element-1-right {
+              flex: 1;
+              display: flex;
+              justify-content: flex-end;
+          }
+        }
+
+        // this might be old
+        .dialog-content-common {
+          h2 {
+            border: none;
+            color: var(--sr5-color-magic);
+            margin: 0;
+            text-underline: none;
+          }
+        }
     }
-
-    .form-group-element-1-right {
-      flex: 1;
-      text-align: right;
-    }
-  }
-
-  .dialog-content-common {
-    h2 {
-      border: none;
-      color: var(--sr5-text);
-      margin: 0;
-      text-underline: none;
-    }
-  }
 }
