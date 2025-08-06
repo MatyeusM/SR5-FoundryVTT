@@ -21,4 +21,6 @@
 .sr5 {
     @include config.use-font($weight: 'default');
     color: var(--sr5-text);
+
+    --color-scrollbar: var(--sr5-action);
 }

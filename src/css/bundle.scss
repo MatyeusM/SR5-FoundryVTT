@@ -32,6 +32,27 @@
         text-shadow: none;
     }
 
+    &.form-dialog {
+        border: 1px solid var(--sr5-border-default);
+
+        .window-header {
+            border: none;
+
+            h4 {
+                @include config.use-font($weight: 500);
+            }
+        }
+        .window-content {
+            border: none;
+
+            h3 {
+                @include config.use-font($weight: 600);
+                color: var(--sr5-accent);
+                border-bottom: 1px solid var(--sr5-border-variant);
+            }
+        }
+    }
+
     .flexcol {
         display: flex;
         flex-direction: column;
@@ -222,7 +243,7 @@
 
     // more specifivity hacks
     a.control, a.control > i, a.document-id-link > i {
-        @include config.hover-transition($color: var(--sr5-accent-subtle));
+        @include config.hover-transition($color: var(--sr5-action));
 
         &:hover {
             text-shadow: none;
@@ -418,7 +439,7 @@ input[type='text'].display {
         border-color: var(--sr5-border-default);
 
         > option {
-            background-color: var(--sr5-surface);
+            background-color: var(--sr5-surface-high);
         }
     }
 
@@ -1106,15 +1127,17 @@ input[type='text'].display {
             .props {
                 display: flex;
                 flex-flow: wrap row;
-                padding: 0.25em 0;
+                @include config.padding($y: 1);
 
                 > * {
                     flex-shrink: 0;
-                    border-right: 1px solid var(--sr5-border-default);
-                    border-bottom: 1px solid var(--sr5-border-default);
-                    padding: 0.25em 0.5em;
-                    margin: 0.1em 0.25em;
-                    box-shadow: 0.2em 0.2em 0.3em config.$shadow;
+                    border: 1px solid var(--sr5-border-default);
+                    background-color: var(--sr5-surface);
+                    border-radius: 0.125rem;
+                    margin: 0.0875rem 0.125rem;
+                    @include config.shadow-elevation(6);
+                    @include config.font-size(14);
+                    @include config.padding($x: 2, $y: 1);
                 }
             }
 
@@ -1155,14 +1178,15 @@ input[type='text'].display {
     button,
     button.display {
         color: var(--sr5-text);
-        border-color: var(--sr5-text-inverse);
-        background: var(--sr5-control-background);
-        border-radius: 0.3em;
+        border-color: var(--sr5-border-default);
+        background: var(--sr5-surface-high);
+        border-radius: 0.25rem;
         text-align: center;
+        @include config.use-font($weight: 600);
+        @include config.hover-transition($color: var(--sr5-text-strong), $background-color: var(--sr5-action-subtle), $border-color: var(--sr5-action-subtle));
 
         &:hover {
-            cursor: pointer;
-            background: var(--sr5-action-subtle);
+            box-shadow: none;
         }
 
         &.short {

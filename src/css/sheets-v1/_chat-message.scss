@@ -285,8 +285,11 @@
         .dice-roll-content {
             gap: 0.25rem;
             display: flex;
-            flex-flow: row wrap;
+            flex-wrap: wrap;
             justify-content: center;
+            line-height: 1.5;
+            @include config.padding($y: 1);
+
             .dice-roll {
                 // asset no longer exists
                 // background-image: config.asset('d6-grey.svg', 'icons/svg/');
@@ -295,11 +298,9 @@
                 @include config.font-size(16);
                 font-weight: 700;
                 text-align: center;
-                width: 24px;
-                line-height: 24px;
-
-                // Consistent margin on top, if missing result boxes will clip.
-                margin-top: 5px;
+                flex-basis: 1.5rem;
+                aspect-ratio: 1;
+                margin: 0;
 
                 &.red {
                     color: var(--sr5-color-physical-strong);
