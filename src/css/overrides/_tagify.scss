@@ -1,8 +1,8 @@
+/*! purgecss start ignore */
 @use '/node_modules/@yaireo/tagify/dist/tagify';
-@use '../config';
-
 .sr5 {
     .tagify-selection {
         border-color: var(--sr5-border-default);
     }
 }
+/*! purgecss end ignore */
