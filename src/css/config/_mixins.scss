@@ -170,3 +170,58 @@
         }
     }
 }
+
+@mixin padding(
+    $top: 0,
+    $right: 0,
+    $bottom: 0,
+    $left: 0,
+    $all: 0,
+    $x: 0,
+    $y: 0,
+    $scaling: 0.25,
+    $unit: rem,
+    $prefer-logical: true
+) {
+    $t: ($all + $y + $top) * $scaling;
+    $r: ($all + $x + $right) * $scaling;
+    $b: ($all + $y + $bottom) * $scaling;
+    $l: ($all + $x + $left) * $scaling;
+
+    $t: if($t != 0, $t + $unit, 0);
+    $r: if($r != 0, $r + $unit, 0);
+    $b: if($b != 0, $b + $unit, 0);
+    $l: if($l != 0, $l + $unit, 0);
+
+    $nonzero: ();
+    @each $v in $t, $r, $b, $l {
+        @if $v != 0 {
+            $nonzero: list.append($nonzero, $v);
+        }
+    }
+    $nonzero-count: list.length($nonzero);
+
+    @if $prefer-logical {
+        @if $t == $b and $r == $l {
+            padding-block: #{$t};
+            padding-inline: #{$r};
+        } @else {
+            padding-block-start: #{$t};
+            padding-inline-end: #{$r};
+            padding-block-end: #{$b};
+            padding-inline-start: #{$l};
+        }
+    } @else {
+        @if $nonzero-count == 0 {
+            padding: 0;
+        } @else if $t == $b and $r == $l and $t == $r {
+            padding: #{$t};
+        } @else if $t == $b and $r == $l {
+            padding: #{$t} #{$r};
+        } @else if $r == $l {
+            padding: #{$t} #{$r} #{$b};
+        } @else {
+            padding: #{$t} #{$r} #{$b} #{$l};
+        }
+    }
+}
