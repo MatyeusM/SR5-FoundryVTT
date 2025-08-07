@@ -16,21 +16,21 @@
 
 $prefixes: 'flex', 'inline-flex';
 $directions: (
-  'row': row,
-  'row-reverse': row-reverse,
-  'column': column,
-  'column-reverse': column-reverse
+    'row': row,
+    'row-reverse': row-reverse,
+    'column': column,
+    'column-reverse': column-reverse,
 );
 
 @each $prefix in $prefixes {
-  $display: if($prefix == 'inline-flex', inline flex, flex);
+    $display: if($prefix == 'inline-flex', inline flex, flex);
 
-  @each $suffix, $direction in $directions {
-    .#{$prefix}-#{$suffix} {
-      display: $display;
-      flex-direction: $direction;
+    @each $suffix, $direction in $directions {
+        .#{$prefix}-#{$suffix} {
+            display: $display;
+            flex-direction: $direction;
+        }
     }
-  }
 }
 
 .flex-wrap {
