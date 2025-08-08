@@ -118,7 +118,7 @@
             $denominator: (12 * math.pow($rem, 2) - 22 * $rem + 12);
             $lh-val: math.div($rem, $denominator) + 1;
         }
-        line-height: functions.round-decimals($lh-val, 6);
+        line-height: functions.round-decimals($lh-val, 3);
     } @else if $lh != null {
         line-height: $lh;
     }

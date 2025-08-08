@@ -1328,3 +1328,14 @@ input[type='text'].display {
 .SR5 tr p:not(th p) {
     padding-left: 10px;
 }
+
+/*! purgecss ignore */
+.theme-light .sr5 img[src*="dist/icons"][src$=".svg"] {
+    // convert our white icons to black in .theme-light
+    filter: invert(1);
+}
+
+// specifivity hack... someone needs to clean out the closet
+.theme-light .sr5 .list-item .list-item-content .item-img.item-roll:hover > img {
+    filter: invert(0);
+}
