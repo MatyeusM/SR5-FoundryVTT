@@ -30,6 +30,7 @@
 
     *:hover {
         text-shadow: none;
+        outline: none;
     }
 
     .flexcol {
@@ -625,7 +626,7 @@ input[type='text'].display {
 
     img {
         box-sizing: border-box;
-        border: 1px solid var(--sr5-text-inverse);
+        border: 1px solid var(--sr5-border-default);
         border-radius: 2px;
         max-width: 100%;
         object-fit: contain;
@@ -1180,14 +1181,12 @@ input[type='text'].display {
 
     button.display.import-character {
         color: var(--sr5-text);
-        border-color: var(--sr5-text-inverse);
-        background: var(--sr5-text-inverse-muted);
+        border: 1px solid var(--sr5-border-default);
+        background-color: var(--sr5-surface-high);
         border-radius: 0.3em;
         text-align: center;
+        @include config.hover-transition($color: var(--sr5-text-strong), $background-color: var(--sr5-surface), $border-color: var(--sr5-border-default-strong));
 
-        &:hover {
-            cursor: pointer;
-        }
 
         &.short {
             line-height: 1.3em;
@@ -1200,14 +1199,11 @@ input[type='text'].display {
     }
     button.display.show-hidden-skills {
         color: var(--sr5-text);
-        border-color: var(--sr5-text-inverse);
-        background: var(--sr5-action-subtle);
+        border: 1px solid var(--sr5-border-default);
+        background: var(--sr5-action);
         border-radius: 0.3em;
         text-align: center;
-
-        &:hover {
-            cursor: pointer;
-        }
+        @include config.hover-transition($color: var(--sr5-text-strong), $background-color: var(--sr5-action-subtle), $border-color: var(--sr5-border-default-strong));
 
         &.short {
             line-height: 1.3em;
@@ -1221,14 +1217,12 @@ input[type='text'].display {
 
     button.display.reset-actor-run-data {
         color: var(--sr5-text);
-        border-color: var(--sr5-text-inverse);
-        background: var(--sr5-action-subtle);
+        border-color: var(--sr5-border-default);
+        border: 1px solid var(--sr5-border-default);
+        background: var(--sr5-action);
         border-radius: 0.3em;
         text-align: center;
-
-        &:hover {
-            cursor: pointer;
-        }
+        @include config.hover-transition($color: var(--sr5-text-strong), $background-color: var(--sr5-action-subtle), $border-color: var(--sr5-border-default-strong));
 
         &.short {
             line-height: 1.3em;

@@ -25,8 +25,8 @@
         align-items: stretch;
         width: 160px;
         background: var(--sr5-surface-high);
-        box-shadow: 0 0 15px var(--sr5-text-inverse);
-        border: 1px solid var(--sr5-text-inverse-muted);
+        box-shadow: 0 0 15px config.$shadow;
+        border: 1px solid var(--sr5-border-default-subtle);
         color: var(--sr5-text);
         height: 40px;
         line-height: 40px;
