@@ -140,10 +140,6 @@ input[type='text'].display {
     color: var(--sr5-action);
 }
 
-.journal-sheet select {
-    color: var(--sr5-text-inverse);
-}
-
 .journal-sheet option {
     color: var(--sr5-text);
 }
@@ -175,8 +171,12 @@ input[type='text'].display {
     flex-wrap: wrap;
 }
 
-.form-dialog .window-content .dialog-buttons>* {
+.form-dialog .window-content .dialog-buttons > * {
     flex: 1;
+    &:focus {
+        box-shadow: none;
+        outline: 0.125rem solid var(--sr5-action);
+    }
 }
 
 .dialog-button.remove-token-modifiers-from-scene,

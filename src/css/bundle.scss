@@ -19,13 +19,13 @@
 // TODO: This is abusing default FoundryVTT CSS classing, which often can cause default FoundryVTT styling to break.
 //
 .sr5 {
-    :where(input:hover, input:focus) {
-        // fixes the blinking on disabled inputs
-        outline-color: transparent;
-    }
-
     input[type="text"], input[type="number"], input[type="password"], input[type="date"], input[type="time"], input[type="datetime-local"], input[type="search"], input[type="file"], select {
         box-shadow: none;
+        // fix blinking outline
+        outline: none;
+        &:hover, &:focus {
+            outline: none;
+        }
     }
 
     *:hover {
@@ -482,13 +482,14 @@ input[type='text'].display {
 
     // An origin link is a uuid based entity link, without drag support.
     .origin-link {
-        background: var(--sr5-text);
-        padding: 1px 4px;
+        background: var(--sr5-surface-highest);
+        font-weight: 600;
         border: 1px solid var(--sr5-border-default);
-        border-radius: 2px;
+        border-radius: 0.25rem;
         white-space: nowrap;
         word-break: break-all;
-        color: var(--sr5-text-inverse);
+        color: var(--sr5-accent-strong);
+        @include config.padding($x: 2, $y: 1);
     }
 
     .roll:not(button) {
@@ -862,8 +863,8 @@ input[type='text'].display {
             justify-content: center;
 
             &.filled {
-                background: var(--sr5-neutral);
-                color: var(--sr5-text-inverse);
+                background: var(--sr5-neutral-subtle);
+                color: var(--sr5-text);
             }
 
             &:hover {
@@ -1158,7 +1159,7 @@ input[type='text'].display {
     button,
     button.display {
         color: var(--sr5-text);
-        border-color: var(--sr5-border-default);
+        border: 1px solid var(--sr5-border-default);
         background: var(--sr5-surface-high);
         border-radius: 0.25rem;
         text-align: center;
@@ -1174,8 +1175,8 @@ input[type='text'].display {
         }
 
         &.light {
-            color: var(--sr5-text-inverse);
-            background: var(--sr5-text);
+            background: var(--sr5-action-subtle);
+            @include config.hover-transition($color: var(--sr5-text-strong), $background-color: var(--sr5-action), $border-color: var(--sr5-action));
         }
     }
 
@@ -1187,14 +1188,13 @@ input[type='text'].display {
         text-align: center;
         @include config.hover-transition($color: var(--sr5-text-strong), $background-color: var(--sr5-surface), $border-color: var(--sr5-border-default-strong));
 
-
         &.short {
             line-height: 1.3em;
         }
 
         &.light {
-            color: var(--sr5-text-inverse);
-            background: var(--sr5-text);
+            background: var(--sr5-action-subtle);
+            @include config.hover-transition($color: var(--sr5-text-strong), $background-color: var(--sr5-action), $border-color: var(--sr5-action));
         }
     }
     button.display.show-hidden-skills {
@@ -1210,8 +1210,8 @@ input[type='text'].display {
         }
 
         &.light {
-            color: var(--sr5-text-inverse);
-            background: var(--sr5-text);
+            background: var(--sr5-action-subtle);
+            @include config.hover-transition($color: var(--sr5-text-strong), $background-color: var(--sr5-action), $border-color: var(--sr5-action));
         }
     }
 
@@ -1229,8 +1229,8 @@ input[type='text'].display {
         }
 
         &.light {
-            color: var(--sr5-text-inverse);
-            background: var(--sr5-text);
+            background: var(--sr5-action-subtle);
+            @include config.hover-transition($color: var(--sr5-text-strong), $background-color: var(--sr5-action), $border-color: var(--sr5-action));
         }
     }
 

@@ -14,7 +14,7 @@
 // - Keep utilities focused on flexbox properties only
 // -----------------------------------------------------------------------------
 
-$prefixes: 'flex', 'inline-flex';
+$prefixes: ('flex', 'inline-flex');
 $directions: (
     'row': row,
     'row-reverse': row-reverse,
