@@ -18,9 +18,11 @@
 
 @use '../config';
 
-.sr5 {
+.sr5,
+.sr5v2 {
     @include config.use-font($weight: 'default');
     color: var(--sr5-text);
 
+    // overwrite some foundry specific variables
     --color-scrollbar: var(--sr5-action);
 }

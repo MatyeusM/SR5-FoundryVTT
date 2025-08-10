@@ -24,7 +24,8 @@
 @use 'theme';
 @use 'functions';
 
-// Generic hover helper
+// Generic hover helper, transistions colors explicitly only those that are changed
+// on hover. Use it for easy uncomplicated hover-steps to alter colors.
 @mixin hover-transition(
     $color: null,
     $background-color: null,
@@ -124,7 +125,9 @@
     }
 }
 
-/// Shadow mixin
+// Adds a layered shadow to component, similar to tailwind or material design
+// it is pretty useless in darkmode except for floating windows
+// i recommend using elevation 6 and 10 for smaller and larger shadows.
 @mixin shadow-elevation($elevation: 1, $color: theme.$shadow, $enhanced: true) {
     @if $elevation <= 0 {
         box-shadow: none;
@@ -180,6 +183,10 @@
     }
 }
 
+// there should be no margin mixin, as margins are more of a layouting thing
+// and better used in html with the layout/_spacing.scss classes.
+// combines the different paddings into one consistent output.
+// default is 1 step = 0.25rem or 4px.
 @mixin padding(
     $top: 0,
     $right: 0,

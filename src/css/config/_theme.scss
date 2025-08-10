@@ -113,6 +113,9 @@ body {
     --sr5-backdrop: #{functions.asset('light-page.webp')};
 
     // legacy support, should be culled asap
+    // used in too many different places to cull without
+    // transistioning the scss to the component system
+    // so cull will happen post V2 migration
     --sr5-control-background: #{color.adjust(functions.getColor($color-scheme, 'neutral', 100), $alpha: -0.9)};
     --sr5-control-background-inverse: #{color.adjust(functions.getColor($color-scheme, 'neutral', 700), $alpha: -0.9)};
 
@@ -174,6 +177,9 @@ body {
         --sr5-backdrop: linear-gradient(rgb(0 0 0 / 0.6), rgb(0 0 0 / 0.6)), #{functions.asset('page.webp')} repeat;
 
         // legacy support, should be culled asap
+        // used in too many different places to cull without
+        // transistioning the scss to the component system
+        // so cull will happen post V2 migration
         --sr5-control-background: #{color.adjust(functions.getColor($color-scheme, 'neutral', 900), $alpha: -0.9)};
         --sr5-control-background-inverse: #{color.adjust(
                 functions.getColor($color-scheme, 'neutral', 300),
