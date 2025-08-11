@@ -19,11 +19,13 @@
 
 $base-url: '/systems/shadowrun5e/dist/';
 
-$sans-font-stack: 'Rajdhani', 'Signika', sans-serif;
+$sans-font-stack:
+    'Rajdhani', ui-sans-serif, system-ui, 'Segoe UI', 'Helvetica Neue', 'Noto Sans', Roboto, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 $default-sans-weight: 500;
-$serif-font-stack: 'Palatino Linotype', serif;
+$serif-font-stack: ui-serif, 'Times New Roman', Georgia, 'Noto Serif', 'Roboto Serif', serif;
 $default-serif-weight: 400;
-$mono-font-stack: monospace;
+$mono-font-stack: ui-monospace, Consolas, Menlo, 'Liberation Mono', 'Roboto Mono', monospace;
 $default-mono-weight: 400;
 
 $actor-sheet-min-width: 54.375rem;
