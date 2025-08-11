@@ -26,6 +26,14 @@
 
     .message-header {
         color: var(--sr5-text-subtle);
+
+        a {
+            @include config.hover-transition($color: var(--sr5-action));
+
+            &:hover {
+                text-shadow: none;
+            }
+        }
     }
 
     .message-content {

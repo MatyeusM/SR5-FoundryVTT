@@ -9,11 +9,105 @@
 // TODO: this is always in light-mode,
 // thus we cannot use vars for colors yet
 .active-effect-sheet {
+    @include config.use-font($weight: 'default');
+    @include config.shadow-elevation($elevation: 6);
+    color: var(--sr5-text);
+    background: var(--sr5-backdrop);
+    border: 1px solid var(--sr5-border-default);
 
-    // Match tagify input selection to Foundry's default input selection
+    *:hover {
+        text-shadow: none;
+    }
+
+    .window-header {
+        border: none;
+    }
+
+    .window-title {
+        font-size: 0;
+    }
+
+    .control, .document-id-link {
+        color: var(--sr5-text-subtle);
+        @include config.hover-transition($color: var(--sr5-action));
+    }
+
+    .document-id-link {
+         @include config.font-size(14);
+    }
+
+    .window-content {
+        background: transparent;
+    }
+
+    .sheet-header {
+        img {
+            border: 1px solid var(--sr5-border-default);
+        }
+
+        .effect-title  {
+            color: var(--sr5-text);
+            font-weight: 600;
+        }
+    }
+
+    .tabs {
+        border-bottom: 1px solid var(--sr5-border-variant);
+        border-top: 1px solid var(--sr5-border-variant);
+
+        .item {
+            color: var(--sr5-text);
+            font-weight: 600;
+            @include config.hover-transition($color: var(--sr5-accent-subtle));
+
+            &.active {
+                color: var(--sr5-accent);
+                text-shadow: none;
+            }
+        }
+    }
+
+    // this refers to the content of the tab
+    .tab.active {
+        @include config.padding($x: 2);
+        color: var(--sr5-text);
+    }
+
     .tagify-selection {
-        border: 1px solid var(--sr5-neutral);
-        border-radius: 3px;
+        --tags-border-color: var(--sr5-border-default);
+        --tags-hover-border-color: var(--sr5-border-default-strong);
+        --tags-focus-border-color: var(--sr5-border-variant-subtle);
+
+        --tag-text-color: var(--sr5-text);
+        --tag-bg: var(--sr5-surface-highest);
+        --tag-hover: var(--sr5-surface-high);
+
+        --tag-remove-btn-color: var(--sr5-text);
+        --tag-remove-bg: var(--sr5-color-physical-subtle);
+        --tag-remove-btn-bg--hover: var(--sr5-color-physical);
+
+        // focus color is for some reason not correctly applied, so we overwrite it
+        &.tagify--focus {
+            border: 1px solid var(--sr5-border-variant-subtle);
+        }
+    }
+
+    input[type="text"], input[type="number"], input[type="password"], input[type="date"], input[type="time"], input[type="datetime-local"], input[type="search"], input[type="file"], select {
+        box-shadow: none;
+
+        font-weight: 700;
+        background: var(--sr5-control-background);
+        color: var(--sr5-text);
+        border-color: var(--sr5-border-default);
+
+        outline: none;
+        &:hover, &:focus {
+            outline: none;
+        }
+
+        ::placeholder {
+            color: var(--sr5-text-subtle);
+        }
     }
 
     // Effects Tab Container
@@ -21,15 +115,13 @@
         padding: 0.75em;
         padding-top: 0;
         @include config.font-size(14);
-        color: #111;
     }
 
     // Header Row
     .effects-header {
         font-weight: bold;
         padding: 0.25em 0;
-        border-bottom: 1px solid #bbb;
-        color: #111;
+        border-bottom: 1px solid var(--sr5-border-default);
         align-items: center;
     }
 
@@ -69,7 +161,6 @@
         box-sizing: border-box;
         height: 2.25em;
         padding: 0.25em 0.4em;
-        color: #111;
         border-radius: 3px;
     }
 
@@ -94,13 +185,23 @@
 
     // Add/Delete Buttons
     .effect-control {
-        color: #444;
-        cursor: pointer;
+        color: var(--sr5-text);
         @include config.font-size(15);
-        transition: color 0.2s ease;
+        @include config.hover-transition($color: var(--sr5-action));
+    }
 
-        &:hover {
-            color: #000;
+    p > a {
+        color: var(--sr5-action-strong);
+    }
+
+    button {
+        background: var(--sr5-surface-high);
+        color: var(--sr5-text);
+        border: 1px solid var(--sr5-border-default);
+        @include config.hover-transition($color: var(--sr5-accent), $background-color: var(--sr5-surface-highest), $border-color: var(--sr5-border-default-strong));
+
+        &:hover, &:focus {
+            box-shadow: none;
         }
     }
 }

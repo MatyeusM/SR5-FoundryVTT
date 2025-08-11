@@ -642,7 +642,7 @@ input[type='text'].display {
     .tabs {
         flex: 0;
         align-items: stretch; // Make tabs stretch instead of space horizontally.
-        border-bottom: 1px solid var(--sr5-accent);
+        border-bottom: 1px solid var(--sr5-border-variant);
 
         > a {
             margin: 0.25em;
