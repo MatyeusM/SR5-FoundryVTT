@@ -19,14 +19,41 @@
 
 $base-url: '/systems/shadowrun5e/dist/';
 
-$sans-font-stack:
-    'Rajdhani', ui-sans-serif, system-ui, 'Segoe UI', 'Helvetica Neue', 'Noto Sans', Roboto, sans-serif,
-    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+// Typography
+// Font Defs
+$sans-font: 'Rajdhani';
+$serif-font: null;
+$mono-font: null;
+
+// default weights
 $default-sans-weight: 500;
-$serif-font-stack: ui-serif, 'Times New Roman', Georgia, 'Noto Serif', 'Roboto Serif', serif;
 $default-serif-weight: 400;
-$mono-font-stack: ui-monospace, Consolas, Menlo, 'Liberation Mono', 'Roboto Mono', monospace;
 $default-mono-weight: 400;
+
+// Stack creation
+$sans-fallback-stack:
+    ui-sans-serif, system-ui, sans-serif, var(--fa-style-family-classic), 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol', 'Noto Color Emoji';
+$serif-fallback-stack: ui-serif, 'Times New Roman', Georgia, 'Noto Serif', 'Roboto Serif', serif;
+$mono-fallback-stack: ui-monospace, Consolas, Menlo, 'Liberation Mono', 'Roboto Mono', monospace;
+
+$font-stacks: (
+    'sans': (
+        user-font: $sans-font,
+        fallback: $sans-fallback-stack,
+        default-weight: $default-sans-weight,
+    ),
+    'serif': (
+        user-font: $serif-font,
+        fallback: $serif-fallback-stack,
+        default-weight: $default-serif-weight,
+    ),
+    'mono': (
+        user-font: $mono-font,
+        fallback: $mono-fallback-stack,
+        default-weight: $default-mono-weight,
+    ),
+);
 
 $actor-sheet-min-width: 54.375rem;
 $actor-sheet-min-height: 43.125rem;

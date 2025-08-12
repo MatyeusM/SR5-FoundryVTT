@@ -78,25 +78,19 @@
 
 // font-family mixin allow additional weights of 'none' and 'default'
 @mixin use-font($family: 'sans', $weight: 'none') {
-    $font-stacks: (
-        'sans': (
-            stack: variables.$sans-font-stack,
-            default-weight: variables.$default-sans-weight,
-        ),
-        'serif': (
-            stack: variables.$serif-font-stack,
-            default-weight: variables.$default-serif-weight,
-        ),
-        'mono': (
-            stack: variables.$mono-font-stack,
-            default-weight: variables.$default-mono-weight,
-        ),
-    );
-
-    $font-data: map.get($font-stacks, $family);
+    $font-data: map.get(variables.$font-stacks, $family);
 
     @if $font-data {
-        font-family: map.get($font-data, stack);
+        $user-font: map.get($font-data, user-font);
+        $fallback-stack: map.get($font-data, fallback);
+
+        @if $user-font {
+            font-family:
+                #{$user-font,
+                $fallback-stack};
+        } @else {
+            font-family: $fallback-stack;
+        }
 
         @if $weight != 'none' and ($weight == 'default' or meta.type-of($weight) == 'number') {
             font-weight: if($weight == 'default', map.get($font-data, default-weight), $weight);
