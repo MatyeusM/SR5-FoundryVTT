@@ -28,7 +28,7 @@
 // to not rely on foundries defaults
 // reset inspired by tailwindcss, needs to merge
 // to also reset foundry default styles
-.sr5v2 {
+.#{config.$base-class} {
     @include config.use-font($weight: 'default');
     @include config.font-size($px: 16, $lh: auto);
     tab-size: 4;
