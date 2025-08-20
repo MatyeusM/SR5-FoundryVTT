@@ -2,8 +2,10 @@
     "include": ["src/**/*", "src/module/types/global.d.ts"],
     "exclude": ["node_modules", "**/*.spec.ts"],
     "compilerOptions": {
-        "target": "es6",
-        "module": "commonjs",
+        "target": "ES6",
+        "module": "ESNext",
+        "lib": ["ES2022", "DOM", "DOM.Iterable"],
+        "esModuleInterop": true,
         "types": ["@league-of-foundry-developers/foundry-vtt-types", "@ethaks/fvtt-quench"],
         "moduleResolution": "node",
         "strictNullChecks": true,
@@ -11,6 +13,7 @@
         "noEmitOnError": false,
         "noImplicitOverride": true,
         "resolveJsonModule": true,
+        "noEmit": true,
         "baseUrl": "./",
         "paths": {
             "@/*": ["./src/*"]
