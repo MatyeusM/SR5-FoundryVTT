@@ -45,7 +45,7 @@ export abstract class DataImporter {
      * @returns A json object converted from the string.
      */
     public static async xml2json(xmlString: string): Promise<object> {
-        const parser = Parser({
+        const parser = new Parser({
             explicitArray: false,
             explicitCharkey: true,
             charkey: IH.CHAR_KEY,

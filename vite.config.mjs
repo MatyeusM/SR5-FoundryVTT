@@ -1,7 +1,9 @@
 import { defineConfig } from 'vite';
 import fs from 'fs-extra';
-import tsconfigPaths from 'vite-tsconfig-paths';
 import path from 'path';
+import tsconfigPaths from 'vite-tsconfig-paths';
+import foundryVTT from './build/vite-plugin-foundryvtt/index.mjs';
+
 
 export default defineConfig(({ command }) => {
     if (command === 'serve') {
@@ -10,29 +12,11 @@ export default defineConfig(({ command }) => {
     }
 
     return {
-        base: `/systems/shadowrun5e/dist/`,
         publicDir: path.resolve(__dirname, 'public'),
-        plugins: [tsconfigPaths()],
-        esbuild: {
-            target: ['es2022'],
-            minifyIdentifiers: false,
-            minifySyntax: true,
-            minifyWhitespace: true,
-            keepNames: true,
-        },
-        server: {
-            port: 30001,
-            proxy: {
-                '^(?!/systems/shadowrun5e/)': `http://localhost:30000/`,
-                '/socket.io': { target: 'ws://localhost:30000', ws: true },
-            },
-        },
+        plugins: [tsconfigPaths(), foundryVTT()],
         build: {
-            outDir: path.resolve(__dirname, 'dist'),
-            emptyOutDir: true,
-            target: 'es2022',
-            lib: { entry: './src/module/main.ts', name: 'bundle', formats: ['es'], fileName: 'bundle' },
-            minify: 'esbuild',
+            // target: 'esnext', // let vite autotarget for compat?
+            lib: { entry: './src/module/main.ts' },
         },
         css: { preprocessorOptions: { scss: { api: 'modern-compiler' } } },
     };

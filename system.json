@@ -16,8 +16,8 @@
         "maximum": "13"
     },
     "scripts": [],
-    "esmodules": ["dist/bundle.js"],
-    "styles": ["dist/bundle.css"],
+    "esmodules": ["bundle.js"],
+    "styles": ["bundle.css"],
     "languages": [
         {
             "lang": "en",

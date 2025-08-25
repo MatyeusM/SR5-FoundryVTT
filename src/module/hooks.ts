@@ -1,3 +1,4 @@
+/// <reference types="vite/client" />
 import { CompileSpriteTest } from './tests/CompileSpriteTest';
 import { OpposedSummonSpiritTest } from './tests/OpposedSummonSpiritTest';
 import { OpposedRitualTest } from './tests/OpposedRitualTest';
@@ -48,8 +49,6 @@ import {DronePerceptionTest} from "./tests/DronePerceptionTest";
 import {DroneInfiltrationTest} from "./tests/DroneInfiltrationTest";
 import { SuppressionDefenseTest } from './tests/SuppressionDefenseTest';
 import { SummonSpiritTest } from './tests/SummonSpiritTest';
-
-import { quenchRegister } from '../unittests/quench';
 import { createItemMacro, createSkillMacro, rollItemMacro, rollSkillMacro } from './macros';
 
 import { NetworkDeviceFlow } from './item/flows/NetworkDeviceFlow';
@@ -77,13 +76,13 @@ import { SR5TokenRuler } from './token/SR5TokenRuler';
 export const SR5CONFIG = SR5;
 
 export class HooksManager {
-    static registerHooks() {
+    static async registerHooks() {
         console.log('Shadowrun 5e | Registering system hooks');
         // Register your highest level hook callbacks here for a quick overview of what's hooked into.
 
         Hooks.once('init', () => {
             HooksManager.init();
-            
+
             // Custom Module Integrations
             // See src/module/integartions for more information.
             if (game.modules.get('routinglib')?.active) {
@@ -108,7 +107,10 @@ export class HooksManager {
         Hooks.on("renderChatLog", HooksManager.chatLogListeners);
         Hooks.on('preUpdateCombatant', SR5Combat.onPreUpdateCombatant);
 
-        Hooks.on('quenchReady', quenchRegister);
+        if (import.meta.env.MODE !== 'production') {
+            const quench = await import('../unittests/quench');
+            Hooks.on('quenchReady', quench.quenchRegister);
+        }
 
         RenderSettings.listen();
     }
@@ -116,12 +118,12 @@ export class HooksManager {
     static init() {
         console.log(`Loading Shadowrun 5e System
 ___________________
- ___________ _____ 
+ ___________ _____
 /  ___| ___ \\  ___|
-\\ \`--.| |_/ /___ \\ 
+\\ \`--.| |_/ /___ \\
  \`--. \\    /    \\ \\
 /\\__/ / |\\ \\/\\__/ /
-\\____/\\_| \\_\\____/ 
+\\____/\\_| \\_\\____/
 ===================
 `);
         // Create a shadowrun5e namespace within the game global
