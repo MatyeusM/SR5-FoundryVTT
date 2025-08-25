@@ -31,8 +31,9 @@
     },
     "scripts": {
         "dev": "vite",
-        "build": "tsc && vite build",
-        "build:db": "node ./build/packs.mjs package pack",
+        "prebuild": "tsc",
+        "build": "vite build",
+        "postbuild": "node ./build/packs.mjs package pack",
         "lint": "eslint ."
     }
 }

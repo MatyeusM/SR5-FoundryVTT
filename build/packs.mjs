@@ -7,12 +7,12 @@
  *
  * # Extract all compendium packs into JSON files
  * $ node ./utils/packs.mjs package unpack
- * 
+ *
  * # Pack all compendium packs into nedb files
  * $ node ./utils/packs.mjs package pack
  * # OR
  * $ npm run build:db
- * 
+ *
  * Both pack and unpack allow targeting specific packs by name, check command help for that.
  */
 import fs from 'fs';
@@ -25,13 +25,13 @@ import { hideBin } from 'yargs/helpers';
  * base 5e system folder.
  * @type {string}
  */
-const PACK_DEST = 'packs';
+const PACK_DEST = 'dist/packs';
 
 /**
  * Folder where source JSON files should be located relative to the 5e system folder.
  * @type {string}
  */
-const PACK_SRC = 'packs/_source';
+const PACK_SRC = 'src/packs';
 
 /**
  * Script argument parsing using yargs. Hand over to the package command.
