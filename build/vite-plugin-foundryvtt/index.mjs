@@ -1,4 +1,5 @@
 import path from 'path';
+import fs from 'fs-extra';
 import { createConfig } from './config/vite.mjs';
 import { manifestCache } from './config/manifest.mjs';
 
@@ -9,6 +10,19 @@ export default function foundryVTT(options = { foundryPort: 30000 }) {
         config: createConfig(options),
         configResolved(config) {
             manifestCache.config = config;
+        },
+        async closeBundle() {
+            const outDir = path.resolve(process.cwd(), 'dist');
+            const candidates = ['system.json', 'module.json'];
+
+            for (const file of candidates) {
+                const src = path.resolve(process.cwd(), file);
+                if (await fs.pathExists(src)) {
+                    const dest = path.join(outDir, file);
+                    await fs.copy(src, dest);
+                    console.log(`Copied ${file} → ${dest}`);
+                }
+            }
         },
         configureServer(server) {
             server.middlewares.use((req, res, next) => {
@@ -36,8 +50,6 @@ export default function foundryVTT(options = { foundryPort: 30000 }) {
                     `);
                     return;
                 }
-
-                console.log(cssEntry);
 
                 if (req.url === cssEntry) {
                     res.setHeader('Content-Type', 'text/css');
