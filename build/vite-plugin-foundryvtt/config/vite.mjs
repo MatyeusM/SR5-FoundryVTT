@@ -3,7 +3,7 @@
 import path from 'path';
 import { loadManifest } from './manifest.mjs';
 
-export function createConfig(options) {
+export default function createConfig(options) {
     return async (config) => {
         const MANIFEST = await loadManifest(config);
 
