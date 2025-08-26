@@ -39,7 +39,6 @@ export default function createConfig(options) {
                 port: options.foundryPort + 1,
                 proxy: {
                     [`^(?!${base})`]: `http://localhost:${options.foundryPort}`,
-                    '/socket.io': { target: `ws://localhost:${options.foundryPort}`, ws: true },
                 },
             },
             build: {

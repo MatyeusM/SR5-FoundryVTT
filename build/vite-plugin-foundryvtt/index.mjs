@@ -3,6 +3,7 @@ import fs from 'fs-extra';
 import createConfig from './config/vite.mjs';
 import { manifestCache } from './config/manifest.mjs';
 import httpMiddlewareHook from './server/http.mjs';
+import wsMiddlewareHook from './server/socket.mjs';
 
 export default function foundryVTT(options = { foundryPort: 30000 }) {
     return {
@@ -29,7 +30,8 @@ export default function foundryVTT(options = { foundryPort: 30000 }) {
         configureServer(server) {
             // Virtualize http calls: entry points & language files
             httpMiddlewareHook(server);
-            // Proxy the ws connection: to inject the correct templates for dev
+            // Serve templates from our files
+            wsMiddlewareHook(server, options);
         },
     };
 }
