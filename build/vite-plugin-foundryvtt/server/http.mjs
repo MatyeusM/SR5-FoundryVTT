@@ -22,7 +22,7 @@ export default function httpMiddlewareHook(server) {
         const cssEntry = cssFileName ? path.posix.join(config.decodedBase, `${cssFileName}.css`) : null;
 
         if (req.url === jsEntry) {
-            const jsToInject = fs.readFileSync('./client-inject-hmr.mjs');
+            const jsToInject = fs.readFileSync(path.resolve(__dirname, './client-inject-hmr.mjs'));
             res.setHeader('Content-Type', 'application/javascript');
             res.end(`
             import "${config.build.lib.entry}";

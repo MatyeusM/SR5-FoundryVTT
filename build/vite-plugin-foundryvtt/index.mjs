@@ -5,7 +5,6 @@ import { manifestCache } from './config/manifest.mjs';
 import httpMiddlewareHook from './server/http.mjs';
 
 export default function foundryVTT(options = { foundryPort: 30000 }) {
-    // console.log(MANIFEST.data);
     return {
         name: 'vite-plugin-foundryvtt',
         config: createConfig(options),
@@ -14,6 +13,7 @@ export default function foundryVTT(options = { foundryPort: 30000 }) {
             manifestCache.config = config;
         },
         async closeBundle() {
+            if (manifestCache.config.mode !== 'production') return;
             const outDir = path.resolve(process.cwd(), manifestCache.config.build.outDir);
             const candidates = ['system.json', 'module.json'];
 
