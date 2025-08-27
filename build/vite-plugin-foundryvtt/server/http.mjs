@@ -1,6 +1,8 @@
 import fs from 'fs-extra';
 import path from 'path';
 import { manifestCache } from '../config/manifest.mjs';
+import { buildExpectedSrcPath, buildLanguage } from '../i18n/transformer.mjs';
+import { languageTracker } from '../i18n/language-tracker.mjs';
 
 export default function httpMiddlewareHook(server) {
     server.middlewares.use((req, res, next) => {
@@ -23,6 +25,22 @@ export default function httpMiddlewareHook(server) {
             return;
         }
 
+        const languages = manifestCache.data.languages.filter(
+            (lang) => path.posix.join(config.decodedBase, lang.path) === req.url,
+        );
+
+        if (languages.length === 1) {
+            const language = languages[0];
+            language.localPublicPath = path.posix.join(config.publicDir, language.path);
+            language.expectedSrcPath = buildExpectedSrcPath(config, language);
+            console.log(language);
+            if (!fs.existsSync(language.localPublicPath)) {
+                res.setHeader('Content-Type', 'application/json');
+                res.end(buildLanguage(language.expectedSrcPath, language.lang));
+            } else {
+                languageTracker.addLanguageFile(language.lang, language.localPublicPath);
+            }
+        }
         next();
     });
 }

@@ -5,6 +5,8 @@ import { manifestCache } from './config/manifest.mjs';
 import httpMiddlewareHook from './server/http.mjs';
 import wsMiddlewareHook from './server/socket.mjs';
 import { templateTracker } from './server/template-tracker.mjs';
+import { buildI18n } from './i18n/transformer.mjs';
+import { languageTracker } from './i18n/language-tracker.mjs';
 
 export default function foundryVTT(options = { foundryPort: 30000 }) {
     return {
@@ -13,6 +15,13 @@ export default function foundryVTT(options = { foundryPort: 30000 }) {
         configResolved(config) {
             // store the resolved config in the manifest cache
             manifestCache.config = config;
+            const normalizedEntry = path.posix.normalize(config.build.lib.entry);
+            const segments = normalizedEntry
+                .split(path.posix.sep)
+                .filter(Boolean)
+                .filter((s) => s !== '.');
+            const firstFolder = segments.length > 0 ? segments[0] : '.';
+            manifestCache.config.projectSourceFolder = path.join(config.root, firstFolder);
         },
         async closeBundle() {
             if (manifestCache.config.mode !== 'production') return;
@@ -27,6 +36,8 @@ export default function foundryVTT(options = { foundryPort: 30000 }) {
                     console.log(`Copied ${file} >>> ${dest}`);
                 }
             }
+
+            buildI18n(manifestCache.data.languages, manifestCache.config);
         },
         load(id) {
             const config = manifestCache.config;
@@ -39,8 +50,9 @@ export default function foundryVTT(options = { foundryPort: 30000 }) {
             }
         },
         configureServer(server) {
-            // initialize the tracking of templates
+            // initialize the tracking of templates && language files
             templateTracker.initialize(server);
+            languageTracker.initialize(server);
             // Virtualize http calls: css entry points & language files
             httpMiddlewareHook(server);
             // Serve templates from our files
