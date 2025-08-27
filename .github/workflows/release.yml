@@ -20,23 +20,23 @@ jobs:
                   DOWNLOAD: https://github.com/${{github.repository}}/releases/download/${{github.event.release.tag_name}}/shadowrun5e.zip
                   VERSION: ${{github.event.release.tag_name}}
               run: |
-                    sudo apt-get install moreutils
-                    jq --arg url $URL '.url=$url' system.json | sponge system.json
-                    jq --arg manifest $MANIFEST '.manifest=$manifest' system.json | sponge system.json
-                    jq --arg download $DOWNLOAD '.download=$download' system.json | sponge system.json
-                    jq --arg version $VERSION '.version=$version' system.json | sponge system.json
+                  sudo apt-get install moreutils
+                  jq --arg url $URL '.url=$url' system.json | sponge system.json
+                  jq --arg manifest $MANIFEST '.manifest=$manifest' system.json | sponge system.json
+                  jq --arg download $DOWNLOAD '.download=$download' system.json | sponge system.json
+                  jq --arg version $VERSION '.version=$version' system.json | sponge system.json
 
             - name: Read System manifest for later use
               run: |
-                    cat system.json
-                    echo "MANIFEST_JSON=$(jq -c . < system.json)" >> $GITHUB_ENV
+                  cat system.json
+                  echo "MANIFEST_JSON=$(jq -c . < system.json)" >> $GITHUB_ENV
 
             - name: Build and package release artifacts
               run: |
                   npm ci
-                  gulp build
-                  npm run build:db
-                  zip -r ./shadowrun5e.zip system.json template.json LICENSE README.md README-DEV.md dist/ packs/ --exclude "packs/_source/*"
+                  npm run build
+                  cd dist
+                  zip -r ../shadowrun5e.zip ./*"
 
             - name: Update Release with Files
               uses: ncipollo/release-action@v1
