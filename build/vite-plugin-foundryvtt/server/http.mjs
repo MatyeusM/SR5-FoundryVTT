@@ -9,7 +9,7 @@ export default function httpMiddlewareHook(server) {
         const config = manifestCache.config;
 
         // This is a defensive check to make sure we don't handle requests
-        // that don't belong to our module.
+        // that don't belong to our module or system.
         if (!req.url.startsWith(config.decodedBase)) {
             next();
             return;
@@ -33,7 +33,6 @@ export default function httpMiddlewareHook(server) {
             const language = languages[0];
             language.localPublicPath = path.posix.join(config.publicDir, language.path);
             language.expectedSrcPath = buildExpectedSrcPath(config, language);
-            console.log(language);
             if (!fs.existsSync(language.localPublicPath)) {
                 res.setHeader('Content-Type', 'application/json');
                 res.end(buildLanguage(language.expectedSrcPath, language.lang));
