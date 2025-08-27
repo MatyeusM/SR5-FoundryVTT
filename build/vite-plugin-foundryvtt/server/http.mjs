@@ -14,21 +14,8 @@ export default function httpMiddlewareHook(server) {
         }
 
         // Get the filenames from the resolved config, as they are now finalized.
-        const jsFileName = config.build.lib.fileName(config.build.lib.formats[0]);
         const cssFileName = config.build.lib.cssFileName;
-
-        // Construct the expected URL paths.
-        const jsEntry = path.posix.join(config.decodedBase, jsFileName);
         const cssEntry = cssFileName ? path.posix.join(config.decodedBase, `${cssFileName}.css`) : null;
-
-        if (req.url === jsEntry) {
-            const jsToInject = fs.readFileSync(path.resolve(__dirname, './client-inject-hmr.mjs'));
-            res.setHeader('Content-Type', 'application/javascript');
-            res.end(`
-            import "${config.build.lib.entry}";
-            ${jsToInject}`);
-            return;
-        }
 
         if (req.url === cssEntry) {
             res.setHeader('Content-Type', 'text/css');

@@ -3,6 +3,7 @@ import path from 'path';
 import { Server as SocketServer } from 'socket.io';
 import { io as ClientIO } from 'socket.io-client';
 import { manifestCache } from '../config/manifest.mjs';
+import { templateTracker } from './template-tracker.mjs';
 
 export default function socketProxy(server, options) {
     const ioProxy = new SocketServer(server.httpServer, { path: '/socket.io' });
@@ -35,6 +36,7 @@ export default function socketProxy(server, options) {
                         if (!fs.existsSync(file)) continue;
                         if (!maybeAck) continue;
                         maybeAck({ html: fs.readFileSync(file, 'utf8'), success: true });
+                        templateTracker.addTemplate(file);
                         return;
                     }
                     // fallback instead

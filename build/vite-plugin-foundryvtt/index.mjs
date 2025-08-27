@@ -4,6 +4,7 @@ import createConfig from './config/vite.mjs';
 import { manifestCache } from './config/manifest.mjs';
 import httpMiddlewareHook from './server/http.mjs';
 import wsMiddlewareHook from './server/socket.mjs';
+import { templateTracker } from './server/template-tracker.mjs';
 
 export default function foundryVTT(options = { foundryPort: 30000 }) {
     return {
@@ -27,8 +28,20 @@ export default function foundryVTT(options = { foundryPort: 30000 }) {
                 }
             }
         },
+        load(id) {
+            const config = manifestCache.config;
+            const jsFileName = config.build.lib.fileName(config.build.lib.formats[0]);
+            if (id === jsFileName || id === `/${jsFileName}`) {
+                const jsToInject = fs.readFileSync(path.resolve(__dirname, './server/client-inject-hmr.mjs'));
+                const entryPath = path.resolve(config.build.lib.entry); // absolute fs path
+                const viteId = `/@fs/${entryPath}`;
+                return `import '${viteId}';\n${jsToInject}`;
+            }
+        },
         configureServer(server) {
-            // Virtualize http calls: entry points & language files
+            // initialize the tracking of templates
+            templateTracker.initialize(server);
+            // Virtualize http calls: css entry points & language files
             httpMiddlewareHook(server);
             // Serve templates from our files
             wsMiddlewareHook(server, options);
