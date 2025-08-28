@@ -7,6 +7,7 @@ import wsMiddlewareHook from './server/socket.mjs';
 import { templateTracker } from './server/template-tracker.mjs';
 import { buildI18n } from './i18n/transformer.mjs';
 import { languageTracker } from './i18n/language-tracker.mjs';
+import { validateI18nBuild } from './i18n/validator.mjs';
 
 export default function foundryVTT(options = { foundryPort: 30000 }) {
     return {
@@ -37,7 +38,13 @@ export default function foundryVTT(options = { foundryPort: 30000 }) {
                 }
             }
 
-            buildI18n(manifestCache.data.languages, manifestCache.config);
+            // console.log(manifestCache.config);
+
+            const languages = manifestCache.data.languages;
+            if (languages.length > 0) {
+                buildI18n(manifestCache.data.languages, manifestCache.config);
+                validateI18nBuild();
+            }
         },
         load(id) {
             const config = manifestCache.config;
