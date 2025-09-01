@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite';
 import tsconfigPaths from 'vite-tsconfig-paths';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
-import foundryVTT from './build/vite-plugin-foundryvtt/index.mjs';
+import foundryVTT from 'vite-plugin-fvtt';
 
 export default defineConfig({
     // TODO @taMif: remove this line before compiling the release with it. never add it again.
