@@ -31,6 +31,7 @@
     },
     "scripts": {
         "dev": "vite",
+        "watch": "vite build --watch --mode development",
         "prebuild": "tsc",
         "build": "vite build",
         "postbuild": "node ./build/packs.mjs package pack",
